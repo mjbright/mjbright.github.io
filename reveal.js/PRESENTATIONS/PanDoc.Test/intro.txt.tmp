@@ -1,0 +1,409 @@
+% Python User Group
+% Introduction
+% 23 Janvier 2014,   Michael Bright,   [\@mjbright](http://twitter.com/mjbright)
+
+
+Agenda
+------
+
+* Introduction
+    * Tour de table
+    * Python User Group
+* Arthur Vuillard - Tests Unitaires sous Python
+    *   Q&A
+* Michael Bright - Tendences developement en 2014
+    *   Q&A
+* Discussion sur le Groupe
+
+Introduction
+============
+
+Tour de Table
+---------
+
+Ou sommes nous?
+---------
+* [La Casemate(ccsti)](http://www.ccsti-grenoble.org/) heberge
+    *    Le FabLab (Atelier de Fabrication)
+    *    Le LOG    (Grenoble Hackerspace)
+
+![](https://mw2.google.com/mw-panoramio/photos/medium/7776150.jpg)
+
+Pourquoi un PyUG?
+---------
+
+* Vous-etes nombreux (a la demander?)
+* Je le veux (AlpesJUG c'est bien mais ...)
+
+> ```Python```
+
+* Langage de l'Annee?
+    * Pas d'apres [TIOBE](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html) 2.4% (-1.77%).
+        *  TIOBE Index compte le nombre de pages web avec un nom de langage, mais base sur l'existence pas les acces ...
+    * D'apres [PYPL](https://sites.google.com/site/pydatalog/pypl/PyPL-PopularitY-of-Programming-Language) 10.2% (+1.3%).
+        *  PYPL recherche l'utilisation de "langage tutorial" dans Google Trends
+
+PYPL
+----
+![](images/PYPL.png)
+
+* Perso je doute ... pour Javascript ...
+
+Pourquoi moi?
+---------
+
+* Je voulais un PyUG ...
+* Pas d'autre merite ...
+
+Tests Unitaires
+---------
+
+* Arthur Vuillard
+
+Tendences development en 2014
+=============================
+
+References
+------
+
+[DZone - dev-tech-will-be-hot](http://java.dzone.com/articles/dev-tech-will-be-hot-2014)
+
+Recherche: Tendences Python 2014
+------
+
+Resultat
+------
+
+![](images/TendencesPython2014.PNG)
+
+Recherche: Python 2014
+------
+
+Resultat
+------
+
+* Monty Python reunion en 2014
+
+Tendences Python in 2014
+------
+
+* Sinon ... Python 3.4 !!
+
+[Docker](http://www.docker.io/)
+------
+
+Revelation de l'annee 2013, Docker fera encore des vagues en 2014.
+Outil de containerization qui donne un alternatif interressant aux VMs,
+permettant de creer et distribuer des images de conteneur.
+
+[Docker](http://www.docker.io/)
+------
+
+![](images/Containers_vs_VMs.png)
+
+[Docker](http://www.docker.io/)
+------
+
+* On entendra parler de lui pour OpenStack, PaaS, DevOps.
+* Nous parlerons de Docker ...
+
+* [JiffyLab](http://ptone.com/dablog/2013/06/introducing-jiffylab/)
+    * Creation d'un environment de dev standard Python
+    * Virtualenv ++
+
+------
+
+Pandas and Vincent
+------------
+
+![](http://java.dzone.com/sites/all/files/pandas.png)
+
+* [Pandas](http://pandas.pydata.org/) - Python Data Analysis Library
+    * Pandas v0.13 est sorti le 15 janvier (release majeur)
+
+* [Vincent](http://vincent.readthedocs.org/en/latest/) - Librarie de visualisation (Vega grammaire)
+
+
+
+Qqn veut nous montrer Numpy/Pandas/Vincent/iPython ??
+
+
+[AngularJS](http://angularjs.org/)
+---------
+
+
+* Framework JavaScript MVW propose par Google
+* Concu pour faire des web apps, qui concurrence Ember et  Knockout.
+    * data-binding bidirectionnel mieux optimise
+    * approche delcarative
+    * moins verbeux qu'attribut noeud Ember ou template Knockout
+    * support de [Web Components](http://www.journaldunet.com/developpeur/client-web/web-components-0913.shtml)
+* Feuille de route riche avec gestion d'animations, performances ameliores.
+* Fait parti du [MEAN stack](http://blog.mongodb.org/post/49262866911/the-mean-stack-mongodb-expressjs-angularjs-and) (Mongo/Ember/Angular/Node.js)
+
+Source: [JournalDuNet](http://www.journaldunet.com/developpeur/outils/angular-js.shtml)
+
+[Angular Rocks](http://angular-tips.com/blog/2013/08/why-does-angular-dot-js-rock/)
+
+
+[Ghost](https://ghost.org/)
+-----
+
+Un plateforme de blog base sur Node.js, repute pour sa simplicite et sa beaute.
+Blog peut-etre ecrit directement en markdown, favorize les utilisateurs plutot que developpeurs.
+
+Voir [features](https://ghost.org/features/)
+
+Focus sur blogging, mais avec system de plugins Node.js qui permet d'etendre.
+Mobile d'abord ...
+
+Finance via sur [Kickstarter](http://www.kickstarter.com/projects/johnonolan/ghost-just-a-blogging-platform)
+
+
+[Zurb Foundation 5](http://foundation.zurb.com/)
+-----------------
+
+CSS Framework qui avait ete depasse par le Bootstrap de Twitter mais
+qui revienne en 2014 grace a des ameliorations de performance.
+
+![](http://java.dzone.com/sites/all/files/foundation.png)
+
+Grunt/Bower
+-----------
+
+![](http://java.dzone.com/sites/all/files/YEOMAN.png)
+
+* Yeoman stack
+    * Yeoman: Demarrer un app a partir d'un generator (Angular/Ember/..)
+    * Bower:  Gestion de dependences
+    * Grunt:  Build/Test (aujourd'hui JS/Ruby ...)
+
+
+[Discourse](http://try.discourse.org/)
+-----------
+
+![](http://java.dzone.com/sites/all/files/discourse.png)
+
+* Forum de discussion next-gen tres facile et agreable a utiliser.
+    * Deja adopte par qqs formations en ligne.
+    * Information sur le nombre de clicks sur un poste
+* OpenSource
+* Plugins
+
+
+Coinbase
+--------
+
+![](http://java.dzone.com/sites/all/files/coinbase.png)
+
+* Permet des transactions d'argent anonymous
+* Obtien des bitcoins par
+    * Bitcoin mining - decouvre un nouveau block (50 bitcoins)
+    * En les achetant
+    * En fournissant des services
+
+Steam Machines
+--------------
+
+![](http://java.dzone.com/sites/all/files/steam.png)
+
+* Interressant pour les gameurs d'avoir une plateforme ouverte
+
+* Interressant pour Linux
+    * Encourage les vendeurs de cartes graphiques sur Linux
+    * Encore du terrain gagne pour Linux
+
+
+Screenhero
+----------
+
+![](http://java.dzone.com/sites/all/files/screenhero.png)
+
+* Mac et Windows seulement
+* Partage d'ecran avec multiple controle
+* Tres pratique pour le codage collaboratif
+
+
+[StackEdit](https://stackedit.io/)
+---------
+
+![](http://java.dzone.com/sites/all/files/stackedit.png)
+
+* Editeur de Markdown en WebApp
+
+FitBit
+------
+
+![](http://java.dzone.com/sites/all/files/fitbit.png)
+
+* Fitness tracking
+* J'espere la meme chose pour le Pebble ...
+
+Arduino/Espruino
+----------------
+
+![](http://java.dzone.com/sites/all/files/espruino.png)
+
+* Il y aura plus de hardware hacking en 2014
+* Example d'open hardware
+* On verra des SDKs plus oriente technos web
+* Espruino: Kickstarter project pour Arduino-Javascript
+
+Crowd Sourcing
+----------------
+
+* Kickstarter
+    * Pebble montre
+    * Parallela CPU multi-coeur (16/64)
+* Indiegogo
+    * [DK] Airtame Wireless HDMI (1m$ > 160k$)
+    * [UK] Linux Voice
+    * [UK] HDMIPi
+    * [Eu?] TriggerTrap
+    * Neurio - Gestion d'energie
+
+OpenShift
+---------
+
+![](http://java.dzone.com/sites/all/files/openshift.png)
+
+* Le PaaS de RedHat ... qui va integrer Docker 
+* Et Solum le projet OpenStack ??
+
+
+FoundationDB
+------------
+
+![](http://java.dzone.com/sites/all/files/foundationdb.png)
+
+* Le SQL revient comme le No-NoSQL !
+* Postgres sera toujours un bon choix
+
+FoundationDB permet de melanger differents modeles de donnees dans un seule DB toujours avec des transactions ACID.
+
+Chrome DevTools
+------------
+
+![](http://java.dzone.com/sites/all/files/chromedevtools.png)
+
+* Pour 2014
+    * Remote debug
+    * Mobile emulation
+
+
+WebRTC
+------------
+
+![](http://java.dzone.com/sites/all/files/webrtc.png)
+
+Projet opensource pour enabler commns temps-reel dans les browseurs.
+
+* Pousse par Google, Mozila, Opera
+* Workgroups IETF (protocole), W3C (api)
+* Permettra applications audio/video chat dans le browser
+
+
+Web Components and CSS Grid Layout
+------------
+
+![](http://java.dzone.com/sites/all/files/w3c.png)
+
+* Widgets pour HTML ...
+
+* CSS Grid Layout
+
+
+Silex, Composer, and Slim
+------------
+
+![](http://java.dzone.com/sites/all/files/silex.png)
+
+* PHP micro-framework
+
+
+Offline-first Development
+------------
+
+![](http://java.dzone.com/sites/all/files/offlinejs.png)
+
+* En 2013 mobile-first developement
+* En 2014 offline-first developement
+
+Offline.js facilitera la tache d'ecrire des applis non-connecte.
+
+
+Discussion sur le Groupe
+=============================
+
+Le LIEU 
+-------
+
+* La Casemate
+    * Pas besoin de monter un assoc (si meme soiree que LOG)
+    * Synergies avec LOG
+    * Centre Ville
+    * Petite Salle
+
+* Ailleurs?
+    * Maison Jean Kuntzmann sur le Campus?
+
+Commns
+--------
+* Meetup
+* LinkedIn
+* GoogleGroup
+* AFPy list
+
+* ..!
+
+Sondage
+--------
+
+[Sondage](https://fr.surveymonkey.com/analyze/_2FfM198po2XCsRZKrlMfHEh0roqS_2BqCQmfmUJjslnbNQ_3D)
+
+Groupes
+--------
+* AlpesJUG (oops - ils ont une reunion ce soir!)
+* GUILDE
+* Grenoble Hackerspace (LOG)
+
+Evenements dans la region
+--------
+* [Reunion du Logiciel Libre](http://www.jdll.org/) (Lyon)
+* MixIT - Avr. (Lyon)
+* RuLu - Juin (Lyon)
+* [Human Talks](http://humantalks.com/cities/grenoble)
+* WebInAlpes - Dec.
+* AlpesJUG
+    * 11 Fevrier - injection (CDI)
+    * 19 Mars - JEE7/Glassfish
+    * 3 Avril soiree NightHacking (developper en java sur Raspberry-Pi)
+* via AlpesJUG
+    *  6 Fevrier - [Lyon Hadoop Meetup](http://www.meetup.com/Lyon-Hadoop-Meetups/events/156288022/)
+    * 19 Fevrier - [Eclipse IoT day](https://wiki.eclipse.org/Eclipse_IoT_Day_Grenoble_2014)
+
+Evenements ailleurs
+--------
+* [EuroPython](https://ep2014.europython.eu) - 21-27 Juillet (Berlin)
+* [DjangoCon](http://2014.djangocon.eu/) - 13-17 Mai, Ile de Embiez(Var)
+* [OpenStack](http://www.openstack.org) Summit - Nov (Paris)
+* [Pyconfr](http://www.pycon.fr/) - Oct? (?)
+
+Cyberspace
+--------
+
+* Les MOOCs / Coursera
+    * Computational Investment
+    * Fundamentals of Prog
+    * Interactive Prog in Python
+    * Software Defined Networking
+
+* Mechanical MOOC
+
+
+La Suite
+========
+
+A vous ...
+--------
+

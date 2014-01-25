@@ -1,0 +1,35 @@
+% Habits
+% John Doe
+% March 22, 2005
+;;; This is NOT a standard markdown comment!!
+;;; A standard comment is an <!-- HTML comment -->
+
+# In the morning
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Breakfast
+
+- Eat eggs
+;;; ADD a pause here:
+...
+- Drink coffee
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
+
+------------------
+
+![picture of spaghetti](images/spaghetti.jpg)
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
