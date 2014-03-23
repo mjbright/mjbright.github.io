@@ -28,15 +28,18 @@
     <title>Lightweight Virtualization with Docker</title>
     <!-- Styles -->
     
-    <link rel="stylesheet" media="print" href="theme/css/print.css">
-    <link rel="stylesheet" media="screen, projection" href="theme/css/screen.css">
+    <link rel="stylesheet" media="print" href="./mike/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="./mike/css/screen.css">
     
+    
+      
+      <link rel="stylesheet" href="custom.css">
+      
     
     <!-- /Styles -->
     <!-- Javascripts -->
     
-    <script type="text/javascript" src="theme/js/slides.js"></script>
-    
+    <script type="text/javascript" src="./mike/js/slides.js"></script>
     
     
     <!-- /Javascripts -->
@@ -436,22 +439,22 @@ RedHats OpenShift, ActiveStates Stackato and soon CloudFoundry.</p>
             
             
             <section><h1>Using Docker - Docker commands [1]</h1>
-<div class="highlight"><pre><span class="lineno"> 1</span>    <span class="nv">$ </span>docker images <span class="c"># List local images</span>
-<span class="lineno"> 2</span>    REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-<span class="lineno"> 3</span>    my/ping             latest              f492632bbd55        11 hours ago        139.7 MB
-<span class="lineno"> 4</span>    wpress              latest              93a82573c321        20 hours ago        680 MB
-<span class="lineno"> 5</span>    ubuntu              12.04               8dbd9e392a96        11 months ago       128 MB
-<span class="lineno"> 6</span>    base                ubuntu-12.10        b750fe79269d        12 months ago       175.3 MB
-<span class="lineno"> 7</span> 
-<span class="lineno"> 8</span>    <span class="c"># Run the base image and print Hello World:</span>
-<span class="lineno"> 9</span>    <span class="nv">$ </span><span class="nb">time </span>docker run -i -t base /bin/echo <span class="s2">&quot;Hello World&quot;</span>
-<span class="lineno">10</span>    Hello World
-<span class="lineno">11</span> 
-<span class="lineno">12</span>    real    0m0.690s <span class="c"># model name: Intel(R) Atom(TM) CPU  230   @ 1.60GHz</span>
-<span class="lineno">13</span> 
-<span class="lineno">14</span>    <span class="nv">$ </span>docker ps -a <span class="c"># Show all containers</span>
-<span class="lineno">15</span>    CONTAINER ID  IMAGE  COMMAND              CREATED     STATUS  PORTS NAMES
-<span class="lineno">16</span>    9d6d3c8a9a18  base   /bin/echo Hello Worl 5 mins ago  Exit 0        thirsty_hawking
+<div class="highlight"><pre>   <span class="nv">$ </span>docker images <span class="c"># List local images</span>
+   REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+   my/ping             latest              f492632bbd55        11 hours ago        139.7 MB
+   wpress              latest              93a82573c321        20 hours ago        680 MB
+   ubuntu              12.04               8dbd9e392a96        11 months ago       128 MB
+   base                ubuntu-12.10        b750fe79269d        12 months ago       175.3 MB
+
+   <span class="c"># Run the base image and print Hello World:</span>
+   <span class="nv">$ </span><span class="nb">time </span>docker run -i -t base /bin/echo <span class="s2">&quot;Hello World&quot;</span>
+   Hello World
+
+   real    0m0.690s <span class="c"># model name: Intel(R) Atom(TM) CPU  230   @ 1.60GHz</span>
+
+   <span class="nv">$ </span>docker ps -a <span class="c"># Show all containers</span>
+   CONTAINER ID  IMAGE  COMMAND              CREATED     STATUS  PORTS NAMES
+   9d6d3c8a9a18  base   /bin/echo Hello Worl 5 mins ago  Exit 0        thirsty_hawking
 </pre></div>
 </section>
             
@@ -542,8 +545,8 @@ RedHats OpenShift, ActiveStates Stackato and soon CloudFoundry.</p>
             <header><h1>Using Docker - Docker commands [3]</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="lineno">1</span>     docker stop <span class="k">$(</span>docker ps -q<span class="k">)</span>   <span class="c"># Stop all runnning containers</span>
-<span class="lineno">2</span>     docker rm <span class="k">$(</span>docker ps -a -q<span class="k">)</span>  <span class="c"># Remove all stopped containers</span>
+            <section><div class="highlight"><pre>    docker stop <span class="k">$(</span>docker ps -q<span class="k">)</span>   <span class="c"># Stop all runnning containers</span>
+    docker rm <span class="k">$(</span>docker ps -a -q<span class="k">)</span>  <span class="c"># Remove all stopped containers</span>
 </pre></div>
 </section>
             
