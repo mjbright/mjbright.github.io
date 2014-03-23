@@ -221,7 +221,7 @@ ports via ssh
 Links - 1
 =========
 
-[The demo script](http://www.centurylinklabs.com/deploying-multi-server-docker-apps-with-ambassadors/)
+[The demo script](./docker_demo.sh)
 
 Links - 2
 =========
