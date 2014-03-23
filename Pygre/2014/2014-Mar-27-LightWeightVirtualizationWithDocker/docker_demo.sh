@@ -55,6 +55,7 @@ gitPush() {
     cp $0 $GITDIR/
     cd $GITDIR
     git commit -m "Semi-auto push: Updated script++" -a
+    git push
     #[ ! -d ~/src/git/mjbright-docker ] 
 }
 
