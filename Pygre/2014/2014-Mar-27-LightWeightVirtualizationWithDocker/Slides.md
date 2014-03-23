@@ -154,9 +154,7 @@ Rendering Instructions
 Slide #2
 ========
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna tellus,
-fermentum nec venenatis nec, dapibus id metus. Phasellus nulla massa, consequat
-nec tempor et, elementum viverra est. Duis sed nisl in eros adipiscing tempor.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna tellus,...
 
 Section #1
 ----------
@@ -167,16 +165,17 @@ velit consectetur.
 Section #2
 ----------
 
-Donec risus tortor, dictum sollicitudin ornare eu, egestas at purus. Cras
-consequat lacus vitae lectus faucibus et molestie nisl gravida. Donec tempor,
-tortor in varius vestibulum, mi odio laoreet magna, in hendrerit nibh neque eu
-eros.
+Donec risus tortor, dictum sollicitudin ornare eu, egestas at purus. Cras...
+
+---
 
 Docker Versions
 ==========================
 - 0.8
 - 0.9
 - 1.0
+
+---
 
 Running Docker
 ==========================
@@ -189,6 +188,8 @@ Running Docker
 -> vagrant-dockstack (later!)
 -> boot2docker(!) - via VirtualBox
 
+---
+
 Demo1 - Basic interaction
 ==========================
 
@@ -198,15 +199,21 @@ Demo1 - Basic interaction
 
 Script to kill items
 
+---
+
 
 Demo2 - Daemon attach/detach
 ============================
+
+---
 
 Demo3 - Open ports
 ==================
 
 - communicate between machines
 - ambassadors
+
+---
 
 Demo4 - Example envts
 ==================
@@ -217,6 +224,8 @@ Demo4 - Example envts
 
 ports via ssh
 
+---
+
 
 Links - 1
 =========
@@ -225,12 +234,17 @@ Links - 1
 
 
 
+---
+
 
 Links - 2
 =========
 
 [Deploying Multi-Server Docker Apps with Ambassadors](http://www.centurylinklabs.com/deploying-multi-server-docker-apps-with-ambassadors/)
 
+
+
+---
 
 Questions?
 ======================================
