@@ -68,6 +68,7 @@ gitPush() {
     #read -p "Enter github password: " -s MDP
 
     [ -d $GIT_SCRIPT_DIR ] && {
+        echo; echo "Pushing script changes to mjbright/Tools:"
         cp $0 $GIT_SCRIPT_DIR/;
         cd $GIT_SCRIPT_DIR/;
         git commit -m "Semi-auto push: Updated script++" -a;
@@ -77,11 +78,12 @@ gitPush() {
 	set +x;
     }
 
+    echo; echo "Pushing script/presentation changes to mjbright.github.io:"
     cp $0 $GIT_PRES_DIR/
     cd $GIT_PRES_DIR
     git commit -m "Semi-auto push: Updated script++" -a
     set -x;
-        git push ssh://git@github.com/mjbright;
+        git push ssh://git@mjbright.github.io/mjbright;
     set +x;
     #git push
     #[ ! -d ~/src/git/mjbright-docker ] 
