@@ -28,18 +28,15 @@
     <title>Lightweight Virtualization with Docker</title>
     <!-- Styles -->
     
-    <link rel="stylesheet" media="print" href="./mike/css/print.css">
-    <link rel="stylesheet" media="screen, projection" href="./mike/css/screen.css">
+    <link rel="stylesheet" media="print" href="theme/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="theme/css/screen.css">
     
-    
-      
-      <link rel="stylesheet" href="custom.css">
-      
     
     <!-- /Styles -->
     <!-- Javascripts -->
     
-    <script type="text/javascript" src="./mike/js/slides.js"></script>
+    <script type="text/javascript" src="theme/js/slides.js"></script>
+    
     
     
     <!-- /Javascripts -->
@@ -60,9 +57,8 @@
             <header><h1>Lightweight Virtualization with Docker</h1></header>
             
             
-            <section><p>Grenoble Python User Group
-<a href="http://mjbright.github.io/Pygre">http://mjbright.github.io/Pygre</a></p>
-<p>Michael Bright, 27 Mars 2014.</p></section>
+            <section><h2>Grenoble Python User Group    -  <a href="http://mjbright.github.io/Pygre">http://mjbright.github.io/Pygre</a></h2>
+<h2>Michael Bright, 27th March 2014.</h2></section>
             
           </div>
           <div class="presenter_notes">
@@ -78,52 +74,7 @@
             </aside>
             
             <aside class="page_number">
-              1/33
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: Slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Code Sample</h1></header>
-            
-            
-            <section><p>Landslide supports code snippets</p>
-<div class="highlight"><pre>   docker ps    <span class="c"># Show running containers only</span>
-   docker ps -a <span class="c"># Show all containers</span>
-   docker ps -a <span class="s1">&#39;hello world&#39;</span> <span class="c"># Show all containers</span>
-
-
-!python
-
-def log<span class="o">(</span>self, message, <span class="nv">level</span><span class="o">=</span><span class="s1">&#39;notice&#39;</span><span class="o">)</span>:
-<span class="k">if </span>self.logger and not callable<span class="o">(</span>self.logger<span class="o">)</span>:
-raise ValueError<span class="o">(</span>u<span class="s2">&quot;Invalid logger set, must be a callable&quot;</span><span class="o">)</span>
-
-<span class="k">if </span>self.verbose and self.logger:
-self.logger<span class="o">(</span>message, level<span class="o">)</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="Slides.md">Slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              2/33
+              1/36
             </aside>
           </footer>
         </div>
@@ -134,55 +85,30 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>!/bin/bash</h1></header>
+            <header><h1>Overview</h1></header>
             
             
-            <section><p>ls</p>
-<h1>!bash</h1>
-<p>ls</p>
-<h1>!/usr/bin/python</h1>
-<p>import modules</p>
-<p>:::python
-   import modules</p>
-<p>:::bash
-       docker ps -a</p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="Slides.md">Slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              3/33
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: Slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Lightweight Virtualization with Docker</h1></header>
-            
-            
-            <section><ul>
-<li>Overview: What's a container?</li>
-<li>OpenStack and Docker</li>
-<li>OpenStack versus Vagrant ??</li>
+            <section><ol>
+<li>What is Docker?<ul>
+<li>Containers versus VMs</li>
+<li>What use is it?</li>
 </ul>
-<p><a href="http://docker.io">http://docker.io</a></p>
-<p><a href="http://blog.docker.io" title="The Docker Blog">Docker Blog</a></p>
-<p>TOADD: <a href="https://mail.google.com/mail/u/0/?ui=2&amp;shva=1#inbox/144db663f35a11b0">19 Mar 2014 e-mail</a></p></section>
+</li>
+<li>Installing and Using Docker<ul>
+<li>Docker commands</li>
+<li>The image repository</li>
+<li>Building Images</li>
+<li>REST API</li>
+<li>Connecting containers</li>
+<li>OpenStack and Docker</li>
+</ul>
+</li>
+<li>... and finally<ul>
+<li>Demo</li>
+<li>Links</li>
+</ul>
+</li>
+</ol></section>
             
           </div>
           <div class="presenter_notes">
@@ -198,7 +124,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             </aside>
             
             <aside class="page_number">
-              4/33
+              2/36
             </aside>
           </footer>
         </div>
@@ -216,7 +142,6 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
 <li>Structure</li>
 <li>Images</li>
 <li>Helicopter view</li>
-<li></li>
 </ul></section>
             
           </div>
@@ -233,7 +158,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             </aside>
             
             <aside class="page_number">
-              5/33
+              3/36
             </aside>
           </footer>
         </div>
@@ -244,12 +169,43 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
         <div class="slide">
           <div class="inner">
             
-            <header><h2>What's a container?</h2></header>
+            <header><h1>What is Docker?</h1></header>
             
             
-            <section><ul>
-<li>LXC: Linux Containers</li>
-</ul>
+            <section><p>Docker is a container mechanism, originally developed on
+LXC (Linux Containers) to allow ...</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Containers versus VMs</h1></header>
+            
+            
+            <section><h2>What is a container?</h2>
+<p>A container isolates a set of processes on a host machine limiting
+what can be done by those processes and to them.</p>
 <p><img alt="VM_containers" src="images/VM_vs_Containers.PNG" /></p></section>
             
           </div>
@@ -266,7 +222,62 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             </aside>
             
             <aside class="page_number">
-              6/33
+              5/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>What is Docker?</h1></header>
+            
+            
+            <section><p>Docker provides</p>
+<ol>
+<li>
+<p>Lightweight virtualization - no OS emulation
+   Allows fast spin up times</p>
+</li>
+<li>
+<p>A union filesystem allowing incremental 'images'</p>
+</li>
+<li>
+<p>An image repository - private or public <a href="https://index.docker.io/">https://index.docker.io/</a>
+  accessible from command-line and REST APIs.</p>
+</li>
+</ol>
+<h2>What does it all mean? - what it gives us</h2>
+<ul>
+<li>Low memory</li>
+<li>Low disk footprint</li>
+<li>Fast spinup</li>
+<li>Hierarchical images via repo</li>
+</ul>
+<h2>What does Docker bring that Container's don't?</h2>
+<ul>
+<li>Image repository</li>
+<li>Union filesystem</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/36
             </aside>
           </footer>
         </div>
@@ -296,7 +307,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             </aside>
             
             <aside class="page_number">
-              7/33
+              7/36
             </aside>
           </footer>
         </div>
@@ -307,10 +318,19 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Intalling Docker</h1></header>
+            <header><h1>What use is it?</h1></header>
             
             
-            <section><p>On what?</p></section>
+            <section><p>In the same way that virtual machines can be used to provide isolation
+and allow cloud functionality (spin up) containers systems such as
+Docker can do this with much lighter processes as we do not emulate the
+host OS.</p>
+<p>Although Docker is not considered to be production ready until its
+impending v1.0 release (April 2014?) it is already being integrated
+into several PaaS (Platform-as-a-Service) platforms such as
+RedHats OpenShift, ActiveStates Stackato and soon CloudFoundry.</p>
+<h2>Projects around Docker</h2>
+<p>Many !!!!</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -326,7 +346,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             </aside>
             
             <aside class="page_number">
-              8/33
+              8/36
             </aside>
           </footer>
         </div>
@@ -341,6 +361,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             
             
             <section><ul>
+<li>originally written in Python</li>
 <li>v0.7 Raspberry Pi</li>
 <li>v0.8</li>
 <li>v0.9</li>
@@ -348,111 +369,13 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
 <p>v1.0</p>
 </li>
 <li>
-<p>1year Birthday !! Mar 2014</p>
+<p>1 year Birthday 20 Mar 2014</p>
 </li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="Slides.md">Slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              9/33
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: Slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>What's Docker?</h1></header>
-            
-            
-            <section><ul>
-<li>A wrapper around LXC</li>
 </ul>
-<h2>What does Docker bring that Container's don't?</h2>
+<h2>Changes</h2>
 <ul>
-<li>Image repository</li>
-<li>Union filesystem</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="Slides.md">Slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              10/33
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: Slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h2>What's bad?</h2></header>
-            
-            
-            <section><ul>
-<li></li>
-<li>Union filesystem</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="Slides.md">Slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              11/33
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: Slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Changes</h1></header>
-            
-            
-            <section><ul>
 <li>Python -&gt; Go</li>
-<li>LXC -&gt; ...</li>
+<li>LXC -&gt; libcontainer</li>
 <li>OpenStack Nova Driver (Havana) -&gt; OpenStack Heat (IceHouse)</li>
 </ul></section>
             
@@ -470,7 +393,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             </aside>
             
             <aside class="page_number">
-              12/33
+              9/36
             </aside>
           </footer>
         </div>
@@ -481,11 +404,333 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>What else?</h1></header>
+            <header><h1>Intalling Docker</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Using Docker</h1></header>
+            
+            
+            <section><h1>Using Docker - Docker commands [1]</h1>
+<div class="highlight"><pre><span class="lineno"> 1</span>    <span class="nv">$ </span>docker images <span class="c"># List local images</span>
+<span class="lineno"> 2</span>    REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+<span class="lineno"> 3</span>    my/ping             latest              f492632bbd55        11 hours ago        139.7 MB
+<span class="lineno"> 4</span>    wpress              latest              93a82573c321        20 hours ago        680 MB
+<span class="lineno"> 5</span>    ubuntu              12.04               8dbd9e392a96        11 months ago       128 MB
+<span class="lineno"> 6</span>    base                ubuntu-12.10        b750fe79269d        12 months ago       175.3 MB
+<span class="lineno"> 7</span> 
+<span class="lineno"> 8</span>    <span class="c"># Run the base image and print Hello World:</span>
+<span class="lineno"> 9</span>    <span class="nv">$ </span><span class="nb">time </span>docker run -i -t base /bin/echo <span class="s2">&quot;Hello World&quot;</span>
+<span class="lineno">10</span>    Hello World
+<span class="lineno">11</span> 
+<span class="lineno">12</span>    real    0m0.690s <span class="c"># model name: Intel(R) Atom(TM) CPU  230   @ 1.60GHz</span>
+<span class="lineno">13</span> 
+<span class="lineno">14</span>    <span class="nv">$ </span>docker ps -a <span class="c"># Show all containers</span>
+<span class="lineno">15</span>    CONTAINER ID  IMAGE  COMMAND              CREATED     STATUS  PORTS NAMES
+<span class="lineno">16</span>    9d6d3c8a9a18  base   /bin/echo Hello Worl 5 mins ago  Exit 0        thirsty_hawking
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Using Docker - Docker commands [2]</h1></header>
+            
+            
+            <section><pre><code>   # Run the base image as a daemon:
+   $ docker run --name DAEMON1 -d base bash -c 'while true; do date; sleep 1;done'
+   1e616ddb8f265063efa2abc8e2f7c728c122ccaadfa179dbe698540ff02ea75c
+
+   $ docker ps    # Show running containers only
+   CONTAINER ID  IMAGE   COMMAND               CREATED     STATUS    PORTS NAMES
+   1e616ddb8f26  base    bash -c while true;   5 secs ago  Up 4 secs       DAEMON1
+
+   # Attach to container to see stderr/stdout:
+   $ docker attach 1e616ddb8f26
+   Sun Mar 23 19:22:58 UTC 2014
+   Sun Mar 23 19:22:59 UTC 2014
+
+   $ pstree -ap 8324
+   docker,8324 -d
+     |-bash,17034 -c while true; do date; sleep 1;done
+     |   `-sleep,20237 1
+     |-{docker},8325
+     |-{docker},8326
+     |-{docker},8327
+     |-{docker},8328
+     |-{docker},8329
+     |-{docker},8332
+     |-{docker},8333
+     |-{docker},8365
+     |-{docker},30009
+     |-{docker},17035
+     |-{docker},18231
+     `-{docker},18610
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Using Docker - Docker commands [3]</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="lineno">1</span>     docker stop <span class="k">$(</span>docker ps -q<span class="k">)</span>   <span class="c"># Stop all runnning containers</span>
+<span class="lineno">2</span>     docker rm <span class="k">$(</span>docker ps -a -q<span class="k">)</span>  <span class="c"># Remove all stopped containers</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>The image repository</h1></header>
+            
+            
+            <section><h2>Creating/using a Docker private repo</h2>
+<p><img alt="repo" src="images/Repository.PNG" /></p>
+<ul>
+<li>repo push/pull/tagging</li>
+<li>private repo</li>
+</ul>
+<h1>Building Images</h1></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Building Images - from a Docker file</h1></header>
+            
+            
+            <section><pre><code>Contents of minimal dockerfile:
+!bash
+
+
+    FROM ubuntu
+    RUN apt-get install ping
+    ENTRYPOINT ["ping"]
+
+Building and tagging a new image:
+!bash
+
+    $ docker build -t my/ping - &lt; Dockerfile
+
+    $ docker images
+    REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+    my/ping             latest              f492632bbd55        12 hours ago        139.7 MB
+    ubuntu              12.04               8dbd9e392a96        11 months ago       128 MB
+    base                latest              b750fe79269d        12 months ago       175.3 MB
+
+    $ docker run my/ping www.google.com
+    docker run my/ping www.google.com
+    PING www.google.com (173.194.67.99) 56(84) bytes of data.
+    64 bytes from wi-in-f99.1e100.net (173.194.67.99): icmp_req=1 ttl=44 time=53.3 ms
+    64 bytes from wi-in-f99.1e100.net (173.194.67.99): icmp_req=2 ttl=44 time=54.2 ms
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>REST API</h1></header>
+            
+            
+            <section><p>Refer to <a href="http://docs.docker.io/en/latest/reference/api/docker_remote_api_v1.8">Docker API</a></p>
+<p>echo -e "GET /images/json HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
+<p>echo -e "GET /containers/json HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
+<p>echo -e "GET /containers/json?all=true HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
+<h2>Start:</h2>
+<p>echo -e "POST /containers/<ID>/start HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
+<h2>Restart:</h2>
+<p>echo -e "POST /containers/<ID>/restart HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
+<h2>Stop:</h2>
+<p>echo -e "POST /containers/<ID>/stop HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
+<h2>Attach:</h2>
+<p>echo -e "POST /containers/<ID>/attach?logs=1&amp;stream=1&amp;stdout=1 HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source:  -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="page_number">
+              /36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Connecting containers</h1></header>
             
             
             <section><ul>
 <li>Ports</li>
+<li>Expose</li>
 <li>Ambassadors</li>
 </ul></section>
             
@@ -503,7 +748,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             </aside>
             
             <aside class="page_number">
-              13/33
+              17/36
             </aside>
           </footer>
         </div>
@@ -514,73 +759,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>What does it all mean? - what it gives us</h1></header>
-            
-            
-            <section><ul>
-<li>Low memory</li>
-<li>Low disk footprint</li>
-<li>Fast spinup</li>
-<li>Hierarchical images via repo</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="Slides.md">Slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              14/33
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: Slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Projects around Docker</h1></header>
-            
-            
-            <section><p>Many !!!!
-- ....</p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="Slides.md">Slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              15/33
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: Slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Docker and OpenStack in Havana (deprecated)</h1></header>
+            <header><h1>OpenStack and Docker - in Havana (deprecated)</h1></header>
             
             
             <section><p><img alt="havana" src="images/OLD_Docker_Wiki_NovaDriver_500px-Docker-under-the-hood.png" /></p></section>
@@ -599,7 +778,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             </aside>
             
             <aside class="page_number">
-              16/33
+              18/36
             </aside>
           </footer>
         </div>
@@ -610,7 +789,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Docker and OpenStack in IceHouse</h1></header>
+            <header><h1>OpenStack and Docker - in IceHouse</h1></header>
             
             
             <section><p><img alt="icehouse" src="images/NEW_Docker_in_IceHouse_heat-nova-300x142.png" /></p></section>
@@ -629,7 +808,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             </aside>
             
             <aside class="page_number">
-              17/33
+              19/36
             </aside>
           </footer>
         </div>
@@ -640,10 +819,8 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Creating/using a Docker private repo</h1></header>
+            <header><h1>... and finally</h1></header>
             
-            
-            <section><p><img alt="repo" src="images/Repository.PNG" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -659,97 +836,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             </aside>
             
             <aside class="page_number">
-              18/33
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: Slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Invocation: Options</h1></header>
-            
-            
-            <section><h2>-name</h2>
-<p>Usage of docker:
-  -D, --debug=false: Enable debug mode
-  -H, --host=[]: Multiple tcp://host:port or unix://path/to/socket to bind in daemon mode, single connection otherwise. systemd socket activation can be used with fd://[socketfd].
-  -G, --group="docker": Group to assign the unix socket specified by -H when running in daemon mode; use '' (the empty string) to disable setting of a group
-  --api-enable-cors=false: Enable CORS headers in the remote API
-  -b, --bridge="": Attach containers to a pre-existing network bridge; use 'none' to disable container networking
-  --bip="": Use this CIDR notation address for the network bridge's IP, not compatible with -b
-  -d, --daemon=false: Enable daemon mode
-  --dns=[]: Force docker to use specific DNS servers
-  -g, --graph="/var/lib/docker": Path to use as the root of the docker runtime
-  --icc=true: Enable inter-container communication
-  --ip="0.0.0.0": Default IP address to use when binding container ports
-  --iptables=true: Disable docker's addition of iptables rules
-  -p, --pidfile="/var/run/docker.pid": Path to use for daemon PID file
-  -r, --restart=true: Restart previously running containers
-  -s, --storage-driver="": Force the docker runtime to use a specific storage driver
-  -e, --exec-driver="native": Force the docker runtime to use a specific exec driver
-  -v, --version=false: Print version information and quit
-  --mtu=0: Set the containers network MTU; if no value is provided: default to the default route MTU or 1500 if no default route is available</p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="Slides.md">Slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              19/33
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: Slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Using the REST API:</h1></header>
-            
-            
-            <section><p>Refer to <a href="http://docs.docker.io/en/latest/reference/api/docker_remote_api_v1.8">Docker API</a></p>
-<p>echo -e "GET /images/json HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
-<p>echo -e "GET /containers/json HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
-<p>echo -e "GET /containers/json?all=true HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
-<h2>Start:</h2>
-<p>echo -e "POST /containers/03e1b160134bd66af9e3ce53fa67112f2f19baf88e24ddd2eee7803f384568a5/start HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
-<h2>Restart:</h2>
-<p>echo -e "POST /containers/03e1b160134bd66af9e3ce53fa67112f2f19baf88e24ddd2eee7803f384568a5/restart HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
-<h2>Stop:</h2>
-<p>echo -e "POST /containers/03e1b160134bd66af9e3ce53fa67112f2f19baf88e24ddd2eee7803f384568a5/stop HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
-<h2>Attach:</h2>
-<p>echo -e "POST /containers/03e1b160134bd66af9e3ce53fa67112f2f19baf88e24ddd2eee7803f384568a5/attach?logs=1&amp;stream=1&amp;stdout=1 HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="Slides.md">Slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              20/33
+              20/36
             </aside>
           </footer>
         </div>
@@ -777,7 +864,117 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             </aside>
             
             <aside class="page_number">
-              21/33
+              21/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Links</h1></header>
+            
+            
+            <section><p>This presentation <a href="http://mjbright.github.io/Pygre/2014/2014-Mar-27-LightWeightVirtualizationWithDocker/presentation.html" title="PyGre">here</a></p>
+<p>[The Docker website]<a href="http://docker.io">http://docker.io</a></p>
+<p><a href="http://blog.docker.io" title="The Docker Blog">The Docker Blog</a></p>
+<p>TOADD: <a href="https://mail.google.com/mail/u/0/?ui=2&amp;shva=1#inbox/144db663f35a11b0">19 Mar 2014 e-mail</a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Invocation: Options</h1></header>
+            
+            
+            <section><h2>-name</h2>
+<p>Usage of docker:</p>
+<p>-D, --debug=false: Enable debug mode</p>
+<p>-H, --host=[]: Multiple tcp://host:port or unix://path/to/socket to bind in daemon mode, single connection otherwise. systemd socket activation can be used with fd://[socketfd].</p>
+<p>-G, --group="docker": Group to assign the unix socket specified by -H when running in daemon mode; use '' (the empty string) to disable setting of a group</p>
+<p>--api-enable-cors=false: Enable CORS headers in the remote API</p>
+<p>-b, --bridge="": Attach containers to a pre-existing network bridge; use 'none' to disable container networking</p>
+<p>--bip="": Use this CIDR notation address for the network bridge's IP, not compatible with -b</p>
+<p>-d, --daemon=false: Enable daemon mode</p>
+<p>--dns=[]: Force docker to use specific DNS servers</p>
+<p>-g, --graph="/var/lib/docker": Path to use as the root of the docker runtime</p>
+<p>--icc=true: Enable inter-container communication</p>
+<p>--ip="0.0.0.0": Default IP address to use when binding container ports</p>
+<p>--iptables=true: Disable docker's addition of iptables rules</p>
+<p>-p, --pidfile="/var/run/docker.pid": Path to use for daemon PID file</p>
+<p>-r, --restart=true: Restart previously running containers</p>
+<p>-s, --storage-driver="": Force the docker runtime to use a specific storage driver</p>
+<p>-e, --exec-driver="native": Force the docker runtime to use a specific exec driver</p>
+<p>-v, --version=false: Print version information and quit</p>
+<p>--mtu=0: Set the containers network MTU; if no value is provided: default to the default route MTU or 1500 if no default route is available</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              23/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Demo</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              24/36
             </aside>
           </footer>
         </div>
@@ -811,7 +1008,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             </aside>
             
             <aside class="page_number">
-              22/33
+              25/36
             </aside>
           </footer>
         </div>
@@ -854,7 +1051,7 @@ self.logger<span class="o">(</span>message, level<span class="o">)</span>
             </aside>
             
             <aside class="page_number">
-              23/33
+              26/36
             </aside>
           </footer>
         </div>
@@ -889,7 +1086,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              24/33
+              27/36
             </aside>
           </footer>
         </div>
@@ -923,7 +1120,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              25/33
+              28/36
             </aside>
           </footer>
         </div>
@@ -959,7 +1156,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              26/33
+              29/36
             </aside>
           </footer>
         </div>
@@ -994,7 +1191,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              27/33
+              30/36
             </aside>
           </footer>
         </div>
@@ -1022,7 +1219,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              28/33
+              31/36
             </aside>
           </footer>
         </div>
@@ -1055,7 +1252,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              29/33
+              32/36
             </aside>
           </footer>
         </div>
@@ -1090,7 +1287,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              30/33
+              33/36
             </aside>
           </footer>
         </div>
@@ -1120,7 +1317,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              31/33
+              34/36
             </aside>
           </footer>
         </div>
@@ -1150,7 +1347,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              32/33
+              35/36
             </aside>
           </footer>
         </div>
@@ -1178,7 +1375,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              33/33
+              36/36
             </aside>
           </footer>
         </div>
@@ -1199,33 +1396,34 @@ velit consectetur.</p>
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">Code Sample</a></th>
+        <th><a href="#slide2">Overview</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
       
-      
-      <tr id="toc-row-3">
-        <th><a href="#slide3">!/bin/bash</a></th>
-        <td><a href="#slide3">3</a></td>
-      </tr>
+        
+        <tr id="toc-row-3" class="sub">
+          <th><a href="#slide3">Stuff</a></th>
+          <td><a href="#slide3">3</a></td>
+        </tr>
+        
       
       
       <tr id="toc-row-4">
-        <th><a href="#slide4">Lightweight Virtualization with Docker</a></th>
+        <th><a href="#slide4">What is Docker?</a></th>
         <td><a href="#slide4">4</a></td>
       </tr>
       
-        
-        <tr id="toc-row-5" class="sub">
-          <th><a href="#slide5">Stuff</a></th>
-          <td><a href="#slide5">5</a></td>
-        </tr>
-        
-        <tr id="toc-row-6" class="sub">
-          <th><a href="#slide6">What's a container?</a></th>
-          <td><a href="#slide6">6</a></td>
-        </tr>
-        
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">Containers versus VMs</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">What is Docker?</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
       
       
       <tr id="toc-row-7">
@@ -1235,7 +1433,7 @@ velit consectetur.</p>
       
       
       <tr id="toc-row-8">
-        <th><a href="#slide8">Intalling Docker</a></th>
+        <th><a href="#slide8">What use is it?</a></th>
         <td><a href="#slide8">8</a></td>
       </tr>
       
@@ -1247,68 +1445,67 @@ velit consectetur.</p>
       
       
       <tr id="toc-row-10">
-        <th><a href="#slide10">What's Docker?</a></th>
+        <th><a href="#slide10">Intalling Docker</a></th>
         <td><a href="#slide10">10</a></td>
       </tr>
       
-        
-        <tr id="toc-row-11" class="sub">
-          <th><a href="#slide11">What's bad?</a></th>
-          <td><a href="#slide11">11</a></td>
-        </tr>
-        
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Using Docker</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Changes</a></th>
+        <th><a href="#slide12">Using Docker - Docker commands [2]</a></th>
         <td><a href="#slide12">12</a></td>
       </tr>
       
       
       <tr id="toc-row-13">
-        <th><a href="#slide13">What else?</a></th>
+        <th><a href="#slide13">Using Docker - Docker commands [3]</a></th>
         <td><a href="#slide13">13</a></td>
       </tr>
       
       
       <tr id="toc-row-14">
-        <th><a href="#slide14">What does it all mean? - what it gives us</a></th>
+        <th><a href="#slide14">The image repository</a></th>
         <td><a href="#slide14">14</a></td>
       </tr>
       
       
       <tr id="toc-row-15">
-        <th><a href="#slide15">Projects around Docker</a></th>
+        <th><a href="#slide15">Building Images - from a Docker file</a></th>
         <td><a href="#slide15">15</a></td>
       </tr>
       
       
       <tr id="toc-row-16">
-        <th><a href="#slide16">Docker and OpenStack in Havana (deprecated)</a></th>
+        <th><a href="#slide16">REST API</a></th>
         <td><a href="#slide16">16</a></td>
       </tr>
       
       
       <tr id="toc-row-17">
-        <th><a href="#slide17">Docker and OpenStack in IceHouse</a></th>
+        <th><a href="#slide17">Connecting containers</a></th>
         <td><a href="#slide17">17</a></td>
       </tr>
       
       
       <tr id="toc-row-18">
-        <th><a href="#slide18">Creating/using a Docker private repo</a></th>
+        <th><a href="#slide18">OpenStack and Docker - in Havana (deprecated)</a></th>
         <td><a href="#slide18">18</a></td>
       </tr>
       
       
       <tr id="toc-row-19">
-        <th><a href="#slide19">Invocation: Options</a></th>
+        <th><a href="#slide19">OpenStack and Docker - in IceHouse</a></th>
         <td><a href="#slide19">19</a></td>
       </tr>
       
       
       <tr id="toc-row-20">
-        <th><a href="#slide20">Using the REST API:</a></th>
+        <th><a href="#slide20">... and finally</a></th>
         <td><a href="#slide20">20</a></td>
       </tr>
       
@@ -1320,74 +1517,92 @@ velit consectetur.</p>
       
       
       <tr id="toc-row-22">
-        <th><a href="#slide22">Images:</a></th>
+        <th><a href="#slide22">Links</a></th>
         <td><a href="#slide22">22</a></td>
       </tr>
       
       
       <tr id="toc-row-23">
-        <th><a href="#slide23">Internals:</a></th>
+        <th><a href="#slide23">Invocation: Options</a></th>
         <td><a href="#slide23">23</a></td>
       </tr>
       
       
       <tr id="toc-row-24">
-        <th><a href="#slide24">Slide #2</a></th>
+        <th><a href="#slide24">Demo</a></th>
         <td><a href="#slide24">24</a></td>
       </tr>
       
       
       <tr id="toc-row-25">
-        <th><a href="#slide25">Docker Versions</a></th>
+        <th><a href="#slide25">Images:</a></th>
         <td><a href="#slide25">25</a></td>
       </tr>
       
       
       <tr id="toc-row-26">
-        <th><a href="#slide26">Running Docker</a></th>
+        <th><a href="#slide26">Internals:</a></th>
         <td><a href="#slide26">26</a></td>
       </tr>
       
       
       <tr id="toc-row-27">
-        <th><a href="#slide27">Demo1 - Basic interaction</a></th>
+        <th><a href="#slide27">Slide #2</a></th>
         <td><a href="#slide27">27</a></td>
       </tr>
       
       
       <tr id="toc-row-28">
-        <th><a href="#slide28">Demo2 - Daemon attach/detach</a></th>
+        <th><a href="#slide28">Docker Versions</a></th>
         <td><a href="#slide28">28</a></td>
       </tr>
       
       
       <tr id="toc-row-29">
-        <th><a href="#slide29">Demo3 - Open ports</a></th>
+        <th><a href="#slide29">Running Docker</a></th>
         <td><a href="#slide29">29</a></td>
       </tr>
       
       
       <tr id="toc-row-30">
-        <th><a href="#slide30">Demo4 - Example envts</a></th>
+        <th><a href="#slide30">Demo1 - Basic interaction</a></th>
         <td><a href="#slide30">30</a></td>
       </tr>
       
       
       <tr id="toc-row-31">
-        <th><a href="#slide31">Links - 1</a></th>
+        <th><a href="#slide31">Demo2 - Daemon attach/detach</a></th>
         <td><a href="#slide31">31</a></td>
       </tr>
       
       
       <tr id="toc-row-32">
-        <th><a href="#slide32">Links - 2</a></th>
+        <th><a href="#slide32">Demo3 - Open ports</a></th>
         <td><a href="#slide32">32</a></td>
       </tr>
       
       
       <tr id="toc-row-33">
-        <th><a href="#slide33">Questions?</a></th>
+        <th><a href="#slide33">Demo4 - Example envts</a></th>
         <td><a href="#slide33">33</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-34">
+        <th><a href="#slide34">Links - 1</a></th>
+        <td><a href="#slide34">34</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-35">
+        <th><a href="#slide35">Links - 2</a></th>
+        <td><a href="#slide35">35</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-36">
+        <th><a href="#slide36">Questions?</a></th>
+        <td><a href="#slide36">36</a></td>
       </tr>
       
       
