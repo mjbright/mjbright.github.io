@@ -50,6 +50,11 @@ interrupt() {
 }
 
 gitPush() {
+    GITDIR="$HOME/z/www/mjbright.github.io/Pygre/2014/2014-Mar-27-LightWeightVirtualizationWithDocker/"
+
+    cp $0 $GITDIR/
+    cd $GITDIR
+    git commit -m "Semi-auto push: Updated script++" -a
     #[ ! -d ~/src/git/mjbright-docker ] 
 }
 
