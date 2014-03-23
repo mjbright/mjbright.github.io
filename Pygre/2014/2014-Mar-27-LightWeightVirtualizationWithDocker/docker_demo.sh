@@ -73,7 +73,7 @@ gitPush() {
         git commit -m "Semi-auto push: Updated script++" -a;
 
 	set -x;
-        git push ssh://mjbright@github.com/mjbright/Tools;
+        git push ssh://git@github.com/mjbright/Tools;
 	set +x;
     }
 
@@ -81,7 +81,7 @@ gitPush() {
     cd $GIT_PRES_DIR
     git commit -m "Semi-auto push: Updated script++" -a
     set -x;
-        git push ssh://mjbright@github.com/mjbright;
+        git push ssh://git@github.com/mjbright;
     set +x;
     #git push
     #[ ! -d ~/src/git/mjbright-docker ] 
