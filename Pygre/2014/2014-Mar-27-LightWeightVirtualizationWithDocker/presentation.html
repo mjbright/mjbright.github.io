@@ -28,15 +28,18 @@
     <title>Lightweight Virtualization with Docker</title>
     <!-- Styles -->
     
-    <link rel="stylesheet" media="print" href="theme/css/print.css">
-    <link rel="stylesheet" media="screen, projection" href="theme/css/screen.css">
+    <link rel="stylesheet" media="print" href="./mike/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="./mike/css/screen.css">
     
+    
+      
+      <link rel="stylesheet" href="custom.css">
+      
     
     <!-- /Styles -->
     <!-- Javascripts -->
     
-    <script type="text/javascript" src="theme/js/slides.js"></script>
-    
+    <script type="text/javascript" src="./mike/js/slides.js"></script>
     
     
     <!-- /Javascripts -->
@@ -57,9 +60,9 @@
             <header><h1>Lightweight Virtualization with Docker</h1></header>
             
             
-            <section><ul>
-<li>Michael Bright, 27 Mars 2014.</li>
-</ul></section>
+            <section><p>Grenoble Python User Group
+<a href="http://mjbright.github.io/Pygre">http://mjbright.github.io/Pygre</a></p>
+<p>Michael Bright, 27 Mars 2014.</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -75,7 +78,90 @@
             </aside>
             
             <aside class="page_number">
-              1/13
+              1/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Code Sample</h1></header>
+            
+            
+            <section><p>Landslide supports code snippets</p>
+<div class="highlight"><pre>   docker ps    <span class="c"># Show running containers only</span>
+   docker ps -a <span class="c"># Show all containers</span>
+   docker ps -a <span class="s1">&#39;hello world&#39;</span> <span class="c"># Show all containers</span>
+
+
+!python
+
+def log<span class="o">(</span>self, message, <span class="nv">level</span><span class="o">=</span><span class="s1">&#39;notice&#39;</span><span class="o">)</span>:
+<span class="k">if </span>self.logger and not callable<span class="o">(</span>self.logger<span class="o">)</span>:
+raise ValueError<span class="o">(</span>u<span class="s2">&quot;Invalid logger set, must be a callable&quot;</span><span class="o">)</span>
+
+<span class="k">if </span>self.verbose and self.logger:
+self.logger<span class="o">(</span>message, level<span class="o">)</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>!/bin/bash</h1></header>
+            
+            
+            <section><p>ls</p>
+<h1>!bash</h1>
+<p>ls</p>
+<h1>!/usr/bin/python</h1>
+<p>import modules</p>
+<p>:::python
+   import modules</p>
+<p>:::bash
+       docker ps -a</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/33
             </aside>
           </footer>
         </div>
@@ -94,7 +180,8 @@
 <li>OpenStack and Docker</li>
 <li>OpenStack versus Vagrant ??</li>
 </ul>
-<p><a href="http://docker.io">docker.io</a></p>
+<p><a href="http://docker.io">http://docker.io</a></p>
+<p><a href="http://blog.docker.io" title="The Docker Blog">Docker Blog</a></p>
 <p>TOADD: <a href="https://mail.google.com/mail/u/0/?ui=2&amp;shva=1#inbox/144db663f35a11b0">19 Mar 2014 e-mail</a></p></section>
             
           </div>
@@ -111,7 +198,42 @@
             </aside>
             
             <aside class="page_number">
-              2/13
+              4/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Stuff</h2></header>
+            
+            
+            <section><ul>
+<li>Structure</li>
+<li>Images</li>
+<li>Helicopter view</li>
+<li></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/33
             </aside>
           </footer>
         </div>
@@ -128,9 +250,97 @@
             <section><ul>
 <li>LXC: Linux Containers</li>
 </ul>
-<h1>Intalling Docker</h1>
-<h1>Docker Versions</h1>
-<ul>
+<p><img alt="VM_containers" src="images/VM_vs_Containers.PNG" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>UnionFS (aufs)</h1></header>
+            
+            
+            <section><p><img alt="UnionFS" src="images/UnionFS.PNG" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Intalling Docker</h1></header>
+            
+            
+            <section><p>On what?</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Docker Versions</h1></header>
+            
+            
+            <section><ul>
 <li>v0.7 Raspberry Pi</li>
 <li>v0.8</li>
 <li>v0.9</li>
@@ -140,45 +350,330 @@
 <li>
 <p>1year Birthday !! Mar 2014</p>
 </li>
-</ul>
-<h1>What's Docker?</h1>
-<ul>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>What's Docker?</h1></header>
+            
+            
+            <section><ul>
 <li>A wrapper around LXC</li>
 </ul>
 <h2>What does Docker bring that Container's don't?</h2>
 <ul>
 <li>Image repository</li>
 <li>Union filesystem</li>
-</ul>
-<h2>What's bad?</h2>
-<ul>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>What's bad?</h2></header>
+            
+            
+            <section><ul>
 <li></li>
 <li>Union filesystem</li>
-</ul>
-<h1>Changes</h1>
-<ul>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Changes</h1></header>
+            
+            
+            <section><ul>
 <li>Python -&gt; Go</li>
 <li>LXC -&gt; ...</li>
 <li>OpenStack Nova Driver (Havana) -&gt; OpenStack Heat (IceHouse)</li>
-</ul>
-<h1>What else?</h1>
-<ul>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>What else?</h1></header>
+            
+            
+            <section><ul>
 <li>Ports</li>
 <li>Ambassadors</li>
-</ul>
-<h1>What does it all mean? - what it gives us</h1>
-<ul>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>What does it all mean? - what it gives us</h1></header>
+            
+            
+            <section><ul>
 <li>Low memory</li>
 <li>Low disk footprint</li>
 <li>Fast spinup</li>
 <li>Hierarchical images via repo</li>
-</ul>
-<h1>Projects around Docker</h1>
-<p>Many !!!!
-- ....</p>
-<h1>Docker and OpenStack</h1>
-<h1>Invocation: Options</h1>
-<h2>-name</h2>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Projects around Docker</h1></header>
+            
+            
+            <section><p>Many !!!!
+- ....</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Docker and OpenStack in Havana (deprecated)</h1></header>
+            
+            
+            <section><p><img alt="havana" src="images/OLD_Docker_Wiki_NovaDriver_500px-Docker-under-the-hood.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Docker and OpenStack in IceHouse</h1></header>
+            
+            
+            <section><p><img alt="icehouse" src="images/NEW_Docker_in_IceHouse_heat-nova-300x142.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Creating/using a Docker private repo</h1></header>
+            
+            
+            <section><p><img alt="repo" src="images/Repository.PNG" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Invocation: Options</h1></header>
+            
+            
+            <section><h2>-name</h2>
 <p>Usage of docker:
   -D, --debug=false: Enable debug mode
   -H, --host=[]: Multiple tcp://host:port or unix://path/to/socket to bind in daemon mode, single connection otherwise. systemd socket activation can be used with fd://[socketfd].
@@ -197,16 +692,140 @@
   -s, --storage-driver="": Force the docker runtime to use a specific storage driver
   -e, --exec-driver="native": Force the docker runtime to use a specific exec driver
   -v, --version=false: Print version information and quit
-  --mtu=0: Set the containers network MTU; if no value is provided: default to the default route MTU or 1500 if no default route is available</p>
-<h1>Demo</h1>
-<h1>Images:</h1>
-<p>docker run image
+  --mtu=0: Set the containers network MTU; if no value is provided: default to the default route MTU or 1500 if no default route is available</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Using the REST API:</h1></header>
+            
+            
+            <section><p>Refer to <a href="http://docs.docker.io/en/latest/reference/api/docker_remote_api_v1.8">Docker API</a></p>
+<p>echo -e "GET /images/json HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
+<p>echo -e "GET /containers/json HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
+<p>echo -e "GET /containers/json?all=true HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
+<h2>Start:</h2>
+<p>echo -e "POST /containers/03e1b160134bd66af9e3ce53fa67112f2f19baf88e24ddd2eee7803f384568a5/start HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
+<h2>Restart:</h2>
+<p>echo -e "POST /containers/03e1b160134bd66af9e3ce53fa67112f2f19baf88e24ddd2eee7803f384568a5/restart HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
+<h2>Stop:</h2>
+<p>echo -e "POST /containers/03e1b160134bd66af9e3ce53fa67112f2f19baf88e24ddd2eee7803f384568a5/stop HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p>
+<h2>Attach:</h2>
+<p>echo -e "POST /containers/03e1b160134bd66af9e3ce53fa67112f2f19baf88e24ddd2eee7803f384568a5/attach?logs=1&amp;stream=1&amp;stdout=1 HTTP/1.0\r\n" | nc -U /var/run/docker.sock</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Demo</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              21/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Images:</h1></header>
+            
+            
+            <section><p>docker run image
   ==&gt; base</p>
 <p>tagging, copying images to local repo</p>
 <p>images on disk</p>
-<p>hierarchy of images</p>
-<h1>Internals:</h1>
-<p>ps -fade | grep docker</p>
+<p>hierarchy of images</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/33
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Internals:</h1></header>
+            
+            
+            <section><p>ps -fade | grep docker</p>
 <h1>Conclusions</h1>
 <h2>Subtitle2</h2>
 <p>-
@@ -235,7 +854,7 @@
             </aside>
             
             <aside class="page_number">
-              3/13
+              23/33
             </aside>
           </footer>
         </div>
@@ -270,7 +889,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              4/13
+              24/33
             </aside>
           </footer>
         </div>
@@ -304,7 +923,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              5/13
+              25/33
             </aside>
           </footer>
         </div>
@@ -340,7 +959,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              6/13
+              26/33
             </aside>
           </footer>
         </div>
@@ -375,7 +994,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              7/13
+              27/33
             </aside>
           </footer>
         </div>
@@ -403,7 +1022,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              8/13
+              28/33
             </aside>
           </footer>
         </div>
@@ -436,7 +1055,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              9/13
+              29/33
             </aside>
           </footer>
         </div>
@@ -471,7 +1090,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              10/13
+              30/33
             </aside>
           </footer>
         </div>
@@ -501,7 +1120,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              11/13
+              31/33
             </aside>
           </footer>
         </div>
@@ -531,7 +1150,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              12/13
+              32/33
             </aside>
           </footer>
         </div>
@@ -559,7 +1178,7 @@ velit consectetur.</p>
             </aside>
             
             <aside class="page_number">
-              13/13
+              33/33
             </aside>
           </footer>
         </div>
@@ -580,75 +1199,195 @@ velit consectetur.</p>
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">Lightweight Virtualization with Docker</a></th>
+        <th><a href="#slide2">Code Sample</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
       
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3">!/bin/bash</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">Lightweight Virtualization with Docker</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
         
-        <tr id="toc-row-3" class="sub">
-          <th><a href="#slide3">What's a container?</a></th>
-          <td><a href="#slide3">3</a></td>
+        <tr id="toc-row-5" class="sub">
+          <th><a href="#slide5">Stuff</a></th>
+          <td><a href="#slide5">5</a></td>
+        </tr>
+        
+        <tr id="toc-row-6" class="sub">
+          <th><a href="#slide6">What's a container?</a></th>
+          <td><a href="#slide6">6</a></td>
         </tr>
         
       
       
-      <tr id="toc-row-4">
-        <th><a href="#slide4">Slide #2</a></th>
-        <td><a href="#slide4">4</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-5">
-        <th><a href="#slide5">Docker Versions</a></th>
-        <td><a href="#slide5">5</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-6">
-        <th><a href="#slide6">Running Docker</a></th>
-        <td><a href="#slide6">6</a></td>
-      </tr>
-      
-      
       <tr id="toc-row-7">
-        <th><a href="#slide7">Demo1 - Basic interaction</a></th>
+        <th><a href="#slide7">UnionFS (aufs)</a></th>
         <td><a href="#slide7">7</a></td>
       </tr>
       
       
       <tr id="toc-row-8">
-        <th><a href="#slide8">Demo2 - Daemon attach/detach</a></th>
+        <th><a href="#slide8">Intalling Docker</a></th>
         <td><a href="#slide8">8</a></td>
       </tr>
       
       
       <tr id="toc-row-9">
-        <th><a href="#slide9">Demo3 - Open ports</a></th>
+        <th><a href="#slide9">Docker Versions</a></th>
         <td><a href="#slide9">9</a></td>
       </tr>
       
       
       <tr id="toc-row-10">
-        <th><a href="#slide10">Demo4 - Example envts</a></th>
+        <th><a href="#slide10">What's Docker?</a></th>
         <td><a href="#slide10">10</a></td>
       </tr>
       
-      
-      <tr id="toc-row-11">
-        <th><a href="#slide11">Links - 1</a></th>
-        <td><a href="#slide11">11</a></td>
-      </tr>
+        
+        <tr id="toc-row-11" class="sub">
+          <th><a href="#slide11">What's bad?</a></th>
+          <td><a href="#slide11">11</a></td>
+        </tr>
+        
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Links - 2</a></th>
+        <th><a href="#slide12">Changes</a></th>
         <td><a href="#slide12">12</a></td>
       </tr>
       
       
       <tr id="toc-row-13">
-        <th><a href="#slide13">Questions?</a></th>
+        <th><a href="#slide13">What else?</a></th>
         <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">What does it all mean? - what it gives us</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Projects around Docker</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">Docker and OpenStack in Havana (deprecated)</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">Docker and OpenStack in IceHouse</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">Creating/using a Docker private repo</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">Invocation: Options</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Using the REST API:</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-21">
+        <th><a href="#slide21">Demo</a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-22">
+        <th><a href="#slide22">Images:</a></th>
+        <td><a href="#slide22">22</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-23">
+        <th><a href="#slide23">Internals:</a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24">Slide #2</a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-25">
+        <th><a href="#slide25">Docker Versions</a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-26">
+        <th><a href="#slide26">Running Docker</a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-27">
+        <th><a href="#slide27">Demo1 - Basic interaction</a></th>
+        <td><a href="#slide27">27</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-28">
+        <th><a href="#slide28">Demo2 - Daemon attach/detach</a></th>
+        <td><a href="#slide28">28</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-29">
+        <th><a href="#slide29">Demo3 - Open ports</a></th>
+        <td><a href="#slide29">29</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-30">
+        <th><a href="#slide30">Demo4 - Example envts</a></th>
+        <td><a href="#slide30">30</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-31">
+        <th><a href="#slide31">Links - 1</a></th>
+        <td><a href="#slide31">31</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-32">
+        <th><a href="#slide32">Links - 2</a></th>
+        <td><a href="#slide32">32</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-33">
+        <th><a href="#slide33">Questions?</a></th>
+        <td><a href="#slide33">33</a></td>
       </tr>
       
       

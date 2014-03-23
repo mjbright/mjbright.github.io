@@ -1,7 +1,59 @@
 Lightweight Virtualization with Docker
 ======================================
 
-- Michael Bright, 27 Mars 2014.
+Grenoble Python User Group
+<http://mjbright.github.io/Pygre>
+
+Michael Bright, 27 Mars 2014.
+
+---
+
+# Code Sample
+
+Landslide supports code snippets
+
+    !bash
+
+       docker ps    # Show running containers only
+       docker ps -a # Show all containers
+       docker ps -a 'hello world' # Show all containers
+
+
+    !python
+
+    def log(self, message, level='notice'):
+    if self.logger and not callable(self.logger):
+	raise ValueError(u"Invalid logger set, must be a callable")
+
+    if self.verbose and self.logger:
+	self.logger(message, level)
+
+[html5slides]: http://code.google.com/p/html5slides/
+[sample]: http://adamzap.com/misc/presentation.html
+
+
+
+---
+
+  !bash
+
+       docker ps -a
+
+#!/bin/bash
+   ls
+
+#!bash
+   ls
+
+#!/usr/bin/python
+   import modules
+
+:::python
+   import modules
+
+:::bash
+       docker ps -a
+
 
 ---
 
@@ -12,9 +64,21 @@ Lightweight Virtualization with Docker
 - OpenStack and Docker
 - OpenStack versus Vagrant ??
 
-[docker.io](http://docker.io)
+<http://docker.io>
+
+[Docker Blog](http://blog.docker.io "The Docker Blog")
 
 TOADD: [19 Mar 2014 e-mail](https://mail.google.com/mail/u/0/?ui=2&shva=1#inbox/144db663f35a11b0)
+
+---
+
+Stuff
+--------------------
+
+- Structure
+- Images
+- Helicopter view
+- 
 
 ---
 
@@ -23,8 +87,23 @@ What's a container?
 
 - LXC: Linux Containers
 
+![VM_containers](images/VM_vs_Containers.PNG)
+
+---
+
+UnionFS (aufs)
+=====================================
+
+![UnionFS](images/UnionFS.PNG)
+
+---
+
 Intalling Docker
 =================
+
+On what?
+
+---
 
 Docker Versions
 =================
@@ -36,6 +115,8 @@ Docker Versions
 
 - 1year Birthday !! Mar 2014
 
+---
+
 What's Docker?
 ===============
 
@@ -46,10 +127,14 @@ What does Docker bring that Container's don't?
 - Image repository
 - Union filesystem
 
+---
+
 What's bad?
 -----------
 - 
 - Union filesystem
+
+---
 
 Changes
 ==========
@@ -57,11 +142,15 @@ Changes
 - LXC -> ...
 - OpenStack Nova Driver (Havana) -> OpenStack Heat (IceHouse)
 
+---
+
 What else?
 ==========
 
 - Ports
 - Ambassadors
+
+---
 
 What does it all mean? - what it gives us
 ==========================================
@@ -70,14 +159,37 @@ What does it all mean? - what it gives us
 - Fast spinup
 - Hierarchical images via repo
 
+---
+
 Projects around Docker
 ======================
 
 Many !!!!
 - ....
 
-Docker and OpenStack
-======================
+---
+
+Docker and OpenStack in Havana (deprecated)
+============================================
+
+![havana](images/OLD_Docker_Wiki_NovaDriver_500px-Docker-under-the-hood.png)
+
+---
+
+Docker and OpenStack in IceHouse
+=================================
+
+![icehouse](images/NEW_Docker_in_IceHouse_heat-nova-300x142.png)
+
+---
+
+Creating/using a Docker private repo
+=====================================
+
+![repo](images/Repository.PNG)
+
+---
+
 
 Invocation: Options
 ======================
@@ -106,8 +218,43 @@ Usage of docker:
   --mtu=0: Set the containers network MTU; if no value is provided: default to the default route MTU or 1500 if no default route is available
 
 
+---
+
+Using the REST API:
+======================
+
+Refer to [Docker API](http://docs.docker.io/en/latest/reference/api/docker_remote_api_v1.8)
+
+echo -e "GET /images/json HTTP/1.0\r\n" | nc -U /var/run/docker.sock
+
+echo -e "GET /containers/json HTTP/1.0\r\n" | nc -U /var/run/docker.sock
+
+echo -e "GET /containers/json?all=true HTTP/1.0\r\n" | nc -U /var/run/docker.sock
+
+Start:
+--------
+echo -e "POST /containers/03e1b160134bd66af9e3ce53fa67112f2f19baf88e24ddd2eee7803f384568a5/start HTTP/1.0\r\n" | nc -U /var/run/docker.sock
+
+Restart:
+--------
+echo -e "POST /containers/03e1b160134bd66af9e3ce53fa67112f2f19baf88e24ddd2eee7803f384568a5/restart HTTP/1.0\r\n" | nc -U /var/run/docker.sock
+
+Stop:
+--------
+echo -e "POST /containers/03e1b160134bd66af9e3ce53fa67112f2f19baf88e24ddd2eee7803f384568a5/stop HTTP/1.0\r\n" | nc -U /var/run/docker.sock
+
+Attach:
+-------
+
+echo -e "POST /containers/03e1b160134bd66af9e3ce53fa67112f2f19baf88e24ddd2eee7803f384568a5/attach?logs=1&stream=1&stdout=1 HTTP/1.0\r\n" | nc -U /var/run/docker.sock
+
+---
+
+
 Demo
 ======================
+
+---
 
 Images:
 ======================
@@ -121,6 +268,8 @@ images on disk
 
 hierarchy of images
 
+
+---
 
 
 Internals:
@@ -248,6 +397,7 @@ Links - 2
 
 Questions?
 ======================================
+
 
 
 

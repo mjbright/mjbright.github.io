@@ -1,6 +1,6 @@
 body {
   font: 14px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-  background: #778;
+  background: #4c4c4c ;
   padding: 0;
   margin: 0;
   overflow: hidden;
@@ -47,9 +47,8 @@ div.slide {
   margin-left: -400px;
   left: 50%;
   top: 50%;
-  background: -webkit-gradient(linear, left bottom, left top, from(#bbd), to(#fff));
-  background-color: #eee;
-  background: -moz-linear-gradient(bottom, #bbd, #fff);
+  #background: url(../img/Happypanda-small.png) no-repeat right bottom, url(../img/background.png);
+  background: url(../img/sea.jpg);
   -webkit-transition: margin 0.25s ease-in-out;
   -moz-transition: margin 0.25s ease-in-out;
   -o-transition: margin 0.25s ease-in-out;
@@ -99,9 +98,8 @@ body.expose div.slide {
 }
 
 body.expose div.slide:hover {
-  background: -webkit-gradient(linear, left bottom, left top, from(#bdd), to(#fff));
-  background-color: #eee;
-  background: -moz-linear-gradient(bottom, #bdd, #fff);
+    background: -webkit-gradient(linear, left bottom, left top, from(#dedede), to(#8c8c8c));
+    background: -moz-linear-gradient(bottom, #8c8c8c, #4c4c4c);
 }
 
 body.expose .slide-wrapper {
@@ -277,7 +275,7 @@ header:not(:only-child) {
   font-weight: normal;
   font-size: 50px;
   letter-spacing: -.05em;
-  color: black;
+  color: #3c6eb4;
   text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
   position: absolute;
   left: 30px;
@@ -300,7 +298,7 @@ header h2:first-child {
 
 section, .slide header:only-child h1 {
   font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-  color: #3f3f3f;
+  color: white;
   text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
   margin-left: 30px;
   margin-right: 30px;
@@ -338,6 +336,8 @@ a {
 }
 
 pre, code, tt {
+  background: lightgrey;
+  color: black;
   font-family: Monaco, Consolas, 'Bitstream Vera Sans Mono', 'Lucida Console', FreeMono, Courier, monospace;
 }
 
@@ -383,7 +383,7 @@ li pre { margin-left: 0em; }
   vertical-align: middle;
   height: 700px;
   width: 900px;
-  font-size: 50px;
+  font-size: 100px;
   margin-top:100px;
   margin-bottom:100px;
 }

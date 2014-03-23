@@ -82,8 +82,13 @@ gitPush() {
     cp $0 $GIT_PRES_DIR/
     cd $GIT_PRES_DIR
     git commit -m "Semi-auto push: Updated script++" -a
+
+    #git config --get remote.origin.url
+    #git remote show origin
+    #git remote add origin ssh://git@github.com/mjbright/mjbright.github.io
+        #git push
     set -x;
-        git push ssh://git@mjbright.github.io/mjbright;
+        git push ssh://git@github.com/mjbright/mjbright.github.io
     set +x;
     #git push
     #[ ! -d ~/src/git/mjbright-docker ] 
@@ -133,6 +138,8 @@ RMALL() {
         echo "No Docker containers";
         return 1;
     }
+
+    #docker rm $(docker ps -a -q)
 
     SHOW_DOCKER rm $DOCKER_IDS
 }
@@ -450,6 +457,7 @@ DEMO_UNIONFS() {
 }
 
 DOCKERFILE_EXAMPLE() {
+    # http://stackoverflow.com/questions/19585028/docker-i-lose-my-data-when-the-container-exits
     cat >/tmp/ex.docker <<EOF
 FROM ubuntu
 RUN apt-get install ping
