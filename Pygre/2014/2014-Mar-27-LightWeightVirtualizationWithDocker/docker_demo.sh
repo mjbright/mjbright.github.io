@@ -49,11 +49,33 @@ interrupt() {
     exit 1
 }
 
-gitPush() {
-    GITDIR="$HOME/z/www/mjbright.github.io/Pygre/2014/2014-Mar-27-LightWeightVirtualizationWithDocker/"
+GIT_SCRIPT_DIR="$HOME/src/git/mjbright-tools"
+GIT_PRES_DIR="$HOME/z/www/mjbright.github.io/Pygre/2014/2014-Mar-27-LightWeightVirtualizationWithDocker/"
 
-    cp $0 $GITDIR/
-    cd $GITDIR
+viSlides() {
+    cd $GIT_PRES_DIR
+    vi Slides.md
+    landslide -r -c Slides.md
+    ls -altr
+}
+
+gitPush() {
+    name="Michael Bright"
+    email="github@mjbright.net"
+    #user="mjbright"
+    git config --global user.name $name
+    git config --global user.email $email
+    #read -p "Enter github password: " -s MDP
+
+    [ -d $GIT_SCRIPT_DIR ] && {
+        cp $0 $GIT_SCRIPT_DIR/;
+        cd $GIT_SCRIPT_DIR/;
+        git commit -m "Semi-auto push: Updated script++" -a;
+        git push ssh://mjbright@github.com/mjbright/Tools;
+    }
+
+    cp $0 $GIT_PRES_DIR/
+    cd $GIT_PRES_DIR
     git commit -m "Semi-auto push: Updated script++" -a
     git push
     #[ ! -d ~/src/git/mjbright-docker ] 
@@ -440,7 +462,8 @@ while [ ! -z "$1" ];do
     case $1 in
         -repo) startRepo; exit 0;;
 
-        -push) gitPush; exit 0;;
+        -push|-git) gitPush; exit 0;;
+        -vi) viSlides; exit 0;;
 
         -RM) RMALL; exit 0;;
         -D|-debug) DEBUG=1;;

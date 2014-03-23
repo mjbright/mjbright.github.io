@@ -218,11 +218,19 @@ Demo4 - Example envts
 ports via ssh
 
 
-Links
-======
+Links - 1
+=========
+
+[The demo script](http://www.centurylinklabs.com/deploying-multi-server-docker-apps-with-ambassadors/)
+
+Links - 2
+=========
 
 [Deploying Multi-Server Docker Apps with Ambassadors](http://www.centurylinklabs.com/deploying-multi-server-docker-apps-with-ambassadors/)
 
+
+Questions?
+======================================
 
 
 
