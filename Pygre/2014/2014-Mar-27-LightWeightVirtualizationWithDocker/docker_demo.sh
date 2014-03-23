@@ -71,13 +71,18 @@ gitPush() {
         cp $0 $GIT_SCRIPT_DIR/;
         cd $GIT_SCRIPT_DIR/;
         git commit -m "Semi-auto push: Updated script++" -a;
+
+	set -x;
         git push ssh://mjbright@github.com/mjbright/Tools;
+	set +x;
     }
 
     cp $0 $GIT_PRES_DIR/
     cd $GIT_PRES_DIR
     git commit -m "Semi-auto push: Updated script++" -a
-    git push ssh://mjbright@github.com/mjbright;
+    set -x;
+        git push ssh://mjbright@github.com/mjbright;
+    set +x;
     #git push
     #[ ! -d ~/src/git/mjbright-docker ] 
 }
