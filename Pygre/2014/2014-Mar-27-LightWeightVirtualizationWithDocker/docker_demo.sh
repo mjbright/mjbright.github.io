@@ -199,7 +199,7 @@ SHOW_THREADS() {
 }
 
 DEMO1() {
-     DEBUG_BANNER "Show basic container launching in interactive mode"
+     BANNER "Show basic container launching in interactive mode"
 
      echo; pause "Removing any existing docker containers:"
      RMALL
@@ -218,24 +218,27 @@ DEMO1() {
 
      echo; pause "Let's look at current Docker containers"
      LIST_ALL
+
+     echo; pause "Cleaning out container"
      RMALL
 
      echo; pause "Starting long-lived Docker container in interactive mode:"
      #CMD="while true;do echo 'hello world'; date; sleep 1;done"
      #CMD="while true;do echo \`date\` 'hello world'; sleep 1;done"
-     CMD="while true;do echo \\\$(date) 'hello world'; sleep 1;done"
+     CMD="while true;do echo \\\$(date) 'hello world'; sleep 5;done"
      SHOW_DOCKER run -i -t base /bin/sh -c "\"$CMD\""
 
 }
 
 DEMO2() {
-     DEBUG_BANNER "Show daemon container launching"
+     BANNER "Show daemon container launching"
      RMALL
 
      NAME=DAEMON`dtime`
 
      echo; pause "About to start container as daemon"
-     CMD="while true;do let LOOP=LOOP+1; echo \\\$LOOP:'STDERR' >&2; echo \\\$(date) 'hello world'; sleep 1;done"
+     #CMD="while true;do let LOOP=LOOP+1; echo \\\$LOOP:'STDERR' >&2; echo \\\$(date) 'hello world'; sleep 1;done"
+     CMD="while true;do let LOOP=LOOP+1; echo \\\$LOOP: \\\$(date) 'hello world'; sleep 5;done"
      #SHOW_DOCKER run --name=$NAME -a stdout -a stderr -d -t base /bin/bash -c "\"$CMD\""
      SHOW_DOCKER run --name=$NAME -d -t base /bin/bash -c "\"$CMD\""
 
@@ -273,7 +276,7 @@ DEMO2() {
 }
 
 DEMO3() {
-    DEBUG_BANNER "Run daemon whilst mounting /var/log of container to $DIR"
+    BANNER "Run daemon whilst mounting /var/log of container to $DIR"
     RMALL
     MOUNT_DIR
 }
@@ -292,7 +295,7 @@ DEMO6() {
     BANNER "Show pushing to repository"
     RMALL
 
-    docker login -u mjbright -p $MDP -e docker@mjbright.net
+    docker LOGIN
 
     echo; pause "Let's search the registry for mjbright"
     SHOW_DOCKER search mjbright
@@ -318,6 +321,8 @@ DEMO6() {
 }
 
 SETUP_WORDPRESS() {
+    BANNER "Demonstrate building from a dockerfile"
+
     DOCKERFILE=/tmp/wordpress.dockerfile
     YES=""
     YES="-y"
@@ -333,16 +338,28 @@ RUN wget http://wordpress.org/latest.tar.gz && mv latest.tar.gz /var/www
 EXPOSE 80
 EOF
 
-    docker -t wpress build - < $DOCKERFILE
+    echo
+    echo
+    echo "DOCKERFILE CONTENTS:"
+    more $DOCKERFILE
+    echo; pause "About to launch build:"
 
-    docker run wpress -p 80:80
+    echo "docker build -t wpress - < $DOCKERFILE"
+    docker build -t wpress - < $DOCKERFILE
+
+    #echo "docker run wpress -d -p 80:80"
+    #echo "docker run -d -p 80:80 wpress /bin/bash"
+    #docker run -d -p 80:80 wpress /bin/bash
+    echo "docker run -i -t -p 80:80 wpress /bin/bash"
+    docker run -i -t -p 80:80 wpress /bin/bash
+    #"/etc/init.d/apache2 start" | sudo lxc-attach --name $FULLID
     ID=wpress
     FULLID=`GETFULLID $ID`
-    echo "/etc/init.d/apache2 start" | sudo lxc-attach --name $FULLID
-
+    #echo "/etc/init.d/apache2 start" | sudo lxc-attach --name $FULLID
+    echo "PERFORM /etc/init.d/apache2 start"
+    docker attach $ID
 
     wget localhost:80
-
 }
 
 MOUNT_DIR() {
@@ -431,17 +448,22 @@ TEST3() {
     SHOW_DOCKER run my/ping www.google.com
 }
 
-TEST4() {
+LOGIN() {
     [ -z "$MDP" ] && read -s -p "MDP> " MDP
     [ -z "$MDP" ] && die "Please set MDP variable"
 
     #docker login
     docker login -u mjbright -p $MDP -e docker@mjbright.net
+}
+
+TEST4() {
+    LOGIN
     #set -x
     #set +x
 }
 
 DEMO_UNIONFS() {
+     BANNER "Union Filesystem"
      RMALL
 
      echo; pause "Let's look at the Union filesystem"
@@ -477,15 +499,15 @@ DEMO_UNIONFS() {
      #echo
      #sudo diff -rq /var/lib/docker/containers/{$FID1,$FID2}
 
-     echo
-     echo "We can see the differences under the aufs directories:"
-     echo
-     echo "sudo diff -rq /var/lib/docker/aufs/diff/{$FID1,$FID2}"
-     echo
-     sudo diff -rq /var/lib/docker/aufs/diff/{$FID1,$FID2}
+     ## echo
+     ## echo "We can see the differences under the aufs directories:"
+     ## echo
+     ## echo "sudo diff -rq /var/lib/docker/aufs/diff/{$FID1,$FID2}"
+     ## echo
+     ## sudo diff -rq /var/lib/docker/aufs/diff/{$FID1,$FID2}
 
      echo;
-     pause "We can also reattach to an old container - let's try container1"
+     pause "We can also reattach to an old container - let's try container1 (will FAIL)"
      SHOW_DOCKER start $FID1
      SHOW_DOCKER attach $FID1
 
@@ -494,14 +516,14 @@ DEMO_UNIONFS() {
      SHOW_DOCKER start $FID2
      SHOW_DOCKER attach $FID2
 
-     echo
-     LIST_ALL
-     pause "Let's try container2 via lxc-attach"
-     SHOW_DOCKER start $FID2
-     LIST_ALL
-     echo "sudo lxc-attach --name $FID2"
-     sudo lxc-attach --name $FID2
-     LIST_ALL
+     ## echo
+     ## LIST_ALL
+     ## pause "Let's try container2 via lxc-attach"
+     ## SHOW_DOCKER start $FID2
+     ## LIST_ALL
+     ## echo "sudo lxc-attach --name $FID2"
+     ## sudo lxc-attach --name $FID2
+     ## LIST_ALL
 }
 
 DOCKERFILE_EXAMPLE() {

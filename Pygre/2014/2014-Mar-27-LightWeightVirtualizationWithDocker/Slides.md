@@ -484,23 +484,25 @@ Building Images
 Building Images - from a Docker file
 ===============
 
-    Contents of minimal dockerfile:
+Contents of minimal dockerfile:
+
     !bash
 
         FROM ubuntu
         RUN apt-get install ping
         ENTRYPOINT ["ping"]
 
-    Building and tagging a new image:
+Building and tagging a new image:
+
     !bash
 
         $ docker build -t my/ping - < Dockerfile
-
         $ docker images
         REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
         my/ping             latest              f492632bbd55        12 hours ago        139.7 MB
-        ubuntu              12.04               8dbd9e392a96        11 months ago       128 MB
         base                latest              b750fe79269d        12 months ago       175.3 MB
+
+        # NOTE: Images are cached - by ID (if we rerun build it will use existing image)
 
         $ docker run my/ping www.google.com
         docker run my/ping www.google.com
@@ -514,7 +516,7 @@ Building Images - from a Docker file
 Image tagging:
 ===============
 
-    # docker tag [OPTIONS] IMAGE [REGISTRYHOST/][USERNAME/]NAME[:TAG]
+# docker tag [OPTIONS] IMAGE [REGISTRYHOST/][USERNAME/]NAME[:TAG]
 
     !bash
         $ docker build -t my/ping - < Dockerfile
