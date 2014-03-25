@@ -60,7 +60,7 @@ what can be done by those processes and to them.
 Let''s compare with a VM:
 
 <img src="images/VM_vs_Containers.PNG" alt="Drawing" style="width: 750px;"/>
-[comment]: <> ( ![VM_containers](images/VM_vs_Containers.PNG =100x100) )
+[comment]: <> ( ![VM_containers](images/VM_vs_Containers.PNG) )
 
 ---
 
@@ -68,7 +68,7 @@ Containers vs chroot/VMs
 ========================
 
 <img src="images/chroot_container_VM.PNG" alt="Drawing" style="width: 850px;"/>
-[comment]: <> ( ![chroot_VM](images/chroot_container_VM.PNG =100x100) )
+[comment]: <> ( ![chroot_VM](images/chroot_container_VM.PNG) )
 
 ---
 
@@ -101,7 +101,16 @@ Union Filesystem (Currently 'aufs')
 =====================================
 
 <img src="images/UnionFS.PNG" alt="Drawing" style="width: 850px;"/>
-[comment]: <> ( ![UnionFS](images/UnionFS.PNG =100x100) )
+[comment]: <> ( ![UnionFS](images/UnionFS.PNG) )
+
+---
+
+The image registry
+========================
+
+<img src="images/Repository.PNG" alt="Drawing" style="width: 700px;"/>
+[comment]: <> ( ![repo](images/Repository.PNG) )
+
 
 ---
 
@@ -236,17 +245,18 @@ Installing Docker
 
 Docker can be installed on several platforms, in several ways.
 
-Natively it can be installed on the latest Ubuntu release (13.
+Natively it can be installed on the latest Ubuntu releases (13.04, 13,10 and 12.04 LTS) as well
+as some other Linuxes.  Runs very stable.
+
+Ports are available for Fedora, and some ARM-based distributions.
+
+Non-native installations can be achieved via a VM, e.g. via:
+
++ boot2docker on OSX, Windows 
++ vagrant-docker
++ CoreOS
 
 See the installation page of the 'getting started page' <https://www.docker.io/gettingstarted/#h_installation>
-
--> Native on Ubuntu LTS and ...
--> Poss on Fedora
--> Soon in RHEL7
--> vagrant-docker
--> CoreOS
--> vagrant-dockstack (later!)
--> boot2docker(!) - via VirtualBox
 
 ---
 
@@ -294,19 +304,24 @@ Using Docker - Docker commands [2]
        CONTAINER ID  IMAGE  COMMAND              CREATED     STATUS  PORTS NAMES
        9d6d3c8a9a18  base   /bin/echo Hello Worl 5 mins ago  Exit 0        thirsty_hawking
 
-
-       # Run the base image as a daemon:
-       $ docker run --name DAEMON1 -d base bash -c 'while true; do date; sleep 1;done'
-       1e616ddb8f265063efa2abc8e2f7c728c122ccaadfa179dbe698540ff02ea75c
-
 ---
 
 Using Docker - Docker commands [3]
 ======================================
 
+
+       # Run the base image as a daemon:
+       $ docker run --name DAEMON1 -d base bash -c 'while true; do date; sleep 1;done'
+       1e616ddb8f265063efa2abc8e2f7c728c122ccaadfa179dbe698540ff02ea75c
+
        $ docker ps    # Show running containers only
        CONTAINER ID  IMAGE   COMMAND               CREATED     STATUS    PORTS NAMES
        1e616ddb8f26  base    bash -c while true;   5 secs ago  Up 4 secs       DAEMON1
+
+---
+
+Using Docker - Docker commands [4]
+======================================
 
        # Attach to container to see stderr/stdout:
        $ docker attach 1e616ddb8f26
@@ -333,17 +348,100 @@ Using Docker - Docker commands [3]
 
 ---
 
-Using Docker - Docker commands [4]
+Using Docker - Docker commands [5]
 ======================================
 
     !bash
 
-        $(docker ps -q)               # List ids of running containers
-        $(docker ps -q -a)            # List ids of all containers (running or exited)
-        $(docker ps -q -a --no-trunc) # List long-ids of all containers
+        $ docker ps -q               # List ids of running containers
+        $ docker ps -q -a            # List ids of all containers (running or exited)
+        $ docker ps -q -a --no-trunc # List long-ids of all containers
 
-        docker stop $(docker ps -q)   # Stop all runnning containers
-        docker rm $(docker ps -a -q)  # Remove all stopped containers
+        $ docker stop $(docker ps -q)   # Stop all runnning containers
+        $ docker rm $(docker ps -a -q)  # Remove all stopped containers
+
+---
+
+Using Docker - Docker commands [6]
+======================================
+
+    !bash
+
+       $ docker search rails        # Search for rails images at <https://index.docker.io/>
+       studiomelipone/ruby-1.9.3-p545  Ruby on Rails setup used at Studio Melipon... 0  [OK]
+       bitmonk/rails                                                                 0
+       gewo/rails                                                                    0
+       ....
+
+       $ docker pull gewo/rails     # Download image
+       Pulling repository gewo/rails
+       4189f1c00b8b: Download complete
+       f83280564354: Download complete
+       ....
+       
+       $ docker run gewo/rails
+      
+
+---
+
+Using Docker - Docker commands [7]
+======================================
+
+Tagging, pushing
+
+    !bash
+
+       $ docker login -u user -e email@gmail.com -p password
+       Login Succeeded
+
+See images on <http://index.docker.io>
+
+    !bash
+
+       $ docker login -u user -e email@gmail.com -p password
+       $ docker run --name PING -d my/ping www.google.com
+       a650a6eba6a3d3df767e8dc9ce6d4883e4de0f335da1bf4363234820526a2168
+
+       $ docker attach PING
+       64 bytes from par03s13-in-f17.1e100.net (173.194.45.81): icmp_req=7 ttl=52 time=25.2 ms
+
+       --- www.google.com ping statistics ---
+       8 packets transmitted, 7 received, 12% packet loss, time 7010ms
+       rtt min/avg/max/mdev = 25.278/25.880/26.651/0.499 ms
+
+---
+
+Using Docker - Docker commands [8]
+======================================
+
+    !bash
+
+       $ docker commit PING mjbright/ping
+       27424daf2ab9b6cb218b9f1fcd3d19c6b89beaa0aadb3c017a7ab3ab98a10d07
+
+       $ docker push mjbright/ping
+       The push refers to a repository [mjbright/ping] (len: 1)
+       Sending image list
+       Pushing repository mjbright/ping (1 tags)
+       8dbd9e392a96: Image already pushed, skipping
+       92993f57601d: Image successfully pushed
+       f492632bbd55: Image successfully pushed
+       27424daf2ab9: Image successfully pushed
+       Pushing tag for rev [27424daf2ab9] on {https://registry-1.docker.io/v1/repositories/mjbright/ping/tags/latest}
+
+       $ docker history mjbright/ping
+       IMAGE               CREATED              CREATED BY                            SIZE
+       27424daf2ab9        About a minute ago   www.google.com                        69 B
+       f492632bbd55        2 days ago           /bin/sh -c #(nop) ENTRYPOINT [ping]   0 B
+       92993f57601d        2 days ago           /bin/sh -c apt-get install ping       11.66 MB
+       8dbd9e392a96        11 months ago                                              128 MB
+
+---
+
+Using Docker - Docker commands [9]
+======================================
+
+See images on <http://index.docker.io>
 
 ---
 
@@ -352,8 +450,6 @@ The image registry
 
 Creating/using a Docker private registry
 --------------------------------------
-
-![repo](images/Repository.PNG)
 
 Github code here: <https://github.com/dotcloud/docker-registry>
 
@@ -418,32 +514,38 @@ Building Images - from a Docker file
 REST API
 ========================
 
+This is how Docker will be integrated into OpenStack for example.
+
 Refer to [Docker API](http://docs.docker.io/en/latest/reference/api/docker_remote_api_v1.8)
 
-echo -e "GET /images/json HTTP/1.0\r\n" | nc -U /var/run/docker.sock
+It is possible to perform standard REST type of actions to
 
-echo -e "GET /containers/json HTTP/1.0\r\n" | nc -U /var/run/docker.sock
++ List resoures (images, containers, ...)
++ Start/stop/restart images
++ Attach to a container
 
-echo -e "GET /containers/json?all=true HTTP/1.0\r\n" | nc -U /var/run/docker.sock
-
-Start:
---------
-echo -e "POST /containers/<ID>/start HTTP/1.0\r\n" | nc -U /var/run/docker.sock
-
-Restart:
---------
-echo -e "POST /containers/<ID>/restart HTTP/1.0\r\n" | nc -U /var/run/docker.sock
-
-Stop:
---------
-echo -e "POST /containers/<ID>/stop HTTP/1.0\r\n" | nc -U /var/run/docker.sock
-
-Attach:
--------
-
-echo -e "POST /containers/<ID>/attach?logs=1&stream=1&stdout=1 HTTP/1.0\r\n" | nc -U /var/run/docker.sock
+Can be done via a web browser (IF port is configured - only recommended if secured by a certificate), curl,
+scripts etc.
 
 ---
+
+
+REST API [2]
+========================
+
+Can be done locally on command-line via the special character socket device:
+    /var/run/docker.sock
+
+e.g.
+
++ To list images:
+    + echo -e "GET /images/json HTTP/1.0\r\n" | nc -U /var/run/docker.sock
+
++ To list containers:
+    + echo -e "GET /containers/json HTTP/1.0\r\n" | nc -U /var/run/docker.sock
+
++ To stop a container:
+    + echo -e "POST /containers/<ID>/stop HTTP/1.0\r\n" | nc -U /var/run/docker.sock
 
 
 ---
