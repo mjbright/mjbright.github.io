@@ -209,8 +209,8 @@ DEMO1() {
      echo; pause "List all local Docker images"
      SHOW_DOCKER images
 
-     echo; pause "Show history of first local Docker image"
      IMAGE1=`docker images | head -2 | tail -1 | awk '{print $1;}'`
+     echo; pause "Show history of first local Docker image [$IMAGE1]"
      docker history $IMAGE1
 
      echo; pause "Starting Docker container in interactive mode: 'hello world'"
@@ -534,6 +534,10 @@ while [ ! -z "$1" ];do
         -vi) viSlides; exit 0;;
 
         -RM) RMALL; exit 0;;
+        -RMI) echo "Removing '<none>' images";
+              docker rmi $(docker images | grep none |awk '{print $3;}');
+              exit 0;;
+
         -D|-debug) DEBUG=1;;
 
         -md) 

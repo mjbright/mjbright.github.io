@@ -20,17 +20,15 @@ Overview
 1. What is Docker?
     + Containers versus VMs
     + What use is it?
-+ Installing and Using Docker
     + The image registry
-    + Building Images
++ Installing and Using Docker
     + Docker commands
+    + Building Images
     + REST API
     + Connecting containers
     + OpenStack and Docker
 + ... and finally
     + Demo
-    + Links
-
 
 ---
 
@@ -233,7 +231,7 @@ The goals for Docker 1.0 are:
 + Docker able to offer long term support
 
 
---
+---
 
 Installing and Using Docker
 =================
@@ -255,21 +253,24 @@ Non-native installations can be achieved via a VM, e.g. via:
 + boot2docker on OSX, Windows 
 + vagrant-docker
 + CoreOS
++ DevStack (Havana)
 
-See the installation page of the 'getting started page' <https://www.docker.io/gettingstarted/#h_installation>
+See the installation page of the 'getting started page'
+<https://www.docker.io/gettingstarted/#h_installation>
 
 ---
 
 Using Docker
 ========================
 
-See the getting started page <https://www.docker.io/gettingstarted/>
+See the tutorials on the 'getting started page'
+<https://www.docker.io/gettingstarted/>
 
 See the command-line client pages <http://docs.docker.io/en/v0.5.3/commandline/command>
 
 ---
 
-Using Docker - Docker commands [1]
+Docker commands [1] - images
 ======================================
 
     !bash
@@ -291,10 +292,11 @@ Using Docker - Docker commands [1]
 
 ---
 
-Using Docker - Docker commands [2]
+Docker commands [2] - containers
 ======================================
 
        # Run the base image and print Hello World:
+       # image --> containers
        $ time docker run -i -t base /bin/echo "Hello World"
        Hello World
 
@@ -306,7 +308,7 @@ Using Docker - Docker commands [2]
 
 ---
 
-Using Docker - Docker commands [3]
+Docker commands [3] - containers
 ======================================
 
 
@@ -320,7 +322,7 @@ Using Docker - Docker commands [3]
 
 ---
 
-Using Docker - Docker commands [4]
+Docker commands [4] - processes
 ======================================
 
        # Attach to container to see stderr/stdout:
@@ -328,6 +330,7 @@ Using Docker - Docker commands [4]
        Sun Mar 23 19:22:58 UTC 2014
        Sun Mar 23 19:22:59 UTC 2014
 
+       # Output of pstree with docker v0.9 (no LXC):
        $ pstree -ap 8324
        docker,8324 -d
          |-bash,17034 -c while true; do date; sleep 1;done
@@ -348,7 +351,7 @@ Using Docker - Docker commands [4]
 
 ---
 
-Using Docker - Docker commands [5]
+Docker commands [5] - start/stop/rm
 ======================================
 
     !bash
@@ -362,7 +365,7 @@ Using Docker - Docker commands [5]
 
 ---
 
-Using Docker - Docker commands [6]
+Docker commands [6] - registry
 ======================================
 
     !bash
@@ -384,10 +387,10 @@ Using Docker - Docker commands [6]
 
 ---
 
-Using Docker - Docker commands [7]
+Docker commands [7] - registry
 ======================================
 
-Tagging, pushing
+#TODO: Tagging
 
     !bash
 
@@ -411,7 +414,7 @@ See images on <http://index.docker.io>
 
 ---
 
-Using Docker - Docker commands [8]
+Docker commands [8] - push image
 ======================================
 
     !bash
@@ -438,14 +441,14 @@ Using Docker - Docker commands [8]
 
 ---
 
-Using Docker - Docker commands [9]
+Docker commands [9] - registry
 ======================================
 
 See images on <http://index.docker.io>
 
 ---
 
-The image registry
+Private image registry
 ========================
 
 Creating/using a Docker private registry
@@ -484,7 +487,6 @@ Building Images - from a Docker file
     Contents of minimal dockerfile:
     !bash
 
-
         FROM ubuntu
         RUN apt-get install ping
         ENTRYPOINT ["ping"]
@@ -506,6 +508,16 @@ Building Images - from a Docker file
         64 bytes from wi-in-f99.1e100.net (173.194.67.99): icmp_req=1 ttl=44 time=53.3 ms
         64 bytes from wi-in-f99.1e100.net (173.194.67.99): icmp_req=2 ttl=44 time=54.2 ms
 
+
+---
+
+Image tagging:
+===============
+
+    # docker tag [OPTIONS] IMAGE [REGISTRYHOST/][USERNAME/]NAME[:TAG]
+
+    !bash
+        $ docker build -t my/ping - < Dockerfile
 
 
 ---
@@ -553,9 +565,14 @@ e.g.
 Connecting containers
 ========================
 
-- Ports
-- Expose
-- Ambassadors
+By default no ports are exposed.
+If you run a web server it can''t be accessed from outside the container.
+
+We can specify ports to be exposed/mapped in the build Dockerfile and/or
+on the command-line.
+
+We can also use the Ambasssador design pattern to provide dynamic mapping
+between components allows to remap so that a component can be online upgraded.
 
 ---
 
