@@ -4,9 +4,13 @@ Lightweight Virtualization with Docker
 Grenoble Python User Group    -  <http://mjbright.github.io/Pygre>
 ----------------------------
 
-
 Michael Bright, 27th March 2014.
 ----------------------------
+
+---
+
+Overview
+======================================
 
 ---
 
@@ -17,9 +21,9 @@ Overview
     + Containers versus VMs
     + What use is it?
 + Installing and Using Docker
-    + Docker commands
-    + The image repository
+    + The image registry
     + Building Images
+    + Docker commands
     + REST API
     + Connecting containers
     + OpenStack and Docker
@@ -30,116 +34,230 @@ Overview
 
 ---
 
-Stuff
---------------------
-
-- Structure
-- Images
-- Helicopter view
+What is Docker?
+========================
 
 ---
 
 What is Docker?
 ========================
 
-Docker is a container mechanism, originally developed on
-LXC (Linux Containers) to allow ...
+Docker is a lightweight container mechanism, originally developed on
+LXC (Linux Containers) to isolate processes from each other.
+
+It is lightweight because the use of a union filesystem allows only
+filesystem differences to be stored.
+
+<img src="images/DockerLogo.jpg" alt="Drawing" style="width: 450px;"/>
 
 ---
 
-Containers versus VMs
-========================
-
 What is a container?
---------------------
+========================
 
 A container isolates a set of processes on a host machine limiting
 what can be done by those processes and to them.
+Let''s compare with a VM:
 
-![VM_containers](images/VM_vs_Containers.PNG)
+<img src="images/VM_vs_Containers.PNG" alt="Drawing" style="width: 750px;"/>
+[comment]: <> ( ![VM_containers](images/VM_vs_Containers.PNG =100x100) )
 
 ---
 
-What is Docker?
+Containers vs chroot/VMs
 ========================
 
-Docker provides
+<img src="images/chroot_container_VM.PNG" alt="Drawing" style="width: 850px;"/>
+[comment]: <> ( ![chroot_VM](images/chroot_container_VM.PNG =100x100) )
 
-1. Lightweight virtualization - no OS emulation
-   Allows fast spin up times
+---
 
-+ A union filesystem allowing incremental 'images'
+So what is Docker?
+========================
 
-+ An image repository - private or public <https://index.docker.io/>
-  accessible from command-line and REST APIs.
+Docker provides the following benefits
 
-What does it all mean? - what it gives us
---------------------------------------------
-- Low memory
-- Low disk footprint
-- Fast spinup
-- Hierarchical images via repo
+    + Lightweight virtualization - no OS emulation
+        * Low memory
+        * Low disk footprint
+        * Fast spinup times compared to VMs
+
+    + A union filesystem allowing incremental 'images'
+
+    + An image registry
+        - private or public <https://index.docker.io/>
+        - accessible from command-line and REST APIs
+        - Hierarchical images via repo
 
 What does Docker bring that Container's don't?
 ----------------------------------------------
-- Image repository
+- Image registry
 - Union filesystem
+- REST api
 
 ---
 
-UnionFS (aufs)
+Union Filesystem (Currently 'aufs')
 =====================================
 
-![UnionFS](images/UnionFS.PNG)
+<img src="images/UnionFS.PNG" alt="Drawing" style="width: 850px;"/>
+[comment]: <> ( ![UnionFS](images/UnionFS.PNG =100x100) )
 
 ---
 
-What use is it?
+What is Docker used for?
 ========================
 
-In the same way that virtual machines can be used to provide isolation
-and allow cloud functionality (spin up) containers systems such as
-Docker can do this with much lighter processes as we do not emulate the
-host OS.
+---
 
-Although Docker is not considered to be production ready until its
-impending v1.0 release (April 2014?) it is already being integrated
-into several PaaS (Platform-as-a-Service) platforms such as
-RedHats OpenShift, ActiveStates Stackato and soon CloudFoundry.
+What is Docker used for?
+========================
 
-Projects around Docker
+**Shipping containers from port to port !!**
+<img src="images/DockerLogo.jpg" alt="Drawing" style="width: 550px;"/>
+
+---
+
+What is Docker used for?
+========================
+
+In the same way that virtual machines can be used to provide isolation and
+allow cloud functionality to spin up machines, container systems such as Docker
+can do this with much lighter processes as we do not emulate the host OS.
+
+**NOTE:** Docker won''t be production ready until its v1.0 release (April 2014?)
+... but it is in production already ...
+
+Commercial PaaS: Platform as a Service
+----------------------------
+
+Docker is already being integrated into several PaaS:
+
++ RedHat''s OpenShift
+- ActiveState''s Stackato
+- soon CloudFoundry (alongside Warden)
+
+---
+
+OpenSource Projects - 1
 ----------------------
 
-Many !!!!
+List courtesy of [CenturyLink Labs](http://www.centurylinklabs.com/top-10-open-source-docker-projects/) article, Mar 2014
+
++ OpenSource PaaS
+    + [Flynn:](http://github.com/flynn) 961*, 24 forks, git push, 14+ sponsors
+    + [Deis:](http://github.com/opdemand/deis) 1,341*, 120 forks, git push, many tools/langs, hybrid cloud
+    + [Dokku:](http://github.com/progrium/dokku) 4,806*, 384 forks in ~ 100 lines of bash, wget install
+
++ DOCKER ORCHESTRATION
+    + [CoreOS:](http://github.com/coreos) 2,564*, 237 forks. Cloud image of tools (etcd,docker,systemd)
+    + [Fig:](http://github.com/orchardup/fig) 1,526*, 51 forks, fig.yml to build complex Docker apps
+    + [Serf:](http://github.com/hashicorp/serf) 1,652*, 91 forks, decentralized service discovery and orchestration that is lightweight, HA/FT.  From Vagrant
 
 ---
 
-Docker Versions
-=================
+OpenSource Projects - 2
+----------------------
 
-- originally written in Python
-- v0.7 Raspberry Pi
-- v0.8
-- v0.9
-- v1.0
++ CI/CD
+    + [Drone](http:://github.com/drone/drone) 2,516*, 133 forks, full Docker-based CI/CD pipeline
 
-- 1 year Birthday 20 Mar 2014
++ UI
+    + [Shipyard](http://github.com/shipyard/shipyard) 1,443*, 96 forks, manage Docker resource across hosts from UI. Deployed from docker
+    + [DockerUI](http://github.com/crosbymichael/dockerui) 1,273*, 70 forks, A web interface for Docker
 
-Changes
-----------
-- Python -> Go
-- LXC -> libcontainer
-- OpenStack Nova Driver (Havana) -> OpenStack Heat (IceHouse)
++ OTHER
+    + [Docker on OpenStack] (http://github.com/dotcloud/openstack-docker) 204*, 17 forks, in Havana/out IceHouse
 
 ---
 
-Intalling Docker
+Docker Startups
 =================
+
+List courtesy of [CenturyLink Labs](http://www.centurylinklabs.com/top-10-startups-built-on-docker/) article, Feb 2014
+
+1. StackDock - Docker hosting on blazing fast dedicated infrastructure
+2. Orchard   - Host your Docker containers in the cloud
+3. Tutum     - IaaS-like control, PaaS-like speed
+4. Quay.io   - PRIVATE DOCKER REGISTRY - Secure hosting for private Docker repositories
+5. Flynn     - DOCKER ORCHESTRATION - The product that ops provides to developers
+6. CoreOS    - Linux for Massive Server Deployments
+7. Serf      - Decentralized service discovery and orchestration that is lightweight, highly available, and fault tolerant
+8. Shippable - CI/CD
+
+
+---
+
+Docker History
+=================
+
+A **very fast** moving project with monthly .1 releases.
+
+Only 1 year old, announced on 20 Mar 2013.
+
+- Originally in Python -> now all in Go (Google''s system language)
+- v0.7: Support for more linux distributions
+- v0.8: Emphasis on quality, initial OSX support(boot2docker)
+- v0.9: Execution Drivers/Libcontainer => allow container mechanisms (LXC, OpenVZ, qemu-kvm) on different OSes
+- v0.10: First Release Candidate (Apr 2014)
+- v1.0: **Production ready!!**
+
+See the releases in the blog <http://blog.docker.io/category/docker-releases/>
+
+
+---
+
+Docker History - Version 1.0
+=================
+
+The goals for Docker 1.0 are:
++ production quality
+
++ first class support of all major operating systems
+
++ a shrunken core and a stable plug in architecture
+
++ well documented
+
++ able to be commercially supported by Docker and our partners
+
++ Docker able to offer long term support
+
+
+--
+
+Installing and Using Docker
+=================
+
+---
+
+Installing Docker
+=================
+
+Docker can be installed on several platforms, in several ways.
+
+Natively it can be installed on the latest Ubuntu release (13.
+
+See the installation page of the 'getting started page' <https://www.docker.io/gettingstarted/#h_installation>
+
+-> Native on Ubuntu LTS and ...
+-> Poss on Fedora
+-> Soon in RHEL7
+-> vagrant-docker
+-> CoreOS
+-> vagrant-dockstack (later!)
+-> boot2docker(!) - via VirtualBox
 
 ---
 
 Using Docker
 ========================
+
+See the getting started page <https://www.docker.io/gettingstarted/>
+
+See the command-line client pages <http://docs.docker.io/en/v0.5.3/commandline/command>
+
+---
 
 Using Docker - Docker commands [1]
 ======================================
@@ -147,11 +265,24 @@ Using Docker - Docker commands [1]
     !bash
 
        $ docker images # List local images
-       REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-       my/ping             latest              f492632bbd55        11 hours ago        139.7 MB
-       wpress              latest              93a82573c321        20 hours ago        680 MB
-       ubuntu              12.04               8dbd9e392a96        11 months ago       128 MB
-       base                ubuntu-12.10        b750fe79269d        12 months ago       175.3 MB
+       REPOSITORY     TAG             IMAGE ID        CREATED         VIRTUAL SIZE
+       my/ping        latest          f492632bbd55    11 hours ago    139.7 MB
+       wpress         latest          93a82573c321    20 hours ago    680 MB
+       ubuntu         12.04           8dbd9e392a96    11 months ago   128 MB
+       base           ubuntu-12.10    b750fe79269d    12 months ago   175.3 MB
+
+       $ docker history my/ping
+       IMAGE          CREATED         CREATED BY                          SIZE
+       f492632bbd55   2 days ago      /bin/sh -c #(nop) ENTRYPOINT [ping] 0 B
+       92993f57601d   2 days ago      /bin/sh -c apt-get install ping     11.66 MB
+       8dbd9e392a96   11 months ago                                       128 MB
+
+       $ docker rmi my/junk # Removing an image (or ID?)
+
+---
+
+Using Docker - Docker commands [2]
+======================================
 
        # Run the base image and print Hello World:
        $ time docker run -i -t base /bin/echo "Hello World"
@@ -164,14 +295,14 @@ Using Docker - Docker commands [1]
        9d6d3c8a9a18  base   /bin/echo Hello Worl 5 mins ago  Exit 0        thirsty_hawking
 
 
----
-
-Using Docker - Docker commands [2]
-======================================
-
        # Run the base image as a daemon:
        $ docker run --name DAEMON1 -d base bash -c 'while true; do date; sleep 1;done'
        1e616ddb8f265063efa2abc8e2f7c728c122ccaadfa179dbe698540ff02ea75c
+
+---
+
+Using Docker - Docker commands [3]
+======================================
 
        $ docker ps    # Show running containers only
        CONTAINER ID  IMAGE   COMMAND               CREATED     STATUS    PORTS NAMES
@@ -202,25 +333,48 @@ Using Docker - Docker commands [2]
 
 ---
 
-Using Docker - Docker commands [3]
+Using Docker - Docker commands [4]
 ======================================
 
     !bash
+
+        $(docker ps -q)               # List ids of running containers
+        $(docker ps -q -a)            # List ids of all containers (running or exited)
+        $(docker ps -q -a --no-trunc) # List long-ids of all containers
 
         docker stop $(docker ps -q)   # Stop all runnning containers
         docker rm $(docker ps -a -q)  # Remove all stopped containers
 
 ---
 
-The image repository
+The image registry
 ========================
 
-Creating/using a Docker private repo
+Creating/using a Docker private registry
 --------------------------------------
 
 ![repo](images/Repository.PNG)
 
+Github code here: <https://github.com/dotcloud/docker-registry>
+
 + repo push/pull/tagging
+    + Pull image in layers ...
+
+    !bash
+
+        $ docker run -p 5000 -v /tmp/registry:/tmp/registry registry
+        Unable to find image 'registry' locally
+        Pulling repository registry
+        873f518b98ef: Pulling dependent layers
+        1f7bbd131cd8: Pulling dependent layers
+        376ca9433bfe: Pulling dependent layers
+        9f98cb899f46: Pulling dependent layers
+        e8e5377f8307: Pulling dependent layers
+        0b520d776e7d: Pulling dependent layers
+        b04ace768d59: Pulling dependent layers
+        511136ea3c5a: Download complete
+        b74728ce6435: Pulling metadata
+
 + private repo
 
 Building Images
@@ -303,17 +457,32 @@ Connecting containers
 
 ---
 
-OpenStack and Docker - in Havana (deprecated)
-============================================
-
-![havana](images/OLD_Docker_Wiki_NovaDriver_500px-Docker-under-the-hood.png)
+OpenStack and Docker
+========================
 
 ---
 
-OpenStack and Docker - in IceHouse
+In Havana Release (deprecated)
+============================================
+
+That''s 2 fast moving projects ...
+
+<img src="images/OLD_Docker_Wiki_NovaDriver_500px-Docker-under-the-hood.png" alt="Drawing" style="width: 650px;"/>
+[comment]: <> ( ![havana]( images/OLD_Docker_Wiki_NovaDriver_500px-Docker-under-the-hood.png) )
+
+Current OpenStack wiki page on Docker refers to this implementation.
+[https://wiki.openstack.org/wiki/Docker](https://wiki.openstack.org/wiki/Docker)
+
+---
+
+In IceHouse Release (Work In Progress)
 =================================
 
-![icehouse](images/NEW_Docker_in_IceHouse_heat-nova-300x142.png)
+<img src="images/NEW_Docker_in_IceHouse_heat-nova-300x142.png" alt="Drawing" style="width: 650px;"/>
+[comment]: <> ( ![icehouse]( images/NEW_Docker_in_IceHouse_heat-nova-300x142.png) )
+
+See [DOCKER WILL BE IN OPENSTACK ICEHOUSE](http://blog.docker.io/2014/03/docker-will-be-in-openstack-icehouse/)
+
 
 ---
 
@@ -336,9 +505,30 @@ This presentation [here](http://mjbright.github.io/Pygre/2014/2014-Mar-27-LightW
 
 [The Docker Blog](http://blog.docker.io "The Docker Blog")
 
+IRC: #docker on Freenode.
+
 TOADD: [19 Mar 2014 e-mail](https://mail.google.com/mail/u/0/?ui=2&shva=1#inbox/144db663f35a11b0)
 
 ---
+
+Questions?
+======================================
+
+
+---
+
+tagging, copying images to local repo
+- communicate between machines
+- ambassadors
+
+- twisted web server
+- rails
+- django
+
+ports via ssh
+
+[Deploying Multi-Server Docker Apps with Ambassadors](http://www.centurylinklabs.com/deploying-multi-server-docker-apps-with-ambassadors/)
+
 
 
 
@@ -385,159 +575,6 @@ Usage of docker:
   -v, --version=false: Print version information and quit
 
   --mtu=0: Set the containers network MTU; if no value is provided: default to the default route MTU or 1500 if no default route is available
-
-
-
----
-
-
-
-Demo
-======================
-
----
-
-Images:
-======================
-
-docker run image
-  ==> base
-
-tagging, copying images to local repo
-
-images on disk
-
-hierarchy of images
-
-
----
-
-
-Internals:
-======================
-
-ps -fade | grep docker
-
-
-Conclusions
-======================
-
-
-Subtitle2
----------
-
--
-- Your first slide (title slide) should not have a heading, only `<p>`s
-- Your other slides should have a heading that renders to an h1 element
-- To highlight blocks of code, put !{{lang}} as the first indented line
-- See the included slides.md for an example
-
-Rendering Instructions
-----------------------
-
-- Put your markdown content in a file called `slides.md`
-- Run `python render.py`
-- Enjoy your newly generated `presentation.html`
-
----
-
-Slide #2
-========
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna tellus,...
-
-Section #1
-----------
-
-Integer in dignissim ipsum. Integer pretium nulla at elit facilisis eu feugiat
-velit consectetur.
-
-Section #2
-----------
-
-Donec risus tortor, dictum sollicitudin ornare eu, egestas at purus. Cras...
-
----
-
-Docker Versions
-==========================
-- 0.8
-- 0.9
-- 1.0
-
----
-
-Running Docker
-==========================
-
--> Native on Ubuntu LTS and ...
--> Poss on Fedora
--> Soon in RHEL7
--> vagrant-docker
--> CoreOS
--> vagrant-dockstack (later!)
--> boot2docker(!) - via VirtualBox
-
----
-
-Demo1 - Basic interaction
-==========================
-
-- Start image
-- Start image, touch file
-- ReStart image, ls file -> error
-
-Script to kill items
-
----
-
-
-Demo2 - Daemon attach/detach
-============================
-
----
-
-Demo3 - Open ports
-==================
-
-- communicate between machines
-- ambassadors
-
----
-
-Demo4 - Example envts
-==================
-
-- twisted web server
-- rails
-- django
-
-ports via ssh
-
----
-
-
-Links - 1
-=========
-
-[The demo script](./docker_demo.sh)
-
-
-
----
-
-
-Links - 2
-=========
-
-[Deploying Multi-Server Docker Apps with Ambassadors](http://www.centurylinklabs.com/deploying-multi-server-docker-apps-with-ambassadors/)
-
-
-
----
-
-Questions?
-======================================
 
 
 

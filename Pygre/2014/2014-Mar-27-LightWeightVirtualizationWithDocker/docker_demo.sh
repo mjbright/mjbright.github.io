@@ -206,6 +206,13 @@ DEMO1() {
      LIST_ALL
      pause
 
+     echo; pause "List all local Docker images"
+     SHOW_DOCKER images
+
+     echo; pause "Show history of first local Docker image"
+     IMAGE1=`docker images | head -2 | tail -1 | awk '{print $1;}'`
+     docker history $IMAGE1
+
      echo; pause "Starting Docker container in interactive mode: 'hello world'"
      SHOW_DOCKER run --name HelloWorld_`dtime` -i -t base echo 'hello world'
 
@@ -249,8 +256,8 @@ DEMO2() {
      echo
      sudo ls -altr $LOG
      #sudo tail -1 $LOG
-     echo; pause "Now let's tail that log file [last 2 lines]"
-     sudo tail -2 $LOG
+     ## echo; pause "Now let's tail that log file [last 2 lines]"
+     ## sudo tail -2 $LOG
 
      echo; pause "Now let's tail that log file"
      sudo tail -f $LOG
@@ -261,7 +268,7 @@ DEMO2() {
      #sudo ls -altr $LOG
      #sudo tail -1 $LOG
 
-     pause "Daemon is running, now let's follow it"
+     pause "Daemon is running, now let's attach to it's stdout"
      SHOW_DOCKER attach $NAME
 }
 
@@ -316,9 +323,9 @@ MOUNT_DIR() {
     [ -f $LOG ] && rm -f $LOG
 
     #CMD="while true;do sleep 1; date >> /var/log/mounted.log; done"
-    CMD="while true;do let LOOP=LOOP+1; sleep 1; date >> /var/log/mounted.log; echo OK\$LOOP; done"
+    CMD="while true;do let LOOP=LOOP+1; date >> /var/log/mounted.log; echo OK\$LOOP; sleep 5;done"
     echo; pause "About to launch $CMD"
-    ID=`docker run --name MNT_EXAMPLE -v $DIR:/var/log -d -t base /bin/bash -c "$CMD"`
+    ID=`set -x;docker run --name MNT_EXAMPLE -v $DIR:/var/log -d -t base /bin/bash -c "$CMD"`
 
     sleep 2;
     echo; echo "Contents of $DIR/";
@@ -391,6 +398,16 @@ TEST3() {
 
     echo; pause "Now let's rerun that ping"
     SHOW_DOCKER run my/ping www.google.com
+}
+
+TEST4() {
+    [ -z "$MDP" ] && read -s -p "MDP> " MDP
+    [ -z "$MDP" ] && die "Please set MDP variable"
+
+    #docker login
+    docker login -u mjbright -p $MDP -e docker@mjbright.net
+    #set -x
+    #set +x
 }
 
 DEMO_UNIONFS() {
@@ -471,6 +488,10 @@ EOF
     echo "PING interrupted"
 }
 
+createMarkdown() {
+    die "TODO"
+}
+
 ################################################################################
 ## Args:
 
@@ -484,13 +505,16 @@ while [ ! -z "$1" ];do
         -RM) RMALL; exit 0;;
         -D|-debug) DEBUG=1;;
 
+        -md) 
+            createMarkdown ;;
+
         -[dt][0-9]*) 
-		NUM=${1#-[dt]};
-		OPT=${1%%[0-9]*};
-		#echo "NUM=$NUM OPT=$OPT";
-		[ "$OPT" = "-d" ] && { echo "Invoking DEMO$NUM"; DEMO${NUM}; };
-		[ "$OPT" = "-t" ] && { echo "Invoking TEST$NUM"; TEST${NUM}; };
-		exit 0;;
+            NUM=${1#-[dt]};
+            OPT=${1%%[0-9]*};
+            #echo "NUM=$NUM OPT=$OPT";
+            [ "$OPT" = "-d" ] && { echo "Invoking DEMO$NUM"; DEMO${NUM}; };
+            [ "$OPT" = "-t" ] && { echo "Invoking TEST$NUM"; TEST${NUM}; };
+            exit 0;;
 
         *) die "Unknown option: '$1'";;
     esac
