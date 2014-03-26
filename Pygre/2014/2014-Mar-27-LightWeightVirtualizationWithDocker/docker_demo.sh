@@ -124,9 +124,29 @@ startRepo() {
         -b 0.0.0.0:5000 -w 1 wsgi:application
 }
 
+# Remove only stopped containers:
+RM() {
+    RUNNING_DOCKER_IDS=`docker ps -q`
+    DOCKER_IDS=`docker ps -q -a`
+
+    # Do it this way to avoid error message for running ids:
+    _IDS=""
+    for ID in $DOCKER_IDS;do
+        [ "${RUNNING_DOCKER_IDS##*$ID}" = "$RUNNING_DOCKER_IDS" ] &&
+            _IDS="$_IDS $ID"
+    done
+
+    #echo "\$DOCKER_IDS='$DOCKER_IDS'"
+    #echo "\$_IDS='$_IDS'"
+    docker rm $_IDS
+}
+
+# Remove running and stopped containers:
 RMALL() {
-    RUNNING_DOCKER_IDS=`docker ps | awk '!/^CONTAINER/ { print $1; }'`
-    DOCKER_IDS=`docker ps -a | awk '!/^CONTAINER/ { print $1; }'`
+    #RUNNING_DOCKER_IDS=`docker ps | awk '!/^CONTAINER/ { print $1; }'`
+    #DOCKER_IDS=`docker ps -a | awk '!/^CONTAINER/ { print $1; }'`
+    RUNNING_DOCKER_IDS=`docker ps -q`
+    DOCKER_IDS=`docker ps -q -a`
     echo "Stopping/Removing all containers";
 
     [ ! -z "$RUNNING_DOCKER_IDS" ] && {
@@ -326,15 +346,16 @@ SETUP_WORDPRESS() {
     DOCKERFILE=/tmp/wordpress.dockerfile
     YES=""
     YES="-y"
-    cat > $DOCKERFILE <<EOF
+    cat > $DOCKERFILE <<"EOF"
 FROM ubuntu
 #FROM base
 RUN echo deb http://archive.ubuntu.com/ubuntu precise main universe > /etc/apt/sources.list
 RUN apt-get update
-RUN apt-get install $YES mysql-server mysql-client
-RUN apt-get install $YES apache2 apache2-mpm-prefork apache2-utils apache2.2-common libapache2-mod-php5 libapr1 libaprutil1 libdbd-mysql-perl libdbi-perl libnet-daemon-perl libplrpc-perl libpq5 mysql-common php5-common php5-mysql
-RUN apt-get install $YES vim wget net-tools
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y mysql-server mysql-client
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y apache2 apache2-mpm-prefork apache2-utils apache2.2-common libapache2-mod-php5 libapr1 libaprutil1 libdbd-mysql-perl libdbi-perl libnet-daemon-perl libplrpc-perl libpq5 mysql-common php5-common php5-mysql
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y vim wget net-tools
 RUN wget http://wordpress.org/latest.tar.gz && mv latest.tar.gz /var/www
+RUN /etc/init.d/apache2 start
 EXPOSE 80
 EOF
 
@@ -356,10 +377,294 @@ EOF
     ID=wpress
     FULLID=`GETFULLID $ID`
     #echo "/etc/init.d/apache2 start" | sudo lxc-attach --name $FULLID
+    echo "/etc/init.d/apache2 start" | docker-attach --name $FULLID
     echo "PERFORM /etc/init.d/apache2 start"
-    docker attach $ID
+    ATTACH $ID
 
     wget localhost:80
+}
+
+ATTACH() {
+    echo "docker attach $1"
+    echo "Press <return> to get prompt"
+    docker attach $1
+}
+
+DEMO7() {
+
+    BANNER "Demo creation of a mysql image, then run as a container"
+
+    _TMP=/tmp/mysql.docker
+    [ ! -d $_TMP ] && mkdir -p $_TMP
+
+    _USER=mjbright
+
+    cd $_TMP
+
+    cat > run.sh <<"EOF"
+#!/bin/bash
+if [ ! -f /.mysql_admin_created ]; then
+        /create_mysql_admin_user.sh
+fi
+exec supervisord -n
+EOF
+
+    cat > start.sh <<"EOF"
+#!/bin/bash
+exec mysqld_safe
+
+EOF
+
+   cat > supervisord-mysqld.conf <<"EOF"
+[program:mysqld]
+command=/start.sh
+numprocs=1
+autostart=true
+EOF
+
+    cat > Dockerfile <<"EOF"
+FROM ubuntu:saucy
+MAINTAINER Fernando Mayo <fernando@tutum.co>
+
+# Install packages
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install supervisor mysql-server pwgen
+
+# Add image configuration and scripts
+ADD start.sh /start.sh
+ADD run.sh /run.sh
+ADD supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
+ADD my.cnf /etc/mysql/conf.d/my.cnf
+ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
+ADD import_sql.sh /import_sql.sh
+RUN chmod 755 /*.sh
+
+EXPOSE 3306
+CMD ["/run.sh"]
+EOF
+
+    cat > my.cnf <<"EOF"
+[mysqld]
+bind-address=0.0.0.0
+EOF
+
+cat > create_db.sh <<"EOF"
+#!/bin/bash
+
+if [[ $# -eq 0 ]]; then
+        echo "Usage: $0 <db_name>"
+        exit 1
+fi
+
+/usr/bin/mysqld_safe > /dev/null 2>&1 &
+
+echo "=> Creating database $1"
+RET=1
+while [[ RET -ne 0 ]]; do
+        sleep 5
+        mysql -uroot -e "CREATE DATABASE $1"
+        RET=$?
+done
+
+mysqladmin -uroot shutdown
+
+echo "=> Done!"
+EOF
+
+cat > create_mysql_admin_user.sh <<"EOF"
+#!/bin/bash
+
+if [ -f /.mysql_admin_created ]; then
+        echo "MySQL 'admin' user already created!"
+        exit 0
+fi
+
+/usr/bin/mysqld_safe > /dev/null 2>&1 &
+
+PASS=${MYSQL_PASS:-$(pwgen -s 12 1)}
+_word=$( [ ${MYSQL_PASS} ] && echo "preset" || echo "random" )
+echo "=> Creating MySQL admin user with ${_word} password"
+RET=1
+while [[ RET -ne 0 ]]; do
+        sleep 5
+        mysql -uroot -e "CREATE USER 'admin'@'%' IDENTIFIED BY '$PASS'"
+        RET=$?
+done
+
+mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION"
+
+mysqladmin -uroot shutdown
+
+echo "=> Done!"
+touch /.mysql_admin_created
+
+echo "========================================================================"
+echo "You can now connect to this MySQL Server using:"
+echo ""
+echo "    mysql -uadmin -p$PASS -h<host> -P<port>"
+echo ""
+echo "Please remember to change the above password as soon as possible!"
+echo "MySQL user 'root' has no password but only allows local connections"
+echo "========================================================================"
+EOF
+
+cat > import_sql.sh <<"EOF"
+#!/bin/bash
+
+if [[ $# -ne 2 ]]; then
+        echo "Usage: $0 <password> </path/to/sql_file.sql>"
+        exit 1
+fi
+
+echo "=> Starting MySQL Server"
+/usr/bin/mysqld_safe > /dev/null 2>&1 &
+sleep 5
+echo "   Started with PID $!"
+
+echo "=> Importing SQL file"
+mysql -uroot -p"$1" < "$2"
+
+echo "=> Stopping MySQL Server"
+mysqladmin -uroot -p"$1" shutdown
+
+echo "=> Done!"
+EOF
+
+    echo; pause "About to build mysql image"
+    SHOW_DOCKER build -t $_USER/mysql .
+    
+    echo; pause "About to run container (as daemon) from mysql image"
+    #SHOW_DOCKER run -d --name mysql $_USER/mysql
+    SHOW_DOCKER run -d --name mysql $_USER/mysql
+
+    # Pickup id of our mysql container:
+    MYSQL_ID=$(docker ps -q -l)
+
+    echo; pause "About to run linked container to show DB env"
+    SHOW_DOCKER run --link mysql:db ubuntu env
+
+    echo; pause "Getting password from container logs [daemon stdout]";
+    MDP=`docker logs ${MYSQL_ID} 2>/dev/null | perl -ne 'if (/mysql -uadmin -p(\S+)/) { print $1; }'`
+    echo "admin password is $MDP"
+
+    echo; pause "Getting host/port info from container environment"
+    HOST_PORT=$(docker run --link mysql:db ubuntu bash -c 'echo ${DB_PORT#tcp://}')
+    HOST=${HOST_PORT%:*}
+    PORT=${HOST_PORT#*:}
+    echo "HOST=$HOST PORT=$PORT"
+    echo; pause "echo 'show databases;' | mysql -uadmin -p$MDP -h$HOST -P$PORT"
+    echo
+    echo "show databases;" | mysql -uadmin -p$MDP -h$HOST -P$PORT
+}
+
+DEMO8() {
+    BANNER "Demo creation of a Python WSGI image, then run as a container"
+
+    _TMP=/tmp/py_wsgi.docker
+    [ ! -d $_TMP ] && mkdir -p $_TMP
+
+    _USER=mjbright
+
+    cd $_TMP
+
+    cat > requirements.txt << "EOF"
+flask
+cherrypy
+EOF
+
+    cat > app.py << "EOF"
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+
+def hello():
+    return "Hello World!"
+
+if (__name__) == "__main__":
+    app.run()
+EOF
+
+    cat > server.py << "EOF"
+# Import your application as:
+# from app import application
+# Example:
+
+from app import app
+
+# Import CherryPy
+import cherrypy
+
+if __name__ == '__main__':
+
+    # Mount the application
+    cherrypy.tree.graft(app, "/")
+
+    # Unsubscribe the default server
+    cherrypy.server.unsubscribe()
+
+    # Instantiate a new server object
+    server = cherrypy._cpserver.Server()
+
+    # Configure the server object
+    server.socket_host = "0.0.0.0"
+    server.socket_port = 80
+    server.thread_pool = 30
+
+    # For SSL Support
+    # server.ssl_module            = 'pyopenssl'
+    # server.ssl_certificate       = 'ssl/certificate.crt'
+    # server.ssl_private_key       = 'ssl/private.key'
+    # server.ssl_certificate_chain = 'ssl/bundle.crt'
+
+    # Subscribe this server
+    server.subscribe()
+
+    # Start the server engine (Option 1 *and* 2)
+
+    cherrypy.engine.start()
+    cherrypy.engine.block()
+EOF
+
+    cat > Dockerfile << "EOF"
+FROM ubuntu:saucy
+MAINTAINER Michael Bright <dockerfun@mjbright.net>
+
+RUN echo "deb http://archive.ubuntu.com/ubuntu/ raring main universe" >> /etc/apt/sources.list
+RUN apt-get update
+
+# Install packages
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install tar git curl vim wget dialog net-tools build-essential
+
+# Add Python stuff
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python python-dev python-distribute python-pip
+
+RUN pip install flask
+RUN pip install cherrypy
+
+RUN mkdir -p /py_wsgi
+RUN cd /py_wsgi
+
+ADD app.py /py_wsgi/app.py
+ADD server.py /py_wsgi/server.py
+ADD requirements.txt /py_wsgi/requirements.txt
+RUN chmod 755 /py_wsgi/*.py
+
+RUN pip install -r /py_wsgi/requirements.txt
+
+EXPOSE 80
+
+WORKDIR  /py_wsgi
+
+CMD python server.py
+
+EOF
+
+    echo; pause "About to build py_wsgi image"
+    SHOW_DOCKER build -t $_USER/py_wsgi .
+    
+
 }
 
 MOUNT_DIR() {
@@ -530,7 +835,8 @@ DOCKERFILE_EXAMPLE() {
     # http://stackoverflow.com/questions/19585028/docker-i-lose-my-data-when-the-container-exits
     cat >/tmp/ex.docker <<EOF
 FROM ubuntu
-RUN apt-get install ping
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install ping
+#RUN apt-get install ping
 ENTRYPOINT ["ping"]
 EOF
     SHOW_DOCKER build -t my/ping - < /tmp/ex.docker
@@ -555,7 +861,8 @@ while [ ! -z "$1" ];do
         -push|-git) gitPush; exit 0;;
         -vi) viSlides; exit 0;;
 
-        -RM) RMALL; exit 0;;
+        -RM) RM; exit 0;;
+        -RMA) RMALL; exit 0;;
         -RMI) echo "Removing '<none>' images";
               docker rmi $(docker images | grep none |awk '{print $3;}');
               exit 0;;
