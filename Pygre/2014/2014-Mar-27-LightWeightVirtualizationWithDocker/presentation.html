@@ -32,6 +32,10 @@
     <link rel="stylesheet" media="screen, projection" href="theme/css/screen.css">
     
     
+      
+      <link rel="stylesheet" href="custom.css">
+      
+    
     <!-- /Styles -->
     <!-- Javascripts -->
     
@@ -74,7 +78,7 @@
             </aside>
             
             <aside class="page_number">
-              1/44
+              1/45
             </aside>
           </footer>
         </div>
@@ -102,7 +106,7 @@
             </aside>
             
             <aside class="page_number">
-              2/44
+              2/45
             </aside>
           </footer>
         </div>
@@ -151,7 +155,7 @@
             </aside>
             
             <aside class="page_number">
-              3/44
+              3/45
             </aside>
           </footer>
         </div>
@@ -179,7 +183,7 @@
             </aside>
             
             <aside class="page_number">
-              4/44
+              4/45
             </aside>
           </footer>
         </div>
@@ -213,7 +217,7 @@ filesystem differences to be stored.</p>
             </aside>
             
             <aside class="page_number">
-              5/44
+              5/45
             </aside>
           </footer>
         </div>
@@ -246,7 +250,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              6/44
+              6/45
             </aside>
           </footer>
         </div>
@@ -276,7 +280,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              7/44
+              7/45
             </aside>
           </footer>
         </div>
@@ -324,7 +328,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              8/44
+              8/45
             </aside>
           </footer>
         </div>
@@ -338,7 +342,8 @@ Let''s compare with a VM:</p>
             <header><h1>Union Filesystem (Currently 'aufs')</h1></header>
             
             
-            <section><p><img src="images/UnionFS.PNG" alt="Drawing" style="width: 850px;"/></p></section>
+            <section><p><img src="images/docker-filesystems-multilayer.png" alt="Drawing" style="width: 850px;"/></p>
+<p><img src="images/UnionFS.PNG" alt="Drawing" style="width: 850px;"/></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -354,7 +359,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              9/44
+              9/45
             </aside>
           </footer>
         </div>
@@ -384,7 +389,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              10/44
+              10/45
             </aside>
           </footer>
         </div>
@@ -412,7 +417,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              11/44
+              11/45
             </aside>
           </footer>
         </div>
@@ -443,7 +448,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              12/44
+              12/45
             </aside>
           </footer>
         </div>
@@ -460,7 +465,7 @@ Let''s compare with a VM:</p>
             <section><p>In the same way that virtual machines can be used to provide isolation and
 allow cloud functionality to spin up machines, container systems such as Docker
 can do this with much lighter processes as we do not emulate the host OS.</p>
-<p><strong>NOTE:</strong> Docker won''t be production ready until its v1.0 release (April 2014?)
+<p><strong>NOTE:</strong> Docker won''t be production ready until its v1.0 release (May? 2014)
 ... but it is in production already ...</p>
 <h2>Commercial PaaS: Platform as a Service</h2>
 <p>Docker is already being integrated into several PaaS:</p>
@@ -484,7 +489,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              13/44
+              13/45
             </aside>
           </footer>
         </div>
@@ -532,7 +537,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              14/44
+              14/45
             </aside>
           </footer>
         </div>
@@ -582,7 +587,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              15/44
+              15/45
             </aside>
           </footer>
         </div>
@@ -622,7 +627,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              16/44
+              16/45
             </aside>
           </footer>
         </div>
@@ -643,6 +648,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
 <li>v0.7: Support for more linux distributions</li>
 <li>v0.8: Emphasis on quality, initial OSX support(boot2docker)</li>
 <li>v0.9: Execution Drivers/Libcontainer =&gt; allow container mechanisms (LXC, OpenVZ, qemu-kvm) on different OSes</li>
+<li>v0.9.1: bug fixes</li>
 <li>v0.10: First Release Candidate (Apr 2014)</li>
 <li>v1.0: <strong>Production ready!!</strong></li>
 </ul>
@@ -662,7 +668,37 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              17/44
+              17/45
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Docker History - Version 0.9</h1></header>
+            
+            
+            <section><p><img src="images/docker-execdriver-diagram.png" alt="Drawing" style="width: 550px;"/></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/45
             </aside>
           </footer>
         </div>
@@ -710,7 +746,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              18/44
+              19/45
             </aside>
           </footer>
         </div>
@@ -738,7 +774,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              19/44
+              20/45
             </aside>
           </footer>
         </div>
@@ -780,7 +816,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              20/44
+              21/45
             </aside>
           </footer>
         </div>
@@ -812,7 +848,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              21/44
+              22/45
             </aside>
           </footer>
         </div>
@@ -826,20 +862,20 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Docker commands [1] - images</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="lineno"> 1</span>    <span class="nv">$ </span>docker images <span class="c"># List local images</span>
-<span class="lineno"> 2</span>    REPOSITORY     TAG             IMAGE ID        CREATED         VIRTUAL SIZE
-<span class="lineno"> 3</span>    my/ping        latest          f492632bbd55    11 hours ago    139.7 MB
-<span class="lineno"> 4</span>    wpress         latest          93a82573c321    20 hours ago    680 MB
-<span class="lineno"> 5</span>    ubuntu         12.04           8dbd9e392a96    11 months ago   128 MB
-<span class="lineno"> 6</span>    base           ubuntu-12.10    b750fe79269d    12 months ago   175.3 MB
-<span class="lineno"> 7</span> 
-<span class="lineno"> 8</span>    <span class="nv">$ </span>docker <span class="nb">history </span>my/ping
-<span class="lineno"> 9</span>    IMAGE          CREATED         CREATED BY                          SIZE
-<span class="lineno">10</span>    f492632bbd55   2 days ago      /bin/sh -c <span class="c">#(nop) ENTRYPOINT [ping] 0 B</span>
-<span class="lineno">11</span>    92993f57601d   2 days ago      /bin/sh -c apt-get install ping     11.66 MB
-<span class="lineno">12</span>    8dbd9e392a96   11 months ago                                       128 MB
-<span class="lineno">13</span> 
-<span class="lineno">14</span>    <span class="nv">$ </span>docker rmi my/junk <span class="c"># Removing an image (or ID?)</span>
+            <section><div class="highlight"><pre>   <span class="nv">$ </span>docker images <span class="c"># List local images</span>
+   REPOSITORY     TAG             IMAGE ID        CREATED         VIRTUAL SIZE
+   my/ping        latest          f492632bbd55    11 hours ago    139.7 MB
+   wpress         latest          93a82573c321    20 hours ago    680 MB
+   ubuntu         12.04           8dbd9e392a96    11 months ago   128 MB
+   base           ubuntu-12.10    b750fe79269d    12 months ago   175.3 MB
+
+   <span class="nv">$ </span>docker <span class="nb">history </span>my/ping
+   IMAGE          CREATED         CREATED BY                          SIZE
+   f492632bbd55   2 days ago      /bin/sh -c <span class="c">#(nop) ENTRYPOINT [ping] 0 B</span>
+   92993f57601d   2 days ago      /bin/sh -c apt-get install ping     11.66 MB
+   8dbd9e392a96   11 months ago                                       128 MB
+
+   <span class="nv">$ </span>docker rmi my/junk <span class="c"># Removing an image (or ID?)</span>
 </pre></div>
 </section>
             
@@ -857,7 +893,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              22/44
+              23/45
             </aside>
           </footer>
         </div>
@@ -897,7 +933,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              23/44
+              24/45
             </aside>
           </footer>
         </div>
@@ -934,7 +970,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              24/44
+              25/45
             </aside>
           </footer>
         </div>
@@ -986,7 +1022,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              25/44
+              26/45
             </aside>
           </footer>
         </div>
@@ -1000,12 +1036,12 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Docker commands [5] - start/stop/rm</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="lineno">1</span>     <span class="nv">$ </span>docker ps -q               <span class="c"># List ids of running containers</span>
-<span class="lineno">2</span>     <span class="nv">$ </span>docker ps -q -a            <span class="c"># List ids of all containers (running or exited)</span>
-<span class="lineno">3</span>     <span class="nv">$ </span>docker ps -q -a --no-trunc <span class="c"># List long-ids of all containers</span>
-<span class="lineno">4</span> 
-<span class="lineno">5</span>     <span class="nv">$ </span>docker stop <span class="k">$(</span>docker ps -q<span class="k">)</span>   <span class="c"># Stop all runnning containers</span>
-<span class="lineno">6</span>     <span class="nv">$ </span>docker rm <span class="k">$(</span>docker ps -a -q<span class="k">)</span>  <span class="c"># Remove all stopped containers</span>
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>docker ps -q               <span class="c"># List ids of running containers</span>
+    <span class="nv">$ </span>docker ps -q -a            <span class="c"># List ids of all containers (running or exited)</span>
+    <span class="nv">$ </span>docker ps -q -a --no-trunc <span class="c"># List long-ids of all containers</span>
+
+    <span class="nv">$ </span>docker stop <span class="k">$(</span>docker ps -q<span class="k">)</span>   <span class="c"># Stop all runnning containers</span>
+    <span class="nv">$ </span>docker rm <span class="k">$(</span>docker ps -a -q<span class="k">)</span>  <span class="c"># Remove all stopped containers</span>
 </pre></div>
 </section>
             
@@ -1023,7 +1059,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              26/44
+              27/45
             </aside>
           </footer>
         </div>
@@ -1037,19 +1073,19 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Docker commands [6] - registry</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="lineno"> 1</span>    <span class="nv">$ </span>docker search rails        <span class="c"># Search for rails images at &lt;https://index.docker.io/&gt;</span>
-<span class="lineno"> 2</span>    studiomelipone/ruby-1.9.3-p545  Ruby on Rails setup used at Studio Melipon... 0  <span class="o">[</span>OK<span class="o">]</span>
-<span class="lineno"> 3</span>    bitmonk/rails                                                                 0
-<span class="lineno"> 4</span>    gewo/rails                                                                    0
-<span class="lineno"> 5</span>    ....
-<span class="lineno"> 6</span> 
-<span class="lineno"> 7</span>    <span class="nv">$ </span>docker pull gewo/rails     <span class="c"># Download image</span>
-<span class="lineno"> 8</span>    Pulling repository gewo/rails
-<span class="lineno"> 9</span>    4189f1c00b8b: Download <span class="nb">complete</span>
-<span class="lineno">10</span> <span class="nb">   </span>f83280564354: Download <span class="nb">complete</span>
-<span class="lineno">11</span>    ....
-<span class="lineno">12</span> 
-<span class="lineno">13</span>    <span class="nv">$ </span>docker run gewo/rails
+            <section><div class="highlight"><pre>   <span class="nv">$ </span>docker search rails        <span class="c"># Search for rails images at &lt;https://index.docker.io/&gt;</span>
+   studiomelipone/ruby-1.9.3-p545  Ruby on Rails setup used at Studio Melipon... 0  <span class="o">[</span>OK<span class="o">]</span>
+   bitmonk/rails                                                                 0
+   gewo/rails                                                                    0
+   ....
+
+   <span class="nv">$ </span>docker pull gewo/rails     <span class="c"># Download image</span>
+   Pulling repository gewo/rails
+   4189f1c00b8b: Download <span class="nb">complete</span>
+<span class="nb">   </span>f83280564354: Download <span class="nb">complete</span>
+   ....
+
+   <span class="nv">$ </span>docker run gewo/rails
 </pre></div>
 </section>
             
@@ -1067,7 +1103,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              27/44
+              28/45
             </aside>
           </footer>
         </div>
@@ -1082,21 +1118,21 @@ as some other Linuxes.  Runs very stable.</p>
             
             
             <section><h1>TODO: Tagging</h1>
-<div class="highlight"><pre><span class="lineno">1</span>    <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
-<span class="lineno">2</span>    Login Succeeded
+<div class="highlight"><pre>   <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
+   Login Succeeded
 </pre></div>
 
 <p>See images on <a href="http://index.docker.io">http://index.docker.io</a></p>
-<div class="highlight"><pre><span class="lineno"> 1</span>    <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
-<span class="lineno"> 2</span>    <span class="nv">$ </span>docker run --name PING -d my/ping www.google.com
-<span class="lineno"> 3</span>    a650a6eba6a3d3df767e8dc9ce6d4883e4de0f335da1bf4363234820526a2168
-<span class="lineno"> 4</span> 
-<span class="lineno"> 5</span>    <span class="nv">$ </span>docker attach PING
-<span class="lineno"> 6</span>    64 bytes from par03s13-in-f17.1e100.net <span class="o">(</span>173.194.45.81<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>7 <span class="nv">ttl</span><span class="o">=</span>52 <span class="nb">time</span><span class="o">=</span>25.2 ms
-<span class="lineno"> 7</span> 
-<span class="lineno"> 8</span>    --- www.google.com ping statistics ---
-<span class="lineno"> 9</span>    8 packets transmitted, 7 received, 12% packet loss, <span class="nb">time </span>7010ms
-<span class="lineno">10</span>    rtt min/avg/max/mdev <span class="o">=</span> 25.278/25.880/26.651/0.499 ms
+<div class="highlight"><pre>   <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
+   <span class="nv">$ </span>docker run --name PING -d my/ping www.google.com
+   a650a6eba6a3d3df767e8dc9ce6d4883e4de0f335da1bf4363234820526a2168
+
+   <span class="nv">$ </span>docker attach PING
+   64 bytes from par03s13-in-f17.1e100.net <span class="o">(</span>173.194.45.81<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>7 <span class="nv">ttl</span><span class="o">=</span>52 <span class="nb">time</span><span class="o">=</span>25.2 ms
+
+   --- www.google.com ping statistics ---
+   8 packets transmitted, 7 received, 12% packet loss, <span class="nb">time </span>7010ms
+   rtt min/avg/max/mdev <span class="o">=</span> 25.278/25.880/26.651/0.499 ms
 </pre></div>
 </section>
             
@@ -1114,7 +1150,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              28/44
+              29/45
             </aside>
           </footer>
         </div>
@@ -1128,25 +1164,25 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Docker commands [8] - push image</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="lineno"> 1</span>    <span class="nv">$ </span>docker commit PING mjbright/ping
-<span class="lineno"> 2</span>    27424daf2ab9b6cb218b9f1fcd3d19c6b89beaa0aadb3c017a7ab3ab98a10d07
-<span class="lineno"> 3</span> 
-<span class="lineno"> 4</span>    <span class="nv">$ </span>docker push mjbright/ping
-<span class="lineno"> 5</span>    The push refers to a repository <span class="o">[</span>mjbright/ping<span class="o">]</span> <span class="o">(</span>len: 1<span class="o">)</span>
-<span class="lineno"> 6</span>    Sending image list
-<span class="lineno"> 7</span>    Pushing repository mjbright/ping <span class="o">(</span>1 tags<span class="o">)</span>
-<span class="lineno"> 8</span>    8dbd9e392a96: Image already pushed, skipping
-<span class="lineno"> 9</span>    92993f57601d: Image successfully pushed
-<span class="lineno">10</span>    f492632bbd55: Image successfully pushed
-<span class="lineno">11</span>    27424daf2ab9: Image successfully pushed
-<span class="lineno">12</span>    Pushing tag <span class="k">for </span>rev <span class="o">[</span>27424daf2ab9<span class="o">]</span> on <span class="o">{</span>https://registry-1.docker.io/v1/repositories/mjbright/ping/tags/latest<span class="o">}</span>
-<span class="lineno">13</span> 
-<span class="lineno">14</span>    <span class="nv">$ </span>docker <span class="nb">history </span>mjbright/ping
-<span class="lineno">15</span>    IMAGE               CREATED              CREATED BY                            SIZE
-<span class="lineno">16</span>    27424daf2ab9        About a minute ago   www.google.com                        69 B
-<span class="lineno">17</span>    f492632bbd55        2 days ago           /bin/sh -c <span class="c">#(nop) ENTRYPOINT [ping]   0 B</span>
-<span class="lineno">18</span>    92993f57601d        2 days ago           /bin/sh -c apt-get install ping       11.66 MB
-<span class="lineno">19</span>    8dbd9e392a96        11 months ago                                              128 MB
+            <section><div class="highlight"><pre>   <span class="nv">$ </span>docker commit PING mjbright/ping
+   27424daf2ab9b6cb218b9f1fcd3d19c6b89beaa0aadb3c017a7ab3ab98a10d07
+
+   <span class="nv">$ </span>docker push mjbright/ping
+   The push refers to a repository <span class="o">[</span>mjbright/ping<span class="o">]</span> <span class="o">(</span>len: 1<span class="o">)</span>
+   Sending image list
+   Pushing repository mjbright/ping <span class="o">(</span>1 tags<span class="o">)</span>
+   8dbd9e392a96: Image already pushed, skipping
+   92993f57601d: Image successfully pushed
+   f492632bbd55: Image successfully pushed
+   27424daf2ab9: Image successfully pushed
+   Pushing tag <span class="k">for </span>rev <span class="o">[</span>27424daf2ab9<span class="o">]</span> on <span class="o">{</span>https://registry-1.docker.io/v1/repositories/mjbright/ping/tags/latest<span class="o">}</span>
+
+   <span class="nv">$ </span>docker <span class="nb">history </span>mjbright/ping
+   IMAGE               CREATED              CREATED BY                            SIZE
+   27424daf2ab9        About a minute ago   www.google.com                        69 B
+   f492632bbd55        2 days ago           /bin/sh -c <span class="c">#(nop) ENTRYPOINT [ping]   0 B</span>
+   92993f57601d        2 days ago           /bin/sh -c apt-get install ping       11.66 MB
+   8dbd9e392a96        11 months ago                                              128 MB
 </pre></div>
 </section>
             
@@ -1164,7 +1200,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              29/44
+              30/45
             </aside>
           </footer>
         </div>
@@ -1194,7 +1230,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              30/44
+              31/45
             </aside>
           </footer>
         </div>
@@ -1251,7 +1287,7 @@ b74728ce6435: Pulling metadata
             </aside>
             
             <aside class="page_number">
-              31/44
+              32/45
             </aside>
           </footer>
         </div>
@@ -1266,25 +1302,25 @@ b74728ce6435: Pulling metadata
             
             
             <section><p>Contents of minimal dockerfile:</p>
-<div class="highlight"><pre><span class="lineno">1</span>     FROM ubuntu
-<span class="lineno">2</span>     RUN apt-get install ping
-<span class="lineno">3</span>     ENTRYPOINT <span class="o">[</span><span class="s2">&quot;ping&quot;</span><span class="o">]</span>
+<div class="highlight"><pre>    FROM ubuntu
+    RUN apt-get install ping
+    ENTRYPOINT <span class="o">[</span><span class="s2">&quot;ping&quot;</span><span class="o">]</span>
 </pre></div>
 
 <p>Building and tagging a new image:</p>
-<div class="highlight"><pre><span class="lineno"> 1</span>     <span class="nv">$ </span>docker build -t my/ping - &lt; Dockerfile
-<span class="lineno"> 2</span>     <span class="nv">$ </span>docker images
-<span class="lineno"> 3</span>     REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-<span class="lineno"> 4</span>     my/ping             latest              f492632bbd55        12 hours ago        139.7 MB
-<span class="lineno"> 5</span>     base                latest              b750fe79269d        12 months ago       175.3 MB
-<span class="lineno"> 6</span> 
-<span class="lineno"> 7</span>     <span class="c"># NOTE: Images are cached - by ID (if we rerun build it will use existing image)</span>
-<span class="lineno"> 8</span> 
-<span class="lineno"> 9</span>     <span class="nv">$ </span>docker run my/ping www.google.com
-<span class="lineno">10</span>     docker run my/ping www.google.com
-<span class="lineno">11</span>     PING www.google.com <span class="o">(</span>173.194.67.99<span class="o">)</span> 56<span class="o">(</span>84<span class="o">)</span> bytes of data.
-<span class="lineno">12</span>     64 bytes from wi-in-f99.1e100.net <span class="o">(</span>173.194.67.99<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>1 <span class="nv">ttl</span><span class="o">=</span>44 <span class="nb">time</span><span class="o">=</span>53.3 ms
-<span class="lineno">13</span>     64 bytes from wi-in-f99.1e100.net <span class="o">(</span>173.194.67.99<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>2 <span class="nv">ttl</span><span class="o">=</span>44 <span class="nb">time</span><span class="o">=</span>54.2 ms
+<div class="highlight"><pre>    <span class="nv">$ </span>docker build -t my/ping - &lt; Dockerfile
+    <span class="nv">$ </span>docker images
+    REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+    my/ping             latest              f492632bbd55        12 hours ago        139.7 MB
+    base                latest              b750fe79269d        12 months ago       175.3 MB
+
+    <span class="c"># NOTE: Images are cached - by ID (if we rerun build it will use existing image)</span>
+
+    <span class="nv">$ </span>docker run my/ping www.google.com
+    docker run my/ping www.google.com
+    PING www.google.com <span class="o">(</span>173.194.67.99<span class="o">)</span> 56<span class="o">(</span>84<span class="o">)</span> bytes of data.
+    64 bytes from wi-in-f99.1e100.net <span class="o">(</span>173.194.67.99<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>1 <span class="nv">ttl</span><span class="o">=</span>44 <span class="nb">time</span><span class="o">=</span>53.3 ms
+    64 bytes from wi-in-f99.1e100.net <span class="o">(</span>173.194.67.99<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>2 <span class="nv">ttl</span><span class="o">=</span>44 <span class="nb">time</span><span class="o">=</span>54.2 ms
 </pre></div>
 </section>
             
@@ -1302,7 +1338,7 @@ b74728ce6435: Pulling metadata
             </aside>
             
             <aside class="page_number">
-              32/44
+              33/45
             </aside>
           </footer>
         </div>
@@ -1317,7 +1353,7 @@ b74728ce6435: Pulling metadata
             
             
             <section><h1>docker tag [OPTIONS] IMAGE [REGISTRYHOST/][USERNAME/]NAME[:TAG]</h1>
-<div class="highlight"><pre><span class="lineno">1</span>     <span class="nv">$ </span>docker build -t my/ping - &lt; Dockerfile
+<div class="highlight"><pre>    <span class="nv">$ </span>docker build -t my/ping - &lt; Dockerfile
 </pre></div>
 </section>
             
@@ -1335,7 +1371,7 @@ b74728ce6435: Pulling metadata
             </aside>
             
             <aside class="page_number">
-              33/44
+              34/45
             </aside>
           </footer>
         </div>
@@ -1374,7 +1410,7 @@ scripts etc.</p></section>
             </aside>
             
             <aside class="page_number">
-              34/44
+              35/45
             </aside>
           </footer>
         </div>
@@ -1426,7 +1462,7 @@ scripts etc.</p></section>
             </aside>
             
             <aside class="page_number">
-              35/44
+              36/45
             </aside>
           </footer>
         </div>
@@ -1461,7 +1497,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              36/44
+              37/45
             </aside>
           </footer>
         </div>
@@ -1489,7 +1525,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              37/44
+              38/45
             </aside>
           </footer>
         </div>
@@ -1522,7 +1558,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              38/44
+              39/45
             </aside>
           </footer>
         </div>
@@ -1553,7 +1589,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              39/44
+              40/45
             </aside>
           </footer>
         </div>
@@ -1581,7 +1617,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              40/44
+              41/45
             </aside>
           </footer>
         </div>
@@ -1609,7 +1645,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              41/44
+              42/45
             </aside>
           </footer>
         </div>
@@ -1643,7 +1679,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              42/44
+              43/45
             </aside>
           </footer>
         </div>
@@ -1671,7 +1707,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              43/44
+              44/45
             </aside>
           </footer>
         </div>
@@ -1720,7 +1756,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              44/44
+              45/45
             </aside>
           </footer>
         </div>
@@ -1837,164 +1873,170 @@ between components allows to remap so that a component can be online upgraded.</
       
       
       <tr id="toc-row-18">
-        <th><a href="#slide18">Docker History - Version 1.0</a></th>
+        <th><a href="#slide18">Docker History - Version 0.9</a></th>
         <td><a href="#slide18">18</a></td>
       </tr>
       
       
       <tr id="toc-row-19">
-        <th><a href="#slide19">Installing and Using Docker</a></th>
+        <th><a href="#slide19">Docker History - Version 1.0</a></th>
         <td><a href="#slide19">19</a></td>
       </tr>
       
       
       <tr id="toc-row-20">
-        <th><a href="#slide20">Installing Docker</a></th>
+        <th><a href="#slide20">Installing and Using Docker</a></th>
         <td><a href="#slide20">20</a></td>
       </tr>
       
       
       <tr id="toc-row-21">
-        <th><a href="#slide21">Using Docker</a></th>
+        <th><a href="#slide21">Installing Docker</a></th>
         <td><a href="#slide21">21</a></td>
       </tr>
       
       
       <tr id="toc-row-22">
-        <th><a href="#slide22">Docker commands [1] - images</a></th>
+        <th><a href="#slide22">Using Docker</a></th>
         <td><a href="#slide22">22</a></td>
       </tr>
       
       
       <tr id="toc-row-23">
-        <th><a href="#slide23">Docker commands [2] - containers</a></th>
+        <th><a href="#slide23">Docker commands [1] - images</a></th>
         <td><a href="#slide23">23</a></td>
       </tr>
       
       
       <tr id="toc-row-24">
-        <th><a href="#slide24">Docker commands [3] - containers</a></th>
+        <th><a href="#slide24">Docker commands [2] - containers</a></th>
         <td><a href="#slide24">24</a></td>
       </tr>
       
       
       <tr id="toc-row-25">
-        <th><a href="#slide25">Docker commands [4] - processes</a></th>
+        <th><a href="#slide25">Docker commands [3] - containers</a></th>
         <td><a href="#slide25">25</a></td>
       </tr>
       
       
       <tr id="toc-row-26">
-        <th><a href="#slide26">Docker commands [5] - start/stop/rm</a></th>
+        <th><a href="#slide26">Docker commands [4] - processes</a></th>
         <td><a href="#slide26">26</a></td>
       </tr>
       
       
       <tr id="toc-row-27">
-        <th><a href="#slide27">Docker commands [6] - registry</a></th>
+        <th><a href="#slide27">Docker commands [5] - start/stop/rm</a></th>
         <td><a href="#slide27">27</a></td>
       </tr>
       
       
       <tr id="toc-row-28">
-        <th><a href="#slide28">Docker commands [7] - registry</a></th>
+        <th><a href="#slide28">Docker commands [6] - registry</a></th>
         <td><a href="#slide28">28</a></td>
       </tr>
       
       
       <tr id="toc-row-29">
-        <th><a href="#slide29">Docker commands [8] - push image</a></th>
+        <th><a href="#slide29">Docker commands [7] - registry</a></th>
         <td><a href="#slide29">29</a></td>
       </tr>
       
       
       <tr id="toc-row-30">
-        <th><a href="#slide30">Docker commands [9] - registry</a></th>
+        <th><a href="#slide30">Docker commands [8] - push image</a></th>
         <td><a href="#slide30">30</a></td>
       </tr>
       
       
       <tr id="toc-row-31">
-        <th><a href="#slide31">Private image registry</a></th>
+        <th><a href="#slide31">Docker commands [9] - registry</a></th>
         <td><a href="#slide31">31</a></td>
       </tr>
       
       
       <tr id="toc-row-32">
-        <th><a href="#slide32">Building Images - from a Docker file</a></th>
+        <th><a href="#slide32">Private image registry</a></th>
         <td><a href="#slide32">32</a></td>
       </tr>
       
       
       <tr id="toc-row-33">
-        <th><a href="#slide33">Image tagging:</a></th>
+        <th><a href="#slide33">Building Images - from a Docker file</a></th>
         <td><a href="#slide33">33</a></td>
       </tr>
       
       
       <tr id="toc-row-34">
-        <th><a href="#slide34">REST API</a></th>
+        <th><a href="#slide34">Image tagging:</a></th>
         <td><a href="#slide34">34</a></td>
       </tr>
       
       
       <tr id="toc-row-35">
-        <th><a href="#slide35">REST API [2]</a></th>
+        <th><a href="#slide35">REST API</a></th>
         <td><a href="#slide35">35</a></td>
       </tr>
       
       
       <tr id="toc-row-36">
-        <th><a href="#slide36">Connecting containers</a></th>
+        <th><a href="#slide36">REST API [2]</a></th>
         <td><a href="#slide36">36</a></td>
       </tr>
       
       
       <tr id="toc-row-37">
-        <th><a href="#slide37">OpenStack and Docker</a></th>
+        <th><a href="#slide37">Connecting containers</a></th>
         <td><a href="#slide37">37</a></td>
       </tr>
       
       
       <tr id="toc-row-38">
-        <th><a href="#slide38">In Havana Release (deprecated)</a></th>
+        <th><a href="#slide38">OpenStack and Docker</a></th>
         <td><a href="#slide38">38</a></td>
       </tr>
       
       
       <tr id="toc-row-39">
-        <th><a href="#slide39">In IceHouse Release (Work In Progress)</a></th>
+        <th><a href="#slide39">In Havana Release (deprecated)</a></th>
         <td><a href="#slide39">39</a></td>
       </tr>
       
       
       <tr id="toc-row-40">
-        <th><a href="#slide40">... and finally</a></th>
+        <th><a href="#slide40">In IceHouse Release (Work In Progress)</a></th>
         <td><a href="#slide40">40</a></td>
       </tr>
       
       
       <tr id="toc-row-41">
-        <th><a href="#slide41">Demo</a></th>
+        <th><a href="#slide41">... and finally</a></th>
         <td><a href="#slide41">41</a></td>
       </tr>
       
       
       <tr id="toc-row-42">
-        <th><a href="#slide42">Links</a></th>
+        <th><a href="#slide42">Demo</a></th>
         <td><a href="#slide42">42</a></td>
       </tr>
       
       
       <tr id="toc-row-43">
-        <th><a href="#slide43">Questions?</a></th>
+        <th><a href="#slide43">Links</a></th>
         <td><a href="#slide43">43</a></td>
       </tr>
       
       
       <tr id="toc-row-44">
-        <th><a href="#slide44">Invocation: Options</a></th>
+        <th><a href="#slide44">Questions?</a></th>
         <td><a href="#slide44">44</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-45">
+        <th><a href="#slide45">Invocation: Options</a></th>
+        <td><a href="#slide45">45</a></td>
       </tr>
       
       

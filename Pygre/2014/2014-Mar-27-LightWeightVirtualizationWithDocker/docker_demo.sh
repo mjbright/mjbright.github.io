@@ -55,7 +55,8 @@ GIT_PRES_DIR="$HOME/z/www/mjbright.github.io/Pygre/2014/2014-Mar-27-LightWeightV
 viSlides() {
     cd $GIT_PRES_DIR
     vi Slides.md
-    landslide -r -c Slides.md
+    #landslide -r -c Slides.md
+    landslide -r ./slides.cfg
     ls -altr
 }
 
@@ -663,9 +664,37 @@ EOF
 
     echo; pause "About to build py_wsgi image"
     SHOW_DOCKER build -t $_USER/py_wsgi .
-    
 
+    echo; pause "About to run py_wsgi image"
+    SHOW_DOCKER run -p 80:80 -i -t $_USER/py_wsgi
 }
+
+DEMO9() {
+    BANNER "Demo creation of a Python twistd image, then run as a container"
+
+    _TMP=/tmp/py_twistd.docker
+    [ ! -d $_TMP ] && mkdir -p $_TMP
+
+    _USER=mjbright
+
+    cd $_TMP
+
+    cat > Dockerfile << "EOF"
+FROM base
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install telnet python python-twisted-web
+
+CMD twistd web --path=./ --port=9000
+
+EXPOSE 9000
+
+EOF
+
+    SHOW_DOCKER build -t mjbright/twistd .
+
+    SHOW_DOCKER run -p 9000:9000 -i -t mjbright/twistd
+}
+
 
 MOUNT_DIR() {
     DIR=/var/myapp/log
@@ -859,7 +888,8 @@ while [ ! -z "$1" ];do
         -repo) startRepo; exit 0;;
 
         -push|-git) gitPush; exit 0;;
-        -vi) viSlides; exit 0;;
+        -vi) vi $0; exit 0;;
+        -vis*) viSlides; exit 0;;
 
         -RM) RM; exit 0;;
         -RMA) RMALL; exit 0;;

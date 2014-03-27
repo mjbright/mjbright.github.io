@@ -98,6 +98,8 @@ What does Docker bring that Container's don't?
 Union Filesystem (Currently 'aufs')
 =====================================
 
+<img src="images/docker-filesystems-multilayer.png" alt="Drawing" style="width: 850px;"/>
+
 <img src="images/UnionFS.PNG" alt="Drawing" style="width: 850px;"/>
 [comment]: <> ( ![UnionFS](images/UnionFS.PNG) )
 
@@ -132,7 +134,7 @@ In the same way that virtual machines can be used to provide isolation and
 allow cloud functionality to spin up machines, container systems such as Docker
 can do this with much lighter processes as we do not emulate the host OS.
 
-**NOTE:** Docker won''t be production ready until its v1.0 release (April 2014?)
+**NOTE:** Docker won''t be production ready until its v1.0 release (May? 2014)
 ... but it is in production already ...
 
 Commercial PaaS: Platform as a Service
@@ -206,11 +208,19 @@ Only 1 year old, announced on 20 Mar 2013.
 - v0.7: Support for more linux distributions
 - v0.8: Emphasis on quality, initial OSX support(boot2docker)
 - v0.9: Execution Drivers/Libcontainer => allow container mechanisms (LXC, OpenVZ, qemu-kvm) on different OSes
+- v0.9.1: bug fixes
 - v0.10: First Release Candidate (Apr 2014)
 - v1.0: **Production ready!!**
 
 See the releases in the blog <http://blog.docker.io/category/docker-releases/>
 
+
+---
+
+Docker History - Version 0.9
+=================
+
+<img src="images/docker-execdriver-diagram.png" alt="Drawing" style="width: 550px;"/>
 
 ---
 
