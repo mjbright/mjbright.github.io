@@ -312,7 +312,7 @@ Installing Docker - boot2docker
 
 Will we get native Docker on all platforms, or Docker via Headless Hypervisors?
 
-<img src="images/Docker-in-headless-hypervisor-127x300.jpg" alt="Drawing" style="width: 550px;"/>
+<img src="images/Docker-in-headless-hypervisor-127x300.jpg" alt="Drawing" style="width: 250px;"/>
 
 ---
 
