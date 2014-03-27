@@ -1072,7 +1072,8 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Docker commands [6] - registry</h1></header>
             
             
-            <section><div class="highlight"><pre>   <span class="nv">$ </span>docker search rails        <span class="c"># Search for rails images at &lt;https://index.docker.io/&gt;</span>
+            <section><p>Search for images on <a href="http://index.docker.io">http://index.docker.io</a></p>
+<div class="highlight"><pre>   <span class="nv">$ </span>docker search rails        <span class="c"># Search for rails images at &lt;https://index.docker.io/&gt;</span>
    studiomelipone/ruby-1.9.3-p545  Ruby on Rails setup used at Studio Melipon... 0  <span class="o">[</span>OK<span class="o">]</span>
    bitmonk/rails                                                                 0
    gewo/rails                                                                    0
@@ -1116,13 +1117,12 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Docker commands [7] - registry</h1></header>
             
             
-            <section><h1>TODO: Tagging</h1>
-<div class="highlight"><pre>   <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
+            <section><div class="highlight"><pre>   <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
    Login Succeeded
-</pre></div>
 
-<p>See images on <a href="http://index.docker.io">http://index.docker.io</a></p>
-<div class="highlight"><pre>   <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
+!bash
+
+   <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
    <span class="nv">$ </span>docker run --name PING -d my/ping www.google.com
    a650a6eba6a3d3df767e8dc9ce6d4883e4de0f335da1bf4363234820526a2168
 
@@ -1207,13 +1207,25 @@ as some other Linuxes.  Runs very stable.</p>
       
       <!-- slide source: Slides.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Docker commands [9] - registry</h1></header>
             
             
-            <section><p>See images on <a href="http://index.docker.io">http://index.docker.io</a></p></section>
+            <section><p>Search for images on <a href="http://index.docker.io">http://index.docker.io</a></p>
+<div class="highlight"><pre><span class="nv">$ </span>docker search rails
+...
+bitmonk/rails                0                    
+zumbrunnen/rails  Rails cont 0                    <span class="o">[</span>OK<span class="o">]</span>
+
+
+<span class="nv">$ </span>docker search mjbright/
+NAME            DESCRIPTION   STARS     OFFICIAL   TRUSTED
+mjbright/test                 0                    
+mjbright/ping                 0
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -1302,7 +1314,10 @@ b74728ce6435: Pulling metadata
             
             <section><p>Contents of minimal dockerfile:</p>
 <div class="highlight"><pre>    FROM ubuntu
+    MAINTAINER Mike BRIGHT
+
     RUN apt-get install ping
+
     ENTRYPOINT <span class="o">[</span><span class="s2">&quot;ping&quot;</span><span class="o">]</span>
 </pre></div>
 

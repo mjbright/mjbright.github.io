@@ -378,6 +378,8 @@ Docker commands [5] - start/stop/rm
 Docker commands [6] - registry
 ======================================
 
+Search for images on <http://index.docker.io>
+
     !bash
 
        $ docker search rails        # Search for rails images at <https://index.docker.io/>
@@ -400,14 +402,10 @@ Docker commands [6] - registry
 Docker commands [7] - registry
 ======================================
 
-#TODO: Tagging
-
     !bash
 
        $ docker login -u user -e email@gmail.com -p password
        Login Succeeded
-
-See images on <http://index.docker.io>
 
     !bash
 
@@ -454,7 +452,20 @@ Docker commands [8] - push image
 Docker commands [9] - registry
 ======================================
 
-See images on <http://index.docker.io>
+Search for images on <http://index.docker.io>
+
+    !bash
+
+    $ docker search rails
+    ...
+    bitmonk/rails                0                    
+    zumbrunnen/rails  Rails cont 0                    [OK]
+
+
+    $ docker search mjbright/
+    NAME            DESCRIPTION   STARS     OFFICIAL   TRUSTED
+    mjbright/test                 0                    
+    mjbright/ping                 0   
 
 ---
 
@@ -499,7 +510,10 @@ Contents of minimal dockerfile:
     !bash
 
         FROM ubuntu
+        MAINTAINER Mike BRIGHT
+
         RUN apt-get install ping
+
         ENTRYPOINT ["ping"]
 
 Building and tagging a new image:
