@@ -689,13 +689,13 @@ DEMO10() {
     docker inspect $CNT | jq -r '.[0].NetworkSettings.IPAddress'
     set +x
 
-    echo; pause "Look at all images related to mjbright/$CNT"
+    echo; pause "Look at all images hierarchy"
     set -x
-    docker images -v mjbright/$CNT | dot -Tpng -o docker.png
+    docker images -v | dot -Tpng -o docker.png
     set +x
 
-    echo "Now look at http://localhost:8080"
-    python -m SimpleHTTPServer 8080
+    #echo "Now look at http://localhost:8080"
+    #python -m SimpleHTTPServer 8080
 
 }
 
