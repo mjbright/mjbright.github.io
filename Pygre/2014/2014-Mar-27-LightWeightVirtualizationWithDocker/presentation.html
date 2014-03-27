@@ -1041,6 +1041,9 @@ as some other Linuxes.  Runs very stable.</p>
 
     <span class="nv">$ </span>docker stop <span class="k">$(</span>docker ps -q<span class="k">)</span>   <span class="c"># Stop all runnning containers</span>
     <span class="nv">$ </span>docker rm <span class="k">$(</span>docker ps -a -q<span class="k">)</span>  <span class="c"># Remove all stopped containers</span>
+
+    <span class="c"># Stop tries stop gracefully, then kill - but some problems with kill</span>
+    <span class="nv">$ </span>docker <span class="nb">kill</span> <span class="k">$(</span>docker ps -q<span class="k">)</span>   <span class="c"># Kill all runnning containers</span>
 </pre></div>
 </section>
             
@@ -1127,7 +1130,6 @@ as some other Linuxes.  Runs very stable.</p>
 
 !bash
 
-   <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
    <span class="nv">$ </span>docker run --name PING -d my/ping www.google.com
    a650a6eba6a3d3df767e8dc9ce6d4883e4de0f335da1bf4363234820526a2168
 
@@ -1182,11 +1184,11 @@ as some other Linuxes.  Runs very stable.</p>
    Pushing tag <span class="k">for </span>rev <span class="o">[</span>27424daf2ab9<span class="o">]</span> on <span class="o">{</span>https://registry-1.docker.io/v1/repositories/mjbright/ping/tags/latest<span class="o">}</span>
 
    <span class="nv">$ </span>docker <span class="nb">history </span>mjbright/ping
-   IMAGE               CREATED              CREATED BY                            SIZE
-   27424daf2ab9        About a minute ago   www.google.com                        69 B
-   f492632bbd55        2 days ago           /bin/sh -c <span class="c">#(nop) ENTRYPOINT [ping]   0 B</span>
-   92993f57601d        2 days ago           /bin/sh -c apt-get install ping       11.66 MB
-   8dbd9e392a96        11 months ago                                              128 MB
+   IMAGE          CREATED              CREATED BY               SIZE
+   27424daf2ab9   About a minute ago   www.google.com           69 B
+   f492632bbd55   2 days ago           /bin/sh -c <span class="c">#(nop) EN      0 B</span>
+   92993f57601d   2 days ago           /bin/sh -c apt-get in 11.66 MB
+   8dbd9e392a96   11 months ago                                128 MB
 </pre></div>
 </section>
             

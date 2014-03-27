@@ -373,6 +373,9 @@ Docker commands [5] - start/stop/rm
         $ docker stop $(docker ps -q)   # Stop all runnning containers
         $ docker rm $(docker ps -a -q)  # Remove all stopped containers
 
+        # Stop tries stop gracefully, then kill - but some problems with kill
+        $ docker kill $(docker ps -q)   # Kill all runnning containers
+
 ---
 
 Docker commands [6] - registry
@@ -414,7 +417,6 @@ Docker commands [7] - registry
 
     !bash
 
-       $ docker login -u user -e email@gmail.com -p password
        $ docker run --name PING -d my/ping www.google.com
        a650a6eba6a3d3df767e8dc9ce6d4883e4de0f335da1bf4363234820526a2168
 
@@ -446,11 +448,11 @@ Docker commands [8] - push image
        Pushing tag for rev [27424daf2ab9] on {https://registry-1.docker.io/v1/repositories/mjbright/ping/tags/latest}
 
        $ docker history mjbright/ping
-       IMAGE               CREATED              CREATED BY                            SIZE
-       27424daf2ab9        About a minute ago   www.google.com                        69 B
-       f492632bbd55        2 days ago           /bin/sh -c #(nop) ENTRYPOINT [ping]   0 B
-       92993f57601d        2 days ago           /bin/sh -c apt-get install ping       11.66 MB
-       8dbd9e392a96        11 months ago                                              128 MB
+       IMAGE          CREATED              CREATED BY               SIZE
+       27424daf2ab9   About a minute ago   www.google.com           69 B
+       f492632bbd55   2 days ago           /bin/sh -c #(nop) EN      0 B
+       92993f57601d   2 days ago           /bin/sh -c apt-get in 11.66 MB
+       8dbd9e392a96   11 months ago                                128 MB
 
 ---
 
