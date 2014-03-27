@@ -479,7 +479,7 @@ Github code here: <https://github.com/dotcloud/docker-registry>
         511136ea3c5a: Download complete
         b74728ce6435: Pulling metadata
 
-+ private repo
+---
 
 Building Images
 ===============
