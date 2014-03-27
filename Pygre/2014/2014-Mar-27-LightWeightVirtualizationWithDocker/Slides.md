@@ -532,6 +532,19 @@ Building and tagging a new image:
 
 ---
 
+Building Images - from a git repository
+===============
+
+    !bash
+
+        $ docker build github.com/mjbright/Docker/py_wsgi
+        2014/03/27 16:30:17 Error: )
+
+**????**
+           
+
+---
+
 Image tagging:
 ===============
 
