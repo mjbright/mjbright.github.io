@@ -1073,11 +1073,12 @@ as some other Linuxes.  Runs very stable.</p>
             
             
             <section><p>Search for images on <a href="http://index.docker.io">http://index.docker.io</a></p>
-<div class="highlight"><pre>   <span class="nv">$ </span>docker search rails        <span class="c"># Search for rails images at &lt;https://index.docker.io/&gt;</span>
-   studiomelipone/ruby-1.9.3-p545  Ruby on Rails setup used at Studio Melipon... 0  <span class="o">[</span>OK<span class="o">]</span>
-   bitmonk/rails                                                                 0
-   gewo/rails                                                                    0
-   ....
+<div class="highlight"><pre>   <span class="nv">$ </span>docker search -s 1 -t rails
+   NAME                      DESCRIPTION        STARS     OFFICIAL   TRUSTED
+   lgsd/docker-rails                              2                    <span class="o">[</span>OK<span class="o">]</span>
+   studiomelipone/ruby-2.1.1 Ruby on Rails setup  2                    <span class="o">[</span>OK<span class="o">]</span>
+   networld/docker-base      Networld PaaS        1                    <span class="o">[</span>OK<span class="o">]</span>
+
 
    <span class="nv">$ </span>docker pull gewo/rails     <span class="c"># Download image</span>
    Pulling repository gewo/rails

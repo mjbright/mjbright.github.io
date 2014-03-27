@@ -382,11 +382,12 @@ Search for images on <http://index.docker.io>
 
     !bash
 
-       $ docker search rails        # Search for rails images at <https://index.docker.io/>
-       studiomelipone/ruby-1.9.3-p545  Ruby on Rails setup used at Studio Melipon... 0  [OK]
-       bitmonk/rails                                                                 0
-       gewo/rails                                                                    0
-       ....
+       $ docker search -s 1 -t rails
+       NAME                      DESCRIPTION        STARS     OFFICIAL   TRUSTED
+       lgsd/docker-rails                              2                    [OK]
+       studiomelipone/ruby-2.1.1 Ruby on Rails setup  2                    [OK]
+       networld/docker-base      Networld PaaS        1                    [OK]
+
 
        $ docker pull gewo/rails     # Download image
        Pulling repository gewo/rails
