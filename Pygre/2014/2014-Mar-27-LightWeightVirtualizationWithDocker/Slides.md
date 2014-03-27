@@ -148,6 +148,43 @@ Docker is already being integrated into several PaaS:
 
 ---
 
+What is Docker used for? - 2
+========================
+
+Use Case             Examples	 Link
+
++ Build your own PaaS	 Dokku - Docker powered mini-Heroku.
+
+                         <http://bit.ly/191Tgsx>
+
++ Web Based Environment for Instruction	 JiffyLab - web based environment for the instruction, or lightweight use of, Python and UNIX shell
+                          <http://bit.ly/12oaj2K>
+
++ Easy Application Deployment	 Deploy Java Apps With Docker = Awesome	
+                          <http://bit.ly/11BCvvu>
+
++ Running Drupal on Docker	
+                          <http://bit.ly/15MJS6B>
+
++ Installing Redis on Docker	
+                          <http://bit.ly/16EWOKh>
+
++ Create Secure Sandboxes	 Docker makes creating secure sandboxes easier than ever	
+                          <http://bit.ly/13mZGJH>
+
++ Create your own SaaS	 Memcached as a Service	
+                          <http://bit.ly/11nL8vh>
+
++ Automated Application Deployment	 Push-button Deployment with Docker	
+                          <http://bit.ly/1bTKZTo>
+
++ Continuous Integration and Deployment	 Next Generation Continuous Integration & Deployment with dotClouds Docker and Strider	
+                          <http://bit.ly/ZwTfoy>
+
++ Lightweight Desktop Virtualization	 Docker Desktop: Your Desktop Over SSH Running Inside Of A Docker Container
+
+---
+
 OpenSource Projects - 1
 ----------------------
 
