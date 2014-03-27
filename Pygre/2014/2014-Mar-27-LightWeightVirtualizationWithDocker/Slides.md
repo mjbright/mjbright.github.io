@@ -382,20 +382,24 @@ Search for images on <http://index.docker.io>
 
     !bash
 
+       $ docker search mjbright/
+       NAME            DESCRIPTION   STARS     OFFICIAL   TRUSTED
+       mjbright/test                 0                    
+       mjbright/ping                 0   
+
        $ docker search -s 1 -t rails
        NAME                      DESCRIPTION        STARS     OFFICIAL   TRUSTED
        lgsd/docker-rails                              2                    [OK]
        studiomelipone/ruby-2.1.1 Ruby on Rails setup  2                    [OK]
        networld/docker-base      Networld PaaS        1                    [OK]
 
-
-       $ docker pull gewo/rails     # Download image
-       Pulling repository gewo/rails
-       4189f1c00b8b: Download complete
-       f83280564354: Download complete
-       ....
+       $ docker pull lgsd/docker-rails
+       Pulling repository lgsd/docker-rails
+       87f7e336bdaa: Download complete
+       ...
+       39031133f250: Download complete
        
-       $ docker run gewo/rails
+       $ docker run lgsd/rails
       
 
 ---
@@ -450,26 +454,6 @@ Docker commands [8] - push image
 
 ---
 
-Docker commands [9] - registry
-======================================
-
-Search for images on <http://index.docker.io>
-
-    !bash
-
-    $ docker search rails
-    ...
-    bitmonk/rails                0                    
-    zumbrunnen/rails  Rails cont 0                    [OK]
-
-
-    $ docker search mjbright/
-    NAME            DESCRIPTION   STARS     OFFICIAL   TRUSTED
-    mjbright/test                 0                    
-    mjbright/ping                 0   
-
----
-
 Private image registry
 ========================
 
@@ -478,8 +462,7 @@ Creating/using a Docker private registry
 
 Github code here: <https://github.com/dotcloud/docker-registry>
 
-+ repo push/pull/tagging
-    + Pull image in layers ...
+**Or** just pull an image!
 
     !bash
 
