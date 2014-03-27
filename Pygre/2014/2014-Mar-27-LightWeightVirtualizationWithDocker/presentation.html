@@ -28,18 +28,15 @@
     <title>Lightweight Virtualization with Docker</title>
     <!-- Styles -->
     
-    <link rel="stylesheet" media="print" href="./mike/css/print.css">
-    <link rel="stylesheet" media="screen, projection" href="./mike/css/screen.css">
+    <link rel="stylesheet" media="print" href="theme/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="theme/css/screen.css">
     
-    
-      
-      <link rel="stylesheet" href="custom.css">
-      
     
     <!-- /Styles -->
     <!-- Javascripts -->
     
-    <script type="text/javascript" src="./mike/js/slides.js"></script>
+    <script type="text/javascript" src="theme/js/slides.js"></script>
+    
     
     
     <!-- /Javascripts -->
@@ -829,20 +826,20 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Docker commands [1] - images</h1></header>
             
             
-            <section><div class="highlight"><pre>   <span class="nv">$ </span>docker images <span class="c"># List local images</span>
-   REPOSITORY     TAG             IMAGE ID        CREATED         VIRTUAL SIZE
-   my/ping        latest          f492632bbd55    11 hours ago    139.7 MB
-   wpress         latest          93a82573c321    20 hours ago    680 MB
-   ubuntu         12.04           8dbd9e392a96    11 months ago   128 MB
-   base           ubuntu-12.10    b750fe79269d    12 months ago   175.3 MB
-
-   <span class="nv">$ </span>docker <span class="nb">history </span>my/ping
-   IMAGE          CREATED         CREATED BY                          SIZE
-   f492632bbd55   2 days ago      /bin/sh -c <span class="c">#(nop) ENTRYPOINT [ping] 0 B</span>
-   92993f57601d   2 days ago      /bin/sh -c apt-get install ping     11.66 MB
-   8dbd9e392a96   11 months ago                                       128 MB
-
-   <span class="nv">$ </span>docker rmi my/junk <span class="c"># Removing an image (or ID?)</span>
+            <section><div class="highlight"><pre><span class="lineno"> 1</span>    <span class="nv">$ </span>docker images <span class="c"># List local images</span>
+<span class="lineno"> 2</span>    REPOSITORY     TAG             IMAGE ID        CREATED         VIRTUAL SIZE
+<span class="lineno"> 3</span>    my/ping        latest          f492632bbd55    11 hours ago    139.7 MB
+<span class="lineno"> 4</span>    wpress         latest          93a82573c321    20 hours ago    680 MB
+<span class="lineno"> 5</span>    ubuntu         12.04           8dbd9e392a96    11 months ago   128 MB
+<span class="lineno"> 6</span>    base           ubuntu-12.10    b750fe79269d    12 months ago   175.3 MB
+<span class="lineno"> 7</span> 
+<span class="lineno"> 8</span>    <span class="nv">$ </span>docker <span class="nb">history </span>my/ping
+<span class="lineno"> 9</span>    IMAGE          CREATED         CREATED BY                          SIZE
+<span class="lineno">10</span>    f492632bbd55   2 days ago      /bin/sh -c <span class="c">#(nop) ENTRYPOINT [ping] 0 B</span>
+<span class="lineno">11</span>    92993f57601d   2 days ago      /bin/sh -c apt-get install ping     11.66 MB
+<span class="lineno">12</span>    8dbd9e392a96   11 months ago                                       128 MB
+<span class="lineno">13</span> 
+<span class="lineno">14</span>    <span class="nv">$ </span>docker rmi my/junk <span class="c"># Removing an image (or ID?)</span>
 </pre></div>
 </section>
             
@@ -1003,12 +1000,12 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Docker commands [5] - start/stop/rm</h1></header>
             
             
-            <section><div class="highlight"><pre>    <span class="nv">$ </span>docker ps -q               <span class="c"># List ids of running containers</span>
-    <span class="nv">$ </span>docker ps -q -a            <span class="c"># List ids of all containers (running or exited)</span>
-    <span class="nv">$ </span>docker ps -q -a --no-trunc <span class="c"># List long-ids of all containers</span>
-
-    <span class="nv">$ </span>docker stop <span class="k">$(</span>docker ps -q<span class="k">)</span>   <span class="c"># Stop all runnning containers</span>
-    <span class="nv">$ </span>docker rm <span class="k">$(</span>docker ps -a -q<span class="k">)</span>  <span class="c"># Remove all stopped containers</span>
+            <section><div class="highlight"><pre><span class="lineno">1</span>     <span class="nv">$ </span>docker ps -q               <span class="c"># List ids of running containers</span>
+<span class="lineno">2</span>     <span class="nv">$ </span>docker ps -q -a            <span class="c"># List ids of all containers (running or exited)</span>
+<span class="lineno">3</span>     <span class="nv">$ </span>docker ps -q -a --no-trunc <span class="c"># List long-ids of all containers</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span>     <span class="nv">$ </span>docker stop <span class="k">$(</span>docker ps -q<span class="k">)</span>   <span class="c"># Stop all runnning containers</span>
+<span class="lineno">6</span>     <span class="nv">$ </span>docker rm <span class="k">$(</span>docker ps -a -q<span class="k">)</span>  <span class="c"># Remove all stopped containers</span>
 </pre></div>
 </section>
             
@@ -1040,19 +1037,19 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Docker commands [6] - registry</h1></header>
             
             
-            <section><div class="highlight"><pre>   <span class="nv">$ </span>docker search rails        <span class="c"># Search for rails images at &lt;https://index.docker.io/&gt;</span>
-   studiomelipone/ruby-1.9.3-p545  Ruby on Rails setup used at Studio Melipon... 0  <span class="o">[</span>OK<span class="o">]</span>
-   bitmonk/rails                                                                 0
-   gewo/rails                                                                    0
-   ....
-
-   <span class="nv">$ </span>docker pull gewo/rails     <span class="c"># Download image</span>
-   Pulling repository gewo/rails
-   4189f1c00b8b: Download <span class="nb">complete</span>
-<span class="nb">   </span>f83280564354: Download <span class="nb">complete</span>
-   ....
-
-   <span class="nv">$ </span>docker run gewo/rails
+            <section><div class="highlight"><pre><span class="lineno"> 1</span>    <span class="nv">$ </span>docker search rails        <span class="c"># Search for rails images at &lt;https://index.docker.io/&gt;</span>
+<span class="lineno"> 2</span>    studiomelipone/ruby-1.9.3-p545  Ruby on Rails setup used at Studio Melipon... 0  <span class="o">[</span>OK<span class="o">]</span>
+<span class="lineno"> 3</span>    bitmonk/rails                                                                 0
+<span class="lineno"> 4</span>    gewo/rails                                                                    0
+<span class="lineno"> 5</span>    ....
+<span class="lineno"> 6</span> 
+<span class="lineno"> 7</span>    <span class="nv">$ </span>docker pull gewo/rails     <span class="c"># Download image</span>
+<span class="lineno"> 8</span>    Pulling repository gewo/rails
+<span class="lineno"> 9</span>    4189f1c00b8b: Download <span class="nb">complete</span>
+<span class="lineno">10</span> <span class="nb">   </span>f83280564354: Download <span class="nb">complete</span>
+<span class="lineno">11</span>    ....
+<span class="lineno">12</span> 
+<span class="lineno">13</span>    <span class="nv">$ </span>docker run gewo/rails
 </pre></div>
 </section>
             
@@ -1085,21 +1082,21 @@ as some other Linuxes.  Runs very stable.</p>
             
             
             <section><h1>TODO: Tagging</h1>
-<div class="highlight"><pre>   <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
-   Login Succeeded
+<div class="highlight"><pre><span class="lineno">1</span>    <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
+<span class="lineno">2</span>    Login Succeeded
 </pre></div>
 
 <p>See images on <a href="http://index.docker.io">http://index.docker.io</a></p>
-<div class="highlight"><pre>   <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
-   <span class="nv">$ </span>docker run --name PING -d my/ping www.google.com
-   a650a6eba6a3d3df767e8dc9ce6d4883e4de0f335da1bf4363234820526a2168
-
-   <span class="nv">$ </span>docker attach PING
-   64 bytes from par03s13-in-f17.1e100.net <span class="o">(</span>173.194.45.81<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>7 <span class="nv">ttl</span><span class="o">=</span>52 <span class="nb">time</span><span class="o">=</span>25.2 ms
-
-   --- www.google.com ping statistics ---
-   8 packets transmitted, 7 received, 12% packet loss, <span class="nb">time </span>7010ms
-   rtt min/avg/max/mdev <span class="o">=</span> 25.278/25.880/26.651/0.499 ms
+<div class="highlight"><pre><span class="lineno"> 1</span>    <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
+<span class="lineno"> 2</span>    <span class="nv">$ </span>docker run --name PING -d my/ping www.google.com
+<span class="lineno"> 3</span>    a650a6eba6a3d3df767e8dc9ce6d4883e4de0f335da1bf4363234820526a2168
+<span class="lineno"> 4</span> 
+<span class="lineno"> 5</span>    <span class="nv">$ </span>docker attach PING
+<span class="lineno"> 6</span>    64 bytes from par03s13-in-f17.1e100.net <span class="o">(</span>173.194.45.81<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>7 <span class="nv">ttl</span><span class="o">=</span>52 <span class="nb">time</span><span class="o">=</span>25.2 ms
+<span class="lineno"> 7</span> 
+<span class="lineno"> 8</span>    --- www.google.com ping statistics ---
+<span class="lineno"> 9</span>    8 packets transmitted, 7 received, 12% packet loss, <span class="nb">time </span>7010ms
+<span class="lineno">10</span>    rtt min/avg/max/mdev <span class="o">=</span> 25.278/25.880/26.651/0.499 ms
 </pre></div>
 </section>
             
@@ -1131,25 +1128,25 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Docker commands [8] - push image</h1></header>
             
             
-            <section><div class="highlight"><pre>   <span class="nv">$ </span>docker commit PING mjbright/ping
-   27424daf2ab9b6cb218b9f1fcd3d19c6b89beaa0aadb3c017a7ab3ab98a10d07
-
-   <span class="nv">$ </span>docker push mjbright/ping
-   The push refers to a repository <span class="o">[</span>mjbright/ping<span class="o">]</span> <span class="o">(</span>len: 1<span class="o">)</span>
-   Sending image list
-   Pushing repository mjbright/ping <span class="o">(</span>1 tags<span class="o">)</span>
-   8dbd9e392a96: Image already pushed, skipping
-   92993f57601d: Image successfully pushed
-   f492632bbd55: Image successfully pushed
-   27424daf2ab9: Image successfully pushed
-   Pushing tag <span class="k">for </span>rev <span class="o">[</span>27424daf2ab9<span class="o">]</span> on <span class="o">{</span>https://registry-1.docker.io/v1/repositories/mjbright/ping/tags/latest<span class="o">}</span>
-
-   <span class="nv">$ </span>docker <span class="nb">history </span>mjbright/ping
-   IMAGE               CREATED              CREATED BY                            SIZE
-   27424daf2ab9        About a minute ago   www.google.com                        69 B
-   f492632bbd55        2 days ago           /bin/sh -c <span class="c">#(nop) ENTRYPOINT [ping]   0 B</span>
-   92993f57601d        2 days ago           /bin/sh -c apt-get install ping       11.66 MB
-   8dbd9e392a96        11 months ago                                              128 MB
+            <section><div class="highlight"><pre><span class="lineno"> 1</span>    <span class="nv">$ </span>docker commit PING mjbright/ping
+<span class="lineno"> 2</span>    27424daf2ab9b6cb218b9f1fcd3d19c6b89beaa0aadb3c017a7ab3ab98a10d07
+<span class="lineno"> 3</span> 
+<span class="lineno"> 4</span>    <span class="nv">$ </span>docker push mjbright/ping
+<span class="lineno"> 5</span>    The push refers to a repository <span class="o">[</span>mjbright/ping<span class="o">]</span> <span class="o">(</span>len: 1<span class="o">)</span>
+<span class="lineno"> 6</span>    Sending image list
+<span class="lineno"> 7</span>    Pushing repository mjbright/ping <span class="o">(</span>1 tags<span class="o">)</span>
+<span class="lineno"> 8</span>    8dbd9e392a96: Image already pushed, skipping
+<span class="lineno"> 9</span>    92993f57601d: Image successfully pushed
+<span class="lineno">10</span>    f492632bbd55: Image successfully pushed
+<span class="lineno">11</span>    27424daf2ab9: Image successfully pushed
+<span class="lineno">12</span>    Pushing tag <span class="k">for </span>rev <span class="o">[</span>27424daf2ab9<span class="o">]</span> on <span class="o">{</span>https://registry-1.docker.io/v1/repositories/mjbright/ping/tags/latest<span class="o">}</span>
+<span class="lineno">13</span> 
+<span class="lineno">14</span>    <span class="nv">$ </span>docker <span class="nb">history </span>mjbright/ping
+<span class="lineno">15</span>    IMAGE               CREATED              CREATED BY                            SIZE
+<span class="lineno">16</span>    27424daf2ab9        About a minute ago   www.google.com                        69 B
+<span class="lineno">17</span>    f492632bbd55        2 days ago           /bin/sh -c <span class="c">#(nop) ENTRYPOINT [ping]   0 B</span>
+<span class="lineno">18</span>    92993f57601d        2 days ago           /bin/sh -c apt-get install ping       11.66 MB
+<span class="lineno">19</span>    8dbd9e392a96        11 months ago                                              128 MB
 </pre></div>
 </section>
             
@@ -1269,25 +1266,25 @@ b74728ce6435: Pulling metadata
             
             
             <section><p>Contents of minimal dockerfile:</p>
-<div class="highlight"><pre>    FROM ubuntu
-    RUN apt-get install ping
-    ENTRYPOINT <span class="o">[</span><span class="s2">&quot;ping&quot;</span><span class="o">]</span>
+<div class="highlight"><pre><span class="lineno">1</span>     FROM ubuntu
+<span class="lineno">2</span>     RUN apt-get install ping
+<span class="lineno">3</span>     ENTRYPOINT <span class="o">[</span><span class="s2">&quot;ping&quot;</span><span class="o">]</span>
 </pre></div>
 
 <p>Building and tagging a new image:</p>
-<div class="highlight"><pre>    <span class="nv">$ </span>docker build -t my/ping - &lt; Dockerfile
-    <span class="nv">$ </span>docker images
-    REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-    my/ping             latest              f492632bbd55        12 hours ago        139.7 MB
-    base                latest              b750fe79269d        12 months ago       175.3 MB
-
-    <span class="c"># NOTE: Images are cached - by ID (if we rerun build it will use existing image)</span>
-
-    <span class="nv">$ </span>docker run my/ping www.google.com
-    docker run my/ping www.google.com
-    PING www.google.com <span class="o">(</span>173.194.67.99<span class="o">)</span> 56<span class="o">(</span>84<span class="o">)</span> bytes of data.
-    64 bytes from wi-in-f99.1e100.net <span class="o">(</span>173.194.67.99<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>1 <span class="nv">ttl</span><span class="o">=</span>44 <span class="nb">time</span><span class="o">=</span>53.3 ms
-    64 bytes from wi-in-f99.1e100.net <span class="o">(</span>173.194.67.99<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>2 <span class="nv">ttl</span><span class="o">=</span>44 <span class="nb">time</span><span class="o">=</span>54.2 ms
+<div class="highlight"><pre><span class="lineno"> 1</span>     <span class="nv">$ </span>docker build -t my/ping - &lt; Dockerfile
+<span class="lineno"> 2</span>     <span class="nv">$ </span>docker images
+<span class="lineno"> 3</span>     REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+<span class="lineno"> 4</span>     my/ping             latest              f492632bbd55        12 hours ago        139.7 MB
+<span class="lineno"> 5</span>     base                latest              b750fe79269d        12 months ago       175.3 MB
+<span class="lineno"> 6</span> 
+<span class="lineno"> 7</span>     <span class="c"># NOTE: Images are cached - by ID (if we rerun build it will use existing image)</span>
+<span class="lineno"> 8</span> 
+<span class="lineno"> 9</span>     <span class="nv">$ </span>docker run my/ping www.google.com
+<span class="lineno">10</span>     docker run my/ping www.google.com
+<span class="lineno">11</span>     PING www.google.com <span class="o">(</span>173.194.67.99<span class="o">)</span> 56<span class="o">(</span>84<span class="o">)</span> bytes of data.
+<span class="lineno">12</span>     64 bytes from wi-in-f99.1e100.net <span class="o">(</span>173.194.67.99<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>1 <span class="nv">ttl</span><span class="o">=</span>44 <span class="nb">time</span><span class="o">=</span>53.3 ms
+<span class="lineno">13</span>     64 bytes from wi-in-f99.1e100.net <span class="o">(</span>173.194.67.99<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>2 <span class="nv">ttl</span><span class="o">=</span>44 <span class="nb">time</span><span class="o">=</span>54.2 ms
 </pre></div>
 </section>
             
@@ -1320,7 +1317,7 @@ b74728ce6435: Pulling metadata
             
             
             <section><h1>docker tag [OPTIONS] IMAGE [REGISTRYHOST/][USERNAME/]NAME[:TAG]</h1>
-<div class="highlight"><pre>    <span class="nv">$ </span>docker build -t my/ping - &lt; Dockerfile
+<div class="highlight"><pre><span class="lineno">1</span>     <span class="nv">$ </span>docker build -t my/ping - &lt; Dockerfile
 </pre></div>
 </section>
             
