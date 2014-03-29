@@ -77,7 +77,7 @@
             </aside>
             
             <aside class="page_number">
-              1/48
+              1/47
             </aside>
           </footer>
         </div>
@@ -105,7 +105,7 @@
             </aside>
             
             <aside class="page_number">
-              2/48
+              2/47
             </aside>
           </footer>
         </div>
@@ -154,7 +154,7 @@
             </aside>
             
             <aside class="page_number">
-              3/48
+              3/47
             </aside>
           </footer>
         </div>
@@ -182,7 +182,7 @@
             </aside>
             
             <aside class="page_number">
-              4/48
+              4/47
             </aside>
           </footer>
         </div>
@@ -196,10 +196,9 @@
             <header><h1>What is Docker?</h1></header>
             
             
-            <section><p>Docker is a lightweight container mechanism, originally developed on
-LXC (Linux Containers) to isolate processes from each other.</p>
-<p>It is lightweight because the use of a union filesystem allows only
-filesystem differences to be stored.</p>
+            <section><p>A lightweight container mechanism, originally developed on top of LXC (Linux Containers).</p>
+<p>It allows to isolate processes from each other, but also the building and management of container images in a repository, greatly facilitating it''s utilisation.</p>
+<p>It''s lightweight because it does not use a full Guest OS like VMs, but also through the use of a union filesystem allows only differences to be stored in a series of image layers.</p>
 <p><img src="images/DockerLogo.jpg" alt="Drawing" style="width: 450px;"/></p></section>
             
           </div>
@@ -216,7 +215,7 @@ filesystem differences to be stored.</p>
             </aside>
             
             <aside class="page_number">
-              5/48
+              5/47
             </aside>
           </footer>
         </div>
@@ -249,7 +248,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              6/48
+              6/47
             </aside>
           </footer>
         </div>
@@ -279,7 +278,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              7/48
+              7/47
             </aside>
           </footer>
         </div>
@@ -327,7 +326,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              8/48
+              8/47
             </aside>
           </footer>
         </div>
@@ -358,7 +357,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              9/48
+              9/47
             </aside>
           </footer>
         </div>
@@ -372,7 +371,11 @@ Let''s compare with a VM:</p>
             <header><h1>The image registry</h1></header>
             
             
-            <section><p><img src="images/Repository.PNG" alt="Drawing" style="width: 700px;"/></p></section>
+            <section><ul>
+<li>Image layers are pushed / pulled to the registry</li>
+<li>Only new layers (representing changes) are pushed/pulled due to caching</li>
+</ul>
+<p><img src="images/Repository.PNG" alt="Drawing" style="width: 400px;"/></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -388,7 +391,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              10/48
+              10/47
             </aside>
           </footer>
         </div>
@@ -416,7 +419,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              11/48
+              11/47
             </aside>
           </footer>
         </div>
@@ -447,7 +450,7 @@ Let''s compare with a VM:</p>
             </aside>
             
             <aside class="page_number">
-              12/48
+              12/47
             </aside>
           </footer>
         </div>
@@ -464,10 +467,10 @@ Let''s compare with a VM:</p>
             <section><p>In the same way that virtual machines can be used to provide isolation and
 allow cloud functionality to spin up machines, container systems such as Docker
 can do this with much lighter processes as we do not emulate the host OS.</p>
-<p><strong>NOTE:</strong> Docker won''t be production ready until its v1.0 release (May? 2014)
+<p><strong>NOTE:</strong> Docker won''t be production ready until its v1.0 release (mid 2014)
 ... but it is in production already ...</p>
 <h2>Commercial PaaS: Platform as a Service</h2>
-<p>Docker is already being integrated into several PaaS:</p>
+<p>Docker is already being integrated into several PaaS which predated Docker:</p>
 <ul>
 <li>RedHat''s OpenShift</li>
 <li>ActiveState''s Stackato</li>
@@ -488,7 +491,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              13/48
+              13/47
             </aside>
           </footer>
         </div>
@@ -502,48 +505,17 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             <header><h1>What is Docker used for? - 2</h1></header>
             
             
-            <section><p>Use Case             Examples    Link</p>
-<ul>
-<li>
-<p>Build your own PaaS    Dokku - Docker powered mini-Heroku.</p>
-<pre><code>                 &lt;http://bit.ly/191Tgsx&gt;
-</code></pre>
-</li>
-<li>
-<p>Web Based Environment for Instruction  JiffyLab - web based environment for the instruction, or lightweight use of, Python and UNIX shell
-                          <a href="http://bit.ly/12oaj2K">http://bit.ly/12oaj2K</a></p>
-</li>
-<li>
-<p>Easy Application Deployment    Deploy Java Apps With Docker = Awesome 
-                          <a href="http://bit.ly/11BCvvu">http://bit.ly/11BCvvu</a></p>
-</li>
-<li>
-<p>Running Drupal on Docker<br />
-<a href="http://bit.ly/15MJS6B">http://bit.ly/15MJS6B</a></p>
-</li>
-<li>
-<p>Installing Redis on Docker  <br />
-<a href="http://bit.ly/16EWOKh">http://bit.ly/16EWOKh</a></p>
-</li>
-<li>
-<p>Create Secure Sandboxes    Docker makes creating secure sandboxes easier than ever  <br />
-<a href="http://bit.ly/13mZGJH">http://bit.ly/13mZGJH</a></p>
-</li>
-<li>
-<p>Create your own SaaS   Memcached as a Service 
-                          <a href="http://bit.ly/11nL8vh">http://bit.ly/11nL8vh</a></p>
-</li>
-<li>
-<p>Automated Application Deployment   Push-button Deployment with Docker 
-                          <a href="http://bit.ly/1bTKZTo">http://bit.ly/1bTKZTo</a></p>
-</li>
-<li>
-<p>Continuous Integration and Deployment  Next Generation Continuous Integration &amp; Deployment with dotClouds Docker and Strider 
-                          <a href="http://bit.ly/ZwTfoy">http://bit.ly/ZwTfoy</a></p>
-</li>
-<li>
-<p>Lightweight Desktop Virtualization     Docker Desktop: Your Desktop Over SSH Running Inside Of A Docker Container</p>
-</li>
+            <section><ul>
+<li>Build your own PaaS, e.g. <a href="http://bit.ly/191Tgsx">Dokku</a></li>
+<li>Web Based Environment for Instruction, e.g.<a href="http://bit.ly/12oaj2K">JiffyLab</a></li>
+<li>Easy Application Deployment <a href="http://bit.ly/11BCvvu">Deploy Java Apps With Docker</a></li>
+<li>Running Drupal on Docker <a href="http://bit.ly/15MJS6B">Drupal on Docker</a></li>
+<li>Installing Redis on Docker <a href="http://bit.ly/16EWOKh">Redis on Docker</a></li>
+<li>Create Secure Sandboxes <a href="http://bit.ly/13mZGJH">Docker for secure sandboxes</a></li>
+<li>Create your own SaaS    <a href="http://bit.ly/11nL8vh">Memcached as a Service</a></li>
+<li>Automated Application Deployment <a href="http://bit.ly/1bTKZTo">Push-button Deployment with Docker</a></li>
+<li>Continuous Integration and Deployment <a href="http://bit.ly/ZwTfoy">Next Generation CI/CD with Docker and Strider</a></li>
+<li>Lightweight Desktop Virtualization    Docker Desktop: Over SSH Running Inside Of a Container</li>
 </ul></section>
             
           </div>
@@ -560,7 +532,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              14/48
+              14/47
             </aside>
           </footer>
         </div>
@@ -608,7 +580,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              15/48
+              15/47
             </aside>
           </footer>
         </div>
@@ -658,7 +630,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              16/48
+              16/47
             </aside>
           </footer>
         </div>
@@ -698,7 +670,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              17/48
+              17/47
             </aside>
           </footer>
         </div>
@@ -718,9 +690,11 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
 <li>Originally in Python -&gt; now all in Go (Google''s system language)</li>
 <li>v0.7: Support for more linux distributions</li>
 <li>v0.8: Emphasis on quality, initial OSX support(boot2docker)</li>
-<li>v0.9: Execution Drivers/Libcontainer =&gt; allow container mechanisms (LXC, OpenVZ, qemu-kvm) on different OSes</li>
+<li>v0.9: Execution Drivers/Libcontainer =&gt; allow container mechanisms (LXC, OpenVZ, qemu-kvm) on different OSes<ul>
 <li>v0.9.1: bug fixes</li>
-<li>v0.10: First Release Candidate (Apr 2014)</li>
+</ul>
+</li>
+<li>v0.10: First Release Candidate (expected in Apr 2014)</li>
 <li>v1.0: <strong>Production ready!!</strong></li>
 </ul>
 <p>See the releases in the blog <a href="http://blog.docker.io/category/docker-releases/">http://blog.docker.io/category/docker-releases/</a></p></section>
@@ -739,7 +713,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              18/48
+              18/47
             </aside>
           </footer>
         </div>
@@ -753,7 +727,11 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             <header><h1>Docker History - Version 0.9</h1></header>
             
             
-            <section><p><img src="images/docker-execdriver-diagram.png" alt="Drawing" style="width: 550px;"/></p></section>
+            <section><p>Version 0.9 paves the way for multi-platform support.</p>
+<p>Provision of an execution driver allows to plugin different container mechanisms.
+In Version 0.9 a default container mechanism is provided by Docker in 'libcontainer', but LXC is also possible.
+In the future drivers will be added for other container technologies.
+<img src="images/docker-execdriver-diagram.png" alt="Drawing" style="width: 550px;"/></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -769,7 +747,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              19/48
+              19/47
             </aside>
           </footer>
         </div>
@@ -783,9 +761,11 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             <header><h1>Docker History - Version 1.0</h1></header>
             
             
-            <section><p>The goals for Docker 1.0 are:
-+ production quality</p>
+            <section><p>The goals for Docker 1.0 are:</p>
 <ul>
+<li>
+<p>production quality</p>
+</li>
 <li>
 <p>first class support of all major operating systems</p>
 </li>
@@ -817,7 +797,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              20/48
+              20/47
             </aside>
           </footer>
         </div>
@@ -845,7 +825,7 @@ can do this with much lighter processes as we do not emulate the host OS.</p>
             </aside>
             
             <aside class="page_number">
-              21/48
+              21/47
             </aside>
           </footer>
         </div>
@@ -887,7 +867,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              22/48
+              22/47
             </aside>
           </footer>
         </div>
@@ -918,7 +898,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              23/48
+              23/47
             </aside>
           </footer>
         </div>
@@ -950,7 +930,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              24/48
+              24/47
             </aside>
           </footer>
         </div>
@@ -995,7 +975,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              25/48
+              25/47
             </aside>
           </footer>
         </div>
@@ -1035,7 +1015,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              26/48
+              26/47
             </aside>
           </footer>
         </div>
@@ -1072,7 +1052,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              27/48
+              27/47
             </aside>
           </footer>
         </div>
@@ -1124,7 +1104,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              28/48
+              28/47
             </aside>
           </footer>
         </div>
@@ -1164,7 +1144,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              29/48
+              29/47
             </aside>
           </footer>
         </div>
@@ -1214,7 +1194,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              30/48
+              30/47
             </aside>
           </footer>
         </div>
@@ -1228,12 +1208,7 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Docker commands [7] - registry</h1></header>
             
             
-            <section><div class="highlight"><pre>   <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
-   Login Succeeded
-
-!bash
-
-   <span class="nv">$ </span>docker run --name PING -d my/ping www.google.com
+            <section><div class="highlight"><pre>   <span class="nv">$ </span>docker run --name PING -d my/ping www.google.com
    a650a6eba6a3d3df767e8dc9ce6d4883e4de0f335da1bf4363234820526a2168
 
    <span class="nv">$ </span>docker attach PING
@@ -1242,6 +1217,10 @@ as some other Linuxes.  Runs very stable.</p>
    --- www.google.com ping statistics ---
    8 packets transmitted, 7 received, 12% packet loss, <span class="nb">time </span>7010ms
    rtt min/avg/max/mdev <span class="o">=</span> 25.278/25.880/26.651/0.499 ms
+
+   <span class="c"># Commit this &#39;new&#39; image locally:</span>
+   <span class="nv">$ </span>docker commit PING mjbright/ping
+   27424daf2ab9b6cb218b9f1fcd3d19c6b89beaa0aadb3c017a7ab3ab98a10d07
 </pre></div>
 </section>
             
@@ -1259,7 +1238,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              31/48
+              31/47
             </aside>
           </footer>
         </div>
@@ -1273,9 +1252,11 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Docker commands [8] - push image</h1></header>
             
             
-            <section><div class="highlight"><pre>   <span class="nv">$ </span>docker commit PING mjbright/ping
-   27424daf2ab9b6cb218b9f1fcd3d19c6b89beaa0aadb3c017a7ab3ab98a10d07
+            <section><div class="highlight"><pre>   <span class="c"># Login to the public registry:</span>
+   <span class="nv">$ </span>docker login -u user -e email@gmail.com -p password
+   Login Succeeded
 
+   <span class="c"># Push the image to the public registry: only &#39;new&#39; layers are pushed</span>
    <span class="nv">$ </span>docker push mjbright/ping
    The push refers to a repository <span class="o">[</span>mjbright/ping<span class="o">]</span> <span class="o">(</span>len: 1<span class="o">)</span>
    Sending image list
@@ -1309,7 +1290,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              32/48
+              32/47
             </aside>
           </footer>
         </div>
@@ -1325,7 +1306,7 @@ as some other Linuxes.  Runs very stable.</p>
             
             <section><h2>Creating/using a Docker private registry</h2>
 <p>Github code here: <a href="https://github.com/dotcloud/docker-registry">https://github.com/dotcloud/docker-registry</a></p>
-<p><strong>Or</strong> just pull an image!</p>
+<p><strong>Or</strong> you can just pull an image and run that as a container! :</p>
 <div class="highlight"><pre>    <span class="nv">$ </span>docker run -p 5000 -v /tmp/registry:/tmp/registry registry
     Unable to find image <span class="s1">&#39;registry&#39;</span> locally
     Pulling repository registry
@@ -1355,7 +1336,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              33/48
+              33/47
             </aside>
           </footer>
         </div>
@@ -1383,7 +1364,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              34/48
+              34/47
             </aside>
           </footer>
         </div>
@@ -1437,7 +1418,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              35/48
+              35/47
             </aside>
           </footer>
         </div>
@@ -1451,11 +1432,12 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Building Images - from a git repository</h1></header>
             
             
-            <section><div class="highlight"><pre>    <span class="nv">$ </span>docker build github.com/mjbright/Docker/py_wsgi
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>docker build -t my/pywsgi github.com/mjbright/Docker/py_wsgi
     2014/03/27 16:30:17 Error: <span class="o">)</span>
 </pre></div>
 
-<p><strong>????</strong></p></section>
+<p><strong>????</strong></p>
+<p>Seems to be an error in v0.9 ... will check again in v0.9.1</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1471,7 +1453,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              36/48
+              36/47
             </aside>
           </footer>
         </div>
@@ -1485,8 +1467,8 @@ as some other Linuxes.  Runs very stable.</p>
             <header><h1>Image tagging:</h1></header>
             
             
-            <section><h1>docker tag [OPTIONS] IMAGE [REGISTRYHOST/][USERNAME/]NAME[:TAG]</h1>
-<div class="highlight"><pre>    <span class="nv">$ </span>docker build -t my/ping - &lt; Dockerfile
+            <section><p>Images can be tagged with the tag command:</p>
+<div class="highlight"><pre><span class="nv">$ </span>docker tag <span class="o">[</span>OPTIONS<span class="o">]</span> IMAGE <span class="o">[</span>REGISTRYHOST/<span class="o">][</span>USERNAME/<span class="o">]</span>NAME<span class="o">[</span>:TAG<span class="o">]</span>
 </pre></div>
 </section>
             
@@ -1504,7 +1486,7 @@ as some other Linuxes.  Runs very stable.</p>
             </aside>
             
             <aside class="page_number">
-              37/48
+              37/47
             </aside>
           </footer>
         </div>
@@ -1520,7 +1502,8 @@ as some other Linuxes.  Runs very stable.</p>
             
             <section><p>This is how Docker will be integrated into OpenStack for example.</p>
 <p>Refer to <a href="http://docs.docker.io/en/latest/reference/api/docker_remote_api_v1.8">Docker API</a></p>
-<p>It is possible to perform standard REST type of actions to</p>
+<p>Separate REST APIs are provided for both the Docker daemon and registry.</p>
+<p>It is possible to perform standard REST type of actions on the daemon to</p>
 <ul>
 <li>List resoures (images, containers, ...)</li>
 <li>Start/stop/restart images</li>
@@ -1543,7 +1526,7 @@ scripts etc.</p></section>
             </aside>
             
             <aside class="page_number">
-              38/48
+              38/47
             </aside>
           </footer>
         </div>
@@ -1557,7 +1540,7 @@ scripts etc.</p></section>
             <header><h1>REST API [2]</h1></header>
             
             
-            <section><p>Can be done locally on command-line via the special character socket device:
+            <section><p>Can also be done locally on command-line via the special character socket device:
     /var/run/docker.sock</p>
 <p>e.g.</p>
 <ul>
@@ -1595,7 +1578,7 @@ scripts etc.</p></section>
             </aside>
             
             <aside class="page_number">
-              39/48
+              39/47
             </aside>
           </footer>
         </div>
@@ -1603,18 +1586,31 @@ scripts etc.</p></section>
       
       <!-- slide source: Slides.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h1>Connecting containers</h1></header>
             
             
-            <section><p>By default no ports are exposed.
-If you run a web server it can''t be accessed from outside the container.</p>
-<p>We can specify ports to be exposed/mapped in the build Dockerfile and/or
-on the command-line.</p>
-<p>We can also use the Ambasssador design pattern to provide dynamic mapping
-between components allows to remap so that a component can be online upgraded.</p></section>
+            <section><p>By default no ports are exposed.</p>
+<p>If you run a web server it can''t be accessed from outside the container unless this is
+explicityly enabled.</p>
+<p>We can specify ports to be exposed in the build Dockerfile using, e.g.</p>
+<div class="highlight"><pre>    EXPOSE 80
+</pre></div>
+
+<p>When the container is run this port will be available on the containers own ip address,
+allocated to it by Docker, on a docker specific bridge network, docker0.</p>
+<p>But at run-time we can also specify a mapping to allow the port to be available on the localhost
+interface, e.g.
+    docker run -d -p 80:8080 my/webserver</p>
+<p>Other tools will allow to have better ways for managing groups of containers and communication
+between them, e.g.</p>
+<ul>
+<li>use of etcd in CoreOS</li>
+<li>use of Ambasssador design pattern to provide dynamic mapping between components allows to remap so that a component can be online upgraded.</li>
+<li>use of fig and others ...</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -1630,7 +1626,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              40/48
+              40/47
             </aside>
           </footer>
         </div>
@@ -1658,7 +1654,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              41/48
+              41/47
             </aside>
           </footer>
         </div>
@@ -1674,8 +1670,7 @@ between components allows to remap so that a component can be online upgraded.</
             
             <section><p>That''s 2 fast moving projects ...</p>
 <p><img src="images/OLD_Docker_Wiki_NovaDriver_500px-Docker-under-the-hood.png" alt="Drawing" style="width: 650px;"/></p>
-<p>Current OpenStack wiki page on Docker refers to this implementation.
-<a href="https://wiki.openstack.org/wiki/Docker">https://wiki.openstack.org/wiki/Docker</a></p></section>
+<p>Current (Mar 2014) <a href="https://wiki.openstack.org/wiki/Docker">OpenStack Docker wiki page</a> refers to this implementation, but it has been removed for now.</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1691,7 +1686,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              42/48
+              42/47
             </aside>
           </footer>
         </div>
@@ -1722,7 +1717,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              43/48
+              43/47
             </aside>
           </footer>
         </div>
@@ -1750,7 +1745,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              44/48
+              44/47
             </aside>
           </footer>
         </div>
@@ -1778,7 +1773,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              45/48
+              45/47
             </aside>
           </footer>
         </div>
@@ -1792,11 +1787,26 @@ between components allows to remap so that a component can be online upgraded.</
             <header><h1>Links</h1></header>
             
             
-            <section><p>This presentation <a href="http://mjbright.github.io/Pygre/2014/2014-Mar-27-LightWeightVirtualizationWithDocker/presentation.html" title="PyGre">here</a></p>
-<p>[The Docker website]<a href="http://docker.io">http://docker.io</a></p>
+            <section><ul>
+<li>
+<p><a href="http://docker.io">The Docker website</a> is full of tutorials, news, blog, mailing list, links to Docker on social networks</p>
+</li>
+<li>
 <p><a href="http://blog.docker.io" title="The Docker Blog">The Docker Blog</a></p>
+</li>
+<li>
 <p>IRC: #docker on Freenode.</p>
-<p>TOADD: <a href="https://mail.google.com/mail/u/0/?ui=2&amp;shva=1#inbox/144db663f35a11b0">19 Mar 2014 e-mail</a></p></section>
+</li>
+<li>
+<p><a href="https://coreos.com/">CoreOS</a></p>
+</li>
+<li>
+<p><a href="http://www.centurylinklabs.com/">CenturyLink Labs</a> has a lot of interesting Docker articles and newsletter</p>
+</li>
+<li>
+<p>This presentation <a href="http://mjbright.github.io/Pygre/2014/2014-Mar-27-LightWeightVirtualizationWithDocker/presentation.html" title="PyGre">here</a>, My demo script <a href="http://mjbright.github.io/Pygre/2014/2014-Mar-27-LightWeightVirtualizationWithDocker/docker_demo.sh" title="might get tidied up at some point!">here</a></p>
+</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -1812,7 +1822,7 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              46/48
+              46/47
             </aside>
           </footer>
         </div>
@@ -1840,40 +1850,17 @@ between components allows to remap so that a component can be online upgraded.</
             </aside>
             
             <aside class="page_number">
-              47/48
+              47/47
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: Slides.md -->
+      <!-- slide source:  -->
       <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Invocation: Options</h1></header>
-            
-            
-            <section><h2>-name</h2>
-<p>Usage of docker:</p>
-<p>-D, --debug=false: Enable debug mode</p>
-<p>-H, --host=[]: Multiple tcp://host:port or unix://path/to/socket to bind in daemon mode, single connection otherwise. systemd socket activation can be used with fd://[socketfd].</p>
-<p>-G, --group="docker": Group to assign the unix socket specified by -H when running in daemon mode; use '' (the empty string) to disable setting of a group</p>
-<p>--api-enable-cors=false: Enable CORS headers in the remote API</p>
-<p>-b, --bridge="": Attach containers to a pre-existing network bridge; use 'none' to disable container networking</p>
-<p>--bip="": Use this CIDR notation address for the network bridge's IP, not compatible with -b</p>
-<p>-d, --daemon=false: Enable daemon mode</p>
-<p>--dns=[]: Force docker to use specific DNS servers</p>
-<p>-g, --graph="/var/lib/docker": Path to use as the root of the docker runtime</p>
-<p>--icc=true: Enable inter-container communication</p>
-<p>--ip="0.0.0.0": Default IP address to use when binding container ports</p>
-<p>--iptables=true: Disable docker's addition of iptables rules</p>
-<p>-p, --pidfile="/var/run/docker.pid": Path to use for daemon PID file</p>
-<p>-r, --restart=true: Restart previously running containers</p>
-<p>-s, --storage-driver="": Force the docker runtime to use a specific storage driver</p>
-<p>-e, --exec-driver="native": Force the docker runtime to use a specific exec driver</p>
-<p>-v, --version=false: Print version information and quit</p>
-<p>--mtu=0: Set the containers network MTU; if no value is provided: default to the default route MTU or 1500 if no default route is available</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1884,12 +1871,8 @@ between components allows to remap so that a component can be online upgraded.</
           </div>
           <footer>
             
-            <aside class="source">
-              Source: <a href="Slides.md">Slides.md</a>
-            </aside>
-            
             <aside class="page_number">
-              48/48
+              /47
             </aside>
           </footer>
         </div>
@@ -2182,12 +2165,6 @@ between components allows to remap so that a component can be online upgraded.</
       <tr id="toc-row-47">
         <th><a href="#slide47">Questions?</a></th>
         <td><a href="#slide47">47</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-48">
-        <th><a href="#slide48">Invocation: Options</a></th>
-        <td><a href="#slide48">48</a></td>
       </tr>
       
       

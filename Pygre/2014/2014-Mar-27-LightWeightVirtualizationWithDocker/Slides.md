@@ -40,11 +40,11 @@ What is Docker?
 What is Docker?
 ========================
 
-Docker is a lightweight container mechanism, originally developed on
-LXC (Linux Containers) to isolate processes from each other.
+A lightweight container mechanism, originally developed on top of LXC (Linux Containers).
 
-It is lightweight because the use of a union filesystem allows only
-filesystem differences to be stored.
+It allows to isolate processes from each other, but also the building and management of container images in a repository, greatly facilitating it''s utilisation.
+
+It''s lightweight because it does not use a full Guest OS like VMs, but also through the use of a union filesystem allows only differences to be stored in a series of image layers.
 
 <img src="images/DockerLogo.jpg" alt="Drawing" style="width: 450px;"/>
 
@@ -108,7 +108,10 @@ Union Filesystem (Currently 'aufs')
 The image registry
 ========================
 
-<img src="images/Repository.PNG" alt="Drawing" style="width: 700px;"/>
++ Image layers are pushed / pulled to the registry
++ Only new layers (representing changes) are pushed/pulled due to caching
+
+<img src="images/Repository.PNG" alt="Drawing" style="width: 400px;"/>
 [comment]: <> ( ![repo](images/Repository.PNG) )
 
 
@@ -134,13 +137,13 @@ In the same way that virtual machines can be used to provide isolation and
 allow cloud functionality to spin up machines, container systems such as Docker
 can do this with much lighter processes as we do not emulate the host OS.
 
-**NOTE:** Docker won''t be production ready until its v1.0 release (May? 2014)
+**NOTE:** Docker won''t be production ready until its v1.0 release (mid 2014)
 ... but it is in production already ...
 
 Commercial PaaS: Platform as a Service
 ----------------------------
 
-Docker is already being integrated into several PaaS:
+Docker is already being integrated into several PaaS which predated Docker:
 
 + RedHat''s OpenShift
 - ActiveState''s Stackato
@@ -151,37 +154,16 @@ Docker is already being integrated into several PaaS:
 What is Docker used for? - 2
 ========================
 
-Use Case             Examples	 Link
-
-+ Build your own PaaS	 Dokku - Docker powered mini-Heroku.
-
-                         <http://bit.ly/191Tgsx>
-
-+ Web Based Environment for Instruction	 JiffyLab - web based environment for the instruction, or lightweight use of, Python and UNIX shell
-                          <http://bit.ly/12oaj2K>
-
-+ Easy Application Deployment	 Deploy Java Apps With Docker = Awesome	
-                          <http://bit.ly/11BCvvu>
-
-+ Running Drupal on Docker	
-                          <http://bit.ly/15MJS6B>
-
-+ Installing Redis on Docker	
-                          <http://bit.ly/16EWOKh>
-
-+ Create Secure Sandboxes	 Docker makes creating secure sandboxes easier than ever	
-                          <http://bit.ly/13mZGJH>
-
-+ Create your own SaaS	 Memcached as a Service	
-                          <http://bit.ly/11nL8vh>
-
-+ Automated Application Deployment	 Push-button Deployment with Docker	
-                          <http://bit.ly/1bTKZTo>
-
-+ Continuous Integration and Deployment	 Next Generation Continuous Integration & Deployment with dotClouds Docker and Strider	
-                          <http://bit.ly/ZwTfoy>
-
-+ Lightweight Desktop Virtualization	 Docker Desktop: Your Desktop Over SSH Running Inside Of A Docker Container
++ Build your own PaaS, e.g. [Dokku](http://bit.ly/191Tgsx)
++ Web Based Environment for Instruction, e.g.[JiffyLab](http://bit.ly/12oaj2K)
++ Easy Application Deployment [Deploy Java Apps With Docker](http://bit.ly/11BCvvu)
++ Running Drupal on Docker [Drupal on Docker](http://bit.ly/15MJS6B)
++ Installing Redis on Docker [Redis on Docker](http://bit.ly/16EWOKh)
++ Create Secure Sandboxes [Docker for secure sandboxes](http://bit.ly/13mZGJH)
++ Create your own SaaS    [Memcached as a Service](http://bit.ly/11nL8vh)
++ Automated Application Deployment [Push-button Deployment with Docker](http://bit.ly/1bTKZTo)
++ Continuous Integration and Deployment	[Next Generation CI/CD with Docker and Strider](http://bit.ly/ZwTfoy)
++ Lightweight Desktop Virtualization	Docker Desktop: Over SSH Running Inside Of a Container
 
 ---
 
@@ -245,8 +227,8 @@ Only 1 year old, announced on 20 Mar 2013.
 - v0.7: Support for more linux distributions
 - v0.8: Emphasis on quality, initial OSX support(boot2docker)
 - v0.9: Execution Drivers/Libcontainer => allow container mechanisms (LXC, OpenVZ, qemu-kvm) on different OSes
-- v0.9.1: bug fixes
-- v0.10: First Release Candidate (Apr 2014)
+    - v0.9.1: bug fixes
+- v0.10: First Release Candidate (expected in Apr 2014)
 - v1.0: **Production ready!!**
 
 See the releases in the blog <http://blog.docker.io/category/docker-releases/>
@@ -257,6 +239,11 @@ See the releases in the blog <http://blog.docker.io/category/docker-releases/>
 Docker History - Version 0.9
 =================
 
+Version 0.9 paves the way for multi-platform support.
+
+Provision of an execution driver allows to plugin different container mechanisms.
+In Version 0.9 a default container mechanism is provided by Docker in 'libcontainer', but LXC is also possible.
+In the future drivers will be added for other container technologies.
 <img src="images/docker-execdriver-diagram.png" alt="Drawing" style="width: 550px;"/>
 
 ---
@@ -265,6 +252,7 @@ Docker History - Version 1.0
 =================
 
 The goals for Docker 1.0 are:
+
 + production quality
 
 + first class support of all major operating systems
@@ -458,11 +446,6 @@ Docker commands [7] - registry
 
     !bash
 
-       $ docker login -u user -e email@gmail.com -p password
-       Login Succeeded
-
-    !bash
-
        $ docker run --name PING -d my/ping www.google.com
        a650a6eba6a3d3df767e8dc9ce6d4883e4de0f335da1bf4363234820526a2168
 
@@ -473,6 +456,10 @@ Docker commands [7] - registry
        8 packets transmitted, 7 received, 12% packet loss, time 7010ms
        rtt min/avg/max/mdev = 25.278/25.880/26.651/0.499 ms
 
+       # Commit this 'new' image locally:
+       $ docker commit PING mjbright/ping
+       27424daf2ab9b6cb218b9f1fcd3d19c6b89beaa0aadb3c017a7ab3ab98a10d07
+
 ---
 
 Docker commands [8] - push image
@@ -480,9 +467,11 @@ Docker commands [8] - push image
 
     !bash
 
-       $ docker commit PING mjbright/ping
-       27424daf2ab9b6cb218b9f1fcd3d19c6b89beaa0aadb3c017a7ab3ab98a10d07
+       # Login to the public registry:
+       $ docker login -u user -e email@gmail.com -p password
+       Login Succeeded
 
+       # Push the image to the public registry: only 'new' layers are pushed
        $ docker push mjbright/ping
        The push refers to a repository [mjbright/ping] (len: 1)
        Sending image list
@@ -510,7 +499,7 @@ Creating/using a Docker private registry
 
 Github code here: <https://github.com/dotcloud/docker-registry>
 
-**Or** just pull an image!
+**Or** you can just pull an image and run that as a container! :
 
     !bash
 
@@ -574,21 +563,24 @@ Building Images - from a git repository
 
     !bash
 
-        $ docker build github.com/mjbright/Docker/py_wsgi
+        $ docker build -t my/pywsgi github.com/mjbright/Docker/py_wsgi
         2014/03/27 16:30:17 Error: )
 
 **????**
            
+Seems to be an error in v0.9 ... will check again in v0.9.1
+
 
 ---
 
 Image tagging:
 ===============
 
-# docker tag [OPTIONS] IMAGE [REGISTRYHOST/][USERNAME/]NAME[:TAG]
+Images can be tagged with the tag command:
 
     !bash
-        $ docker build -t my/ping - < Dockerfile
+
+    $ docker tag [OPTIONS] IMAGE [REGISTRYHOST/][USERNAME/]NAME[:TAG]
 
 
 ---
@@ -601,7 +593,9 @@ This is how Docker will be integrated into OpenStack for example.
 
 Refer to [Docker API](http://docs.docker.io/en/latest/reference/api/docker_remote_api_v1.8)
 
-It is possible to perform standard REST type of actions to
+Separate REST APIs are provided for both the Docker daemon and registry.
+
+It is possible to perform standard REST type of actions on the daemon to
 
 + List resoures (images, containers, ...)
 + Start/stop/restart images
@@ -616,7 +610,7 @@ scripts etc.
 REST API [2]
 ========================
 
-Can be done locally on command-line via the special character socket device:
+Can also be done locally on command-line via the special character socket device:
     /var/run/docker.sock
 
 e.g.
@@ -637,13 +631,29 @@ Connecting containers
 ========================
 
 By default no ports are exposed.
-If you run a web server it can''t be accessed from outside the container.
 
-We can specify ports to be exposed/mapped in the build Dockerfile and/or
-on the command-line.
+If you run a web server it can''t be accessed from outside the container unless this is
+explicityly enabled.
 
-We can also use the Ambasssador design pattern to provide dynamic mapping
-between components allows to remap so that a component can be online upgraded.
+We can specify ports to be exposed in the build Dockerfile using, e.g.
+
+    !bash
+
+        EXPOSE 80
+
+When the container is run this port will be available on the containers own ip address,
+allocated to it by Docker, on a docker specific bridge network, docker0.
+
+But at run-time we can also specify a mapping to allow the port to be available on the localhost
+interface, e.g.
+    docker run -d -p 80:8080 my/webserver
+
+Other tools will allow to have better ways for managing groups of containers and communication
+between them, e.g.
+
++ use of etcd in CoreOS
++ use of Ambasssador design pattern to provide dynamic mapping between components allows to remap so that a component can be online upgraded.
++ use of fig and others ...
 
 ---
 
@@ -660,8 +670,7 @@ That''s 2 fast moving projects ...
 <img src="images/OLD_Docker_Wiki_NovaDriver_500px-Docker-under-the-hood.png" alt="Drawing" style="width: 650px;"/>
 [comment]: <> ( ![havana]( images/OLD_Docker_Wiki_NovaDriver_500px-Docker-under-the-hood.png) )
 
-Current OpenStack wiki page on Docker refers to this implementation.
-[https://wiki.openstack.org/wiki/Docker](https://wiki.openstack.org/wiki/Docker)
+Current (Mar 2014) [OpenStack Docker wiki page](https://wiki.openstack.org/wiki/Docker) refers to this implementation, but it has been removed for now.
 
 ---
 
@@ -689,15 +698,19 @@ Demo
 Links
 ========================
 
-This presentation [here](http://mjbright.github.io/Pygre/2014/2014-Mar-27-LightWeightVirtualizationWithDocker/presentation.html "PyGre")
++ [The Docker website](http://docker.io) is full of tutorials, news, blog, mailing list, links to Docker on social networks
 
-[The Docker website]<http://docker.io>
++ [The Docker Blog](http://blog.docker.io "The Docker Blog")
 
-[The Docker Blog](http://blog.docker.io "The Docker Blog")
++ IRC: #docker on Freenode.
 
-IRC: #docker on Freenode.
++ [CoreOS](https://coreos.com/)
 
-TOADD: [19 Mar 2014 e-mail](https://mail.google.com/mail/u/0/?ui=2&shva=1#inbox/144db663f35a11b0)
++ [CenturyLink Labs](http://www.centurylinklabs.com/) has a lot of interesting Docker articles and newsletter
+
++ This presentation [here](http://mjbright.github.io/Pygre/2014/2014-Mar-27-LightWeightVirtualizationWithDocker/presentation.html "PyGre"), My demo script [here](http://mjbright.github.io/Pygre/2014/2014-Mar-27-LightWeightVirtualizationWithDocker/docker_demo.sh "might get tidied up at some point!")
+
+
 
 ---
 
@@ -707,64 +720,8 @@ Questions?
 
 ---
 
-tagging, copying images to local repo
-- communicate between machines
-- ambassadors
-
-- twisted web server
-- rails
-- django
-
-ports via ssh
-
-[Deploying Multi-Server Docker Apps with Ambassadors](http://www.centurylinklabs.com/deploying-multi-server-docker-apps-with-ambassadors/)
 
 
-
-
-Invocation: Options
-======================
-
--name
--------
-
-Usage of docker:
-
-  -D, --debug=false: Enable debug mode
-
-  -H, --host=[]: Multiple tcp://host:port or unix://path/to/socket to bind in daemon mode, single connection otherwise. systemd socket activation can be used with fd://[socketfd].
-
-  -G, --group="docker": Group to assign the unix socket specified by -H when running in daemon mode; use '' (the empty string) to disable setting of a group
-
-  --api-enable-cors=false: Enable CORS headers in the remote API
-
-  -b, --bridge="": Attach containers to a pre-existing network bridge; use 'none' to disable container networking
-
-  --bip="": Use this CIDR notation address for the network bridge's IP, not compatible with -b
-
-  -d, --daemon=false: Enable daemon mode
-
-  --dns=[]: Force docker to use specific DNS servers
-
-  -g, --graph="/var/lib/docker": Path to use as the root of the docker runtime
-
-  --icc=true: Enable inter-container communication
-
-  --ip="0.0.0.0": Default IP address to use when binding container ports
-
-  --iptables=true: Disable docker's addition of iptables rules
-
-  -p, --pidfile="/var/run/docker.pid": Path to use for daemon PID file
-
-  -r, --restart=true: Restart previously running containers
-
-  -s, --storage-driver="": Force the docker runtime to use a specific storage driver
-
-  -e, --exec-driver="native": Force the docker runtime to use a specific exec driver
-
-  -v, --version=false: Print version information and quit
-
-  --mtu=0: Set the containers network MTU; if no value is provided: default to the default route MTU or 1500 if no default route is available
 
 
 

@@ -38,7 +38,7 @@ die() {
 
 pause() {
     [ ! -z "$1" ] && echo $*
-    echo "Press <return> to continue"
+    echo "Press <return> to continue [or q to quit]"
     read _DUMMY
     [ "$_DUMMY" = "q" ] && exit 0
     [ "$_DUMMY" = "Q" ] && exit 0
@@ -148,7 +148,7 @@ RMALL() {
     #DOCKER_IDS=`docker ps -a | awk '!/^CONTAINER/ { print $1; }'`
     RUNNING_DOCKER_IDS=`docker ps -q`
     DOCKER_IDS=`docker ps -q -a`
-    echo "Stopping/Removing all containers";
+    echo; echo "CLEANUP: Stopping/Removing all containers";
 
     [ ! -z "$RUNNING_DOCKER_IDS" ] && {
         DEBUG "Stopping running containers";
@@ -196,7 +196,7 @@ PAUSE_DOCKER() {
 }
 
 BANNER() {
-    echo; echo; echo; echo; echo; echo; echo; echo;
+    echo; echo; echo; echo;
     echo "================================================================"
     #for LINE in $@;do echo "== $LINE"; done
     echo "== $@"
@@ -220,12 +220,10 @@ SHOW_THREADS() {
 }
 
 DEMO1() {
-     BANNER "Show basic container launching in interactive mode"
-
-     echo; pause "Removing any existing docker containers:"
      RMALL
-     LIST_ALL
-     pause
+     #LIST_ALL pause
+
+     BANNER "Show basic container launching"
 
      echo; pause "List all local Docker images"
      SHOW_DOCKER images
@@ -235,25 +233,24 @@ DEMO1() {
      docker history $IMAGE1
 
      echo; pause "Starting Docker container in interactive mode: 'hello world'"
-     SHOW_DOCKER run --name HelloWorld_`dtime` -i -t base echo 'hello world'
+     SHOW_DOCKER run --name HelloWorld_`dtime` base echo 'hello world'
 
      echo; pause "Let's look at current Docker containers"
      LIST_ALL
 
-     echo; pause "Cleaning out container"
      RMALL
 
      echo; pause "Starting long-lived Docker container in interactive mode:"
      #CMD="while true;do echo 'hello world'; date; sleep 1;done"
      #CMD="while true;do echo \`date\` 'hello world'; sleep 1;done"
      CMD="while true;do echo \\\$(date) 'hello world'; sleep 5;done"
-     SHOW_DOCKER run -i -t base /bin/sh -c "\"$CMD\""
+     SHOW_DOCKER run base /bin/sh -c "\"$CMD\""
 
 }
 
 DEMO2() {
-     BANNER "Show daemon container launching"
      RMALL
+     BANNER "Show daemon container launching"
 
      NAME=DAEMON`dtime`
 
@@ -297,9 +294,10 @@ DEMO2() {
 }
 
 DEMO3() {
-    BANNER "Run daemon whilst mounting /var/log of container to $DIR"
     RMALL
     MOUNT_DIR
+
+    INTERACT_CONTAINERS
 }
 
 DEMO4() {
@@ -312,9 +310,9 @@ DEMO5() {
 
 DEMO6() {
 
+    RMALL
     #DEBUG_BANNER "Show pushing to repository"
     BANNER "Show pushing to repository"
-    RMALL
 
     docker LOGIN
 
@@ -352,9 +350,9 @@ FROM ubuntu
 #FROM base
 RUN echo deb http://archive.ubuntu.com/ubuntu precise main universe > /etc/apt/sources.list
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y mysql-server mysql-client
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y apache2 apache2-mpm-prefork apache2-utils apache2.2-common libapache2-mod-php5 libapr1 libaprutil1 libdbd-mysql-perl libdbi-perl libnet-daemon-perl libplrpc-perl libpq5 mysql-common php5-common php5-mysql
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y vim wget net-tools
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server mysql-client
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 apache2-mpm-prefork apache2-utils apache2.2-common libapache2-mod-php5 libapr1 libaprutil1 libdbd-mysql-perl libdbi-perl libnet-daemon-perl libplrpc-perl libpq5 mysql-common php5-common php5-mysql
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim wget net-tools
 RUN wget http://wordpress.org/latest.tar.gz && mv latest.tar.gz /var/www
 RUN /etc/init.d/apache2 start
 EXPOSE 80
@@ -392,7 +390,6 @@ ATTACH() {
 }
 
 DEMO7() {
-
     BANNER "Demo creation of a mysql image, then run as a container"
 
     _TMP=/tmp/mysql.docker
@@ -727,6 +724,7 @@ EOF
 
 
 MOUNT_DIR() {
+    BANNER "Run daemon whilst mounting /var/log of container to $DIR"
     DIR=/var/myapp/log
     LOG=$DIR/mounted.log
 
@@ -740,29 +738,40 @@ MOUNT_DIR() {
     ID=`set -x;docker run --name MNT_EXAMPLE -v $DIR:/var/log -d -t base /bin/bash -c "$CMD"`
 
     sleep 2;
-    echo; echo "Contents of $DIR/";
+    echo; echo "ON HOST: Contents of $DIR/";
     sudo ls -altr $DIR/
 
-    echo; echo "Tail of file $DIR/mounted.log:"
+    echo; echo "ON HOST: Tail of file $DIR/mounted.log:"
 
     trap 'echo "Interrupt"' SIGINT
     sudo tail -f $DIR/mounted.log
+}
 
+INTERACT_CONTAINERS() {
+    BANNER "Examples of interacting with docker containers"
     echo;
-    echo "We could 'docker attach' to this daemon and we'd see it's stdout but we can't take control"
-    pause "Let's now lxc-attach to process"
+    pause "Pipe commands into a new container:"
+    echo "{ echo uptime; echo ps -ef; } | docker run -i base bash"
+    { echo uptime; echo ps -ef; } | docker run -i base bash
 
-    echo; echo "First get fullid using docker inspect"
-    FULLID=`GETFULLID $ID`
-    echo "ID=<$ID> FULLID=<$FULLID>"
+    echo; 
+    pause "Start an interactive bash session in daemon mode, then pipe commands to it"
 
-    echo; echo "lxc-attach to container $FULLID"
-    echo "Then do a 'ps -fade'"
-    echo "echo;echo 'YES WERE IN!!';echo; uptime; echo; ps -fade" | sudo lxc-attach --name $FULLID
+    echo; echo "Starting the daemon:"
+    SHOW_DOCKER run -i -d -t base bash
 
-    echo; echo "Now let's lxc-attach to take control"
-    echo "sudo lxc-attach --name $FULLID"
-    sudo lxc-attach --name $FULLID
+    FULLID=$(docker ps -q -l --no-trunc)
+    echo
+    echo "echo uptime | docker attach $FULLID"
+
+    echo uptime | docker attach $FULLID
+
+    echo; SHOW_DOCKER logs $FULLID
+
+    echo; pause "Now let's attach to take control"
+
+    echo; echo "Press <return> to get a prompt [or ctrl-D to exit]"
+    SHOW_DOCKER attach $FULLID
 }
 
 GETFULLID() {
@@ -910,11 +919,30 @@ createMarkdown() {
     die "TODO"
 }
 
+USAGE() {
+    echo
+    echo "Usage: $0"
+    echo "   -d<N>: run DEMO N"
+    echo
+    echo "e.g."
+    echo "    $0 -d1 # run demo 1"
+    echo
+}
+
 ################################################################################
 ## Args:
 
+# If no arguments, show USAGE and exit:
+[ -z "$1" ] && {
+    USAGE;
+    exit 0;
+}
+
 while [ ! -z "$1" ];do
     case $1 in
+        # USAGE/help:
+        -h|-\?) USAGE; exit 0;;
+
         -repo) startRepo; exit 0;;
 
         -push|-git) gitPush; exit 0;;
