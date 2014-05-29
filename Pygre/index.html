@@ -1,65 +1,192 @@
-<html>
-  <title>Index page</title>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="my.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    </style>
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="bootstrap/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="bootstrap/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="bootstrap/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="bootstrap/ico/favicon.png">
+  </head>
+
   <body>
-  <h1>Grenoble Python User Group - Prochains Evenements</h1>
-    <h2> Suivez-nous sur Twitter:
-          <a href="https://twitter.com/PyUGGre"> @PyUGGre </a>
-       et
-          <a href="https://twitter.com/search?q=PyUGGre&src=typd"> tweets </a>
-    </h2>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#"> Groupe d'Uutilisateurs Python Grenoble </a>
+          <div class="nav-collapse collapse">
+            <!--
+            <p class="navbar-text pull-right">
+              Logged in as <a href="#" class="navbar-link">Username</a>
+            </p>
+              <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            -->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <img src="images/python.png">
+            <ul class="nav nav-list">
+              <li class="nav-header">Meetups a venir</li>
+              <li class="active"><a href="#upcoming">Juin 2014</a></li>
+              <li><a href="#upcoming">Aout 2014</a></li>
+              <li><a href="#upcoming">Sep 2014</a></li>
+              <li><a href="#upcoming">Oct 2014</a></li>
+              <li><a href="#upcoming">Nov 2014</a></li>
+              <li class="nav-header">Archives</li>
+              <li><a href="#2014-mai">Mai 2014</a></li>
+              <li><a href="#2014-avr">Avr 2014</a></li>
+              <li><a href="#2014-mar">Mar 2014</a></li>
+              <li><a href="#2014-fev">Fev 2014</a></li>
+              <li><a href="#2014-jan">Jan 2014</a></li>
+              <li class="nav-header">Evenements</li>
+              <li><a href="http://www.pycon.fr/">Pyconfr 2014 [25-28 Octobre @Lyon]</a></li>
+              <li><a href="http://www.meetup.com/OpenStack-Rhone-Alpes/">OpenStack Rhone-Alpes [1 Juillet @HP]</a></li>
+              <li><a href="https://ep2014.europython.eu/en/">EuroPython 2014, [21-27 juillet @Berlin]</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <div class="hero-unit">
+           <img src="images/grenoble-pont-st-laurent.png">
+
+            <!-- <h1>Python User Group de Grenoble</h1> -->
+            <h1> Groupe d'Uutilisateurs Python Grenoble </h1>
+            <p>Nous sommes une groupe de personnes qui se reunit chaque mois depuis 2014 pour parler Python et tout ce qui est autour.  Nous ne sommes pas une association, nous profitons des lieux de la Casemate a Grenoble pour nos reunions.
+    <h2> La Casemate </h2>
+        <a href="http://www.ccsti-grenoble.org/" >
+          <img src="https://mw2.google.com/mw-panoramio/photos/medium/7776150.jpg" />
+        </a>
+
+    <hr/> <br/>
+
+    <h3> Suivez-nous sur
+     <p>
+        <a href="https://twitter.com/PyUGGre">
+          <img width=50 src="images/Twitter_logo_blue.png">
+          Twitter: @PyUGGre
+        </a>
+      [ <a href="https://twitter.com/search?q=PyUGGre&src=typd"> tweets </a> ]
+     </p>
+    <p>et</p>
+      <a href="http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/">
+          <img width=50 src="images/meetup-logo.png"/>
+          Groupe Page
+      </a>
+    </h3>
+
+    <hr/> <br/>
+
+    <h3>Nous suivons l'Association Francophone Python</h3>
+      <a href="http://www.afpy.org/" class="btn btn-primary btn-large">Visitez l'AFPY &raquo;</a>
+
     <!-- http://hackerspaces.org/wiki/Laboratoire_Ouvert_Grenoblois -->
+            </a>
+          </div>
 
-  <h2>Planning - Tableur</h2>
-    <a href="https://docs.google.com/spreadsheets/d/1vBvtYfRvkUYuJMG_u0AoYQ1Z7lGSX1eZj6-UW-JVjQQ/edit#gid=0"> Planning d'intervenants - vous etes inviter a proposer vos presentations </a>
-  <br>
-    <h2>Prochains Meetups</h2>
-        <a href="http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/">
-           pages de la Groupe
-        </a> </font>
+          <h1>Reunions a venir</h1>
+          <div class="row-fluid">
+             <a name="upcoming"> </a>
 
-   
-        <font color=#00bbbb> Merci de s'inscrire pour les Meetups sur les pages
+            <div class="span4"> <h2>26 Juin 2014</h2>
+               Nous passons en mode Apero/Resto
+               Inscrivez-vous ici sur le
+           <a href="http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/185711952/">
+ <img width=50 src="images/meetup-logo.png"/> </a>
 
-     <li>
-       <h3><u>2014-06-26 - on va faire AFPyro ! </u></h3>
-        <font size+=1>
-          <br/>
-            Pas de presentations aujourd'hui, on va juste aller boire un coup.
-          <br/>
-            Rendezvous a preciser
-        </font>
-     </li>
+              </p> <!-- <p><a class="btn" href="#">View details &raquo;</a></p> -->
+            </div><!--/span-->
 
-     <li>
-       <h3><u>2014-09-xx a la <a href="http://www.ccsti-grenoble.org/" > Casemate </a> </u></h3>
-        <font color=#ff0000> [date/contenu a preciser] </font>
-        A priori Jerome Kieffer va nous presenter
-         "l'Ecosysteme Scientifique (numpy, scikit, ...)"
-     </li>
+            <div class="span4"> <h2>28 Aout 2014</h2>
+               Nous passons en mode Apero/Resto
+               Inscrivez-vous ici sur le
+           <a href="http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/185712242/">
+ <img width=50 src="images/meetup-logo.png"/> </a>
+              </p> <!-- <p><a class="btn" href="#">View details &raquo;</a></p> -->
+            </div><!--/span-->
 
-     <li>
-       <h3><u>2014-10-xx a la <a href="http://www.ccsti-grenoble.org/" > Casemate </a> </u></h3>
+            <div class="span4"> <h2>25 Septembre 2014</h2>
+              <p>a la <a href="http://www.ccsti-grenoble.org/" > Casemate </a>
+               <font color=#ff0000> [date/contenu a preciser] </font>
+               A priori Jerome Kieffer va nous presenter
+                "l'Ecosysteme Scientifique (numpy, scikit, ...)"
+              </p> <!-- <p><a class="btn" href="#">View details &raquo;</a></p> -->
+            </div><!--/span-->
+
+            <div class="span4">
+              <h2>30 Octobre 2014</h2>
+       <p>a la <a href="http://www.ccsti-grenoble.org/" > Casemate </a>
         <font color=#ff0000> [date/contenu a preciser] </font>
         A priori Frederic va nous presenter <a href="http://micropython.org/"> microPython </a> un Python optimiser pour les microcontrollers.
-     </li>
+       </p>
 
-     <li>
-       <h3><u>2014-11-xx a la <a href="http://www.ccsti-grenoble.org/" > Casemate </a> </u></h3>
+              <!-- <p><a class="btn" href="#">View details &raquo;</a></p> -->
+            </div><!--/span-->
+
+            <div class="span4">
+              <h2>27 Novembre 2014</h2>
+       <p>a la <a href="http://www.ccsti-grenoble.org/" > Casemate </a>
         <font color=#ff0000> [date/contenu a preciser] </font>
-     </li>
+              <p> </p>
+              <!-- <p><a class="btn" href="#">View details &raquo;</a></p> -->
+            </div><!--/span-->
 
-     </ul>
+          </div><!--/row-->
 
-      <p>
-
-  <h1>Grenoble Python User Group - Archives</h1>
-  <ul>
-        <!-- <font color=#ff0000> [date/contenu a confirmer]: </font> -->
-     <ul>
-
-
-     <li>
-       <h3><u>2014-05-22 a la <a href="http://www.ccsti-grenoble.org/" > Casemate </a> </u></h3>
+          <h1>Archives des Reunions Pass&eacute;es</h1>
+          <div class="row-fluid">
+             <a name="2014-mai">
+            <div class="span4">
+              <h2>Mai 2014</h2>
          <a href="http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/174121922">
              <font color=#00bbbb> Meetup </font>
          </a>
@@ -72,17 +199,22 @@
          <a href="http://static.hashbang.fr/20140522_grenoble_djangoconeu/">
                Voici les slides de Arthur:
          <br>
-               <img src="2014/2014-May-22/images/Arthur_DjangoConEU.PNG" width=300>
+            <div class="slides">
+               <img src="2014/2014-May-22/images/Arthur_DjangoConEU.PNG" > <!-- width=200> -->
+            </div>
          </a>
          <br>
        </b>
        <b> Tout le monde : "Discussion sur les IDEs"
          <br>
        <p>
-     </li>
 
-     <li>
-       <h3><u>2014-04-17 a la <a href="http://www.ccsti-grenoble.org/" > Casemate </a> </u></h3>
+              <!-- <p><a class="btn" href="#">View details &raquo;</a></p> -->
+            </div><!--/span-->
+             <a name="2014-avr">
+            <div class="span4">
+              <h2>Avr 2014</h2>
+
        <b> Matias Guijarro : "Introduction to gevent"
          <a href="http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/174121922">
              <font color=#00bbbb> Meetup </font>
@@ -91,7 +223,9 @@
          <a href="http://www.labwiz.org/gevent_pyugg/presentation.html#slide1">
                Voici les slides de Matias:
          <br>
-               <img src="2014/2014-Apr-17-Gevent/images/Matias_Gevent.PNG" width=300>
+            <div class="slides">
+               <img src="2014/2014-Apr-17-Gevent/images/Matias_Gevent.PNG" > <!-- width=200> -->
+            </div>
          </a>
          <br>
        </b>
@@ -100,10 +234,12 @@
          </a>
          <br>
        <p>
-     </li>
 
-     <li>
-       <h3><u>2014-03-27 a la <a href="http://www.ccsti-grenoble.org/" > Casemate </a> </u></h3>
+              <!-- <p><a class="btn" href="#">View details &raquo;</a></p> -->
+            </div><!--/span-->
+             <a name="2014-mar">
+            <div class="span4">
+              <h2>Mar 2014</h2>
 
        <b> Mike Bright: "Lightweight Virtualization with Docker"
          <a href="http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/171032122">
@@ -113,14 +249,19 @@
          <a href="http://mjbright.github.io/Pygre/2014/2014-Mar-27-LightWeightVirtualizationWithDocker/presentation.html">
                Voici les slides de Mike:
          <br>
-               <img src="2014/2014-Mar-27-LightWeightVirtualizationWithDocker/images/SLIDE1.PNG" width=300>
+            <div class="slides">
+               <img src="2014/2014-Mar-27-LightWeightVirtualizationWithDocker/images/SLIDE1.PNG" > <!-- width=200> -->
+            </div>
           </a>
        </b>
        <p>
-     </li>
 
-     <li>
-       <h3><u>2014-02-27 a la <a href="http://www.ccsti-grenoble.org/" > Casemate </a> </u></h3>
+              <!-- <p><a class="btn" href="#">View details &raquo;</a></p> -->
+            </div><!--/span-->
+             <a name="2014-fev">
+            <div class="span4">
+              <h2>Fev 2014</h2>
+
 
        <b> Sylvain Bauza
          "Python et Openstack : presentation de certaines librairies et frameworks"
@@ -131,7 +272,9 @@
          <a href="http://sbauza.github.io/2014/02/27/pyuggre_openstack.html">
                Voici les slides de Sylvain:
          <br>
-               <img src="2014/images/2014-Feb-27_SylvainBauza_Presa.png" width=300>
+            <div class="slides">
+               <img src="2014/images/2014-Feb-27_SylvainBauza_Presa.png" > <!-- width=200> -->
+            </div>
           </a>
        </b>
        <p>
@@ -150,21 +293,11 @@
        </ul>
 
      </li>
-    <h2><u>2014-01-23 a la <a href="http://www.ccsti-grenoble.org/" > Casemate </a> </u></h2>
-          <img src="https://mw2.google.com/mw-panoramio/photos/medium/7776150.jpg" />
-
-      <p>
-      <br>
-      le 23 Janvier a eu lieu la premiere reunion du groupe, a la Casemate
-      <br>
-      Bien acceuilli par le LOG (<a href="http://hackerspaces.org/wiki/Grenoble">Grenoble Hackerspace </a>) nous etions 17
-      a discuter, grignoter, manger et boire jusqu'a 23h.
-      <br>
-
-      <p>
-      <img width=512 src="./2014/images/2014-01-23 19.25.02.jpg" />
-
-      <p>
+              <!-- <p><a class="btn" href="#">View details &raquo;</a></p> -->
+            </div><!--/span-->
+             <a name="2014-jan">
+            <div class="span4">
+              <h2>Jan 2014</h2>
 
   <h3><u>Les presentations</u></h3>
       <table>
@@ -199,7 +332,53 @@
           </tr>
       </tbody>
       </table>
-  </ul>
+    
+              <!-- <p><a class="btn" href="#">View details &raquo;</a></p> -->
+            </div><!--/span-->
+          </div><!--/row-->
+
+      <br>
+      le 23 Janvier a eu lieu la premiere reunion du groupe, a la Casemate
+      <br>
+      Bien acceuilli par le LOG (<a href="http://hackerspaces.org/wiki/Grenoble">Grenoble Hackerspace </a>) nous etions 17
+      a discuter, grignoter, manger et boire jusqu'a 23h.
+      <br>
+
+      <p>
+      <img width=512 src="./2014/images/2014-01-23 19.25.02.jpg" />
+
+      <p>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+    </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- All included in bootstrap-min.js
+    <script src="bootstrap/js/bootstrap-transition.js"></script>
+    <script src="bootstrap/js/bootstrap-alert.js"></script>
+    <script src="bootstrap/js/bootstrap-modal.js"></script>
+    <script src="bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="bootstrap/js/bootstrap-scrollspy.js"></script>
+    <script src="bootstrap/js/bootstrap-tab.js"></script>
+    <script src="bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="bootstrap/js/bootstrap-popover.js"></script>
+    <script src="bootstrap/js/bootstrap-button.js"></script>
+    <script src="bootstrap/js/bootstrap-collapse.js"></script>
+    <script src="bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="bootstrap/js/bootstrap-typeahead.js"></script>
+    -->
+
+
+      <footer> <p>&copy; Python User Group de Grenoble - 2014</p> </footer>
+
 
   </body>
 </html>

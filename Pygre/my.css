@@ -1,0 +1,26 @@
+/*!
+ * Bootstrap v2.3.2
+ *
+ * Copyright 2013 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world by @mdo and @fat.
+ */
+
+.slides {
+  /*border: 10;
+  border-color: #0000ff;
+  padding: 6px;
+  background: #0000ff;
+  padding: 2px;
+  border-color: #ffff00;
+  border:1px solid #999999;
+*/
+
+ background:#ffffff;
+    padding:6px;
+    border:2px solid #9999ff;
+}
+
+
