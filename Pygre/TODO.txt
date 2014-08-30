@@ -1,0 +1,9 @@
+
+- Add info about PaaSes ... e.g.
+   - PiCloud?
+   - PythonAnywhere
+   - OpenShift
+   - "XX" (CloudFoundry)
+   - Stackato? (CloudFoundry)
+   - SEARCH for other PaaSes, especially Python oriented ones.
+
