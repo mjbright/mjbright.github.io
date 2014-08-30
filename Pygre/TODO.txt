@@ -1,5 +1,16 @@
 
-- Add info about PaaSes ... e.g.
+- Look at having an environment where others can contribute
+
+- Look at having Django based site?
+  -> embedded spreadsheet and login -> book reservations
+
+- Add abonnement page with links to
+   - pyuggre list abonnement
+   - LinkedIn group
+   - Google group ? ! NO
+   - AFPY and their mailing list
+
+- Add info (separate Page) about PaaSes ... e.g.
    - PiCloud?
    - PythonAnywhere
    - OpenShift
