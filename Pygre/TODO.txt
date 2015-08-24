@@ -1,4 +1,48 @@
 
+Monthly announcements:
+
+Send an e-mail to afpy and pygre FROM afpy@mjbright.net, e.g.
+    Subject: [Grenoble] Meetup a la Casemate - jeudi 28 - Damien Accorsi nous parlera de Tortilla
+
+    Voila, presque tout est dans le sujet du message.
+
+    Nous ferons meetup a Grenoble ce jeudi soir, et Damien Accorsi nous parlera
+    de Tortilla <https://pypi.python.org/pypi/tortilla>
+
+    Merci de vous inscire sur Meetup, ici <http://bit.ly/1cXwG7O>
+
+    A bientot,
+    Mike.
+
+(Want to check archives? goto:
+    http://lists.afpy.org/pipermail/pyuggre/
+  and
+    http://lists.afpy.org/mailman/private/afpy-membres/
+        (Votre mot de passe pour la liste AFPy-membres est : gouxonen)
+
+
+Create event on Meetup, create bit.ly link to it, then
+
+Tweet, e.g.
+    As @mjbright:
+        @PyUGGre a la @LaCasemate jeudi 28 mai, 19h pour la pres de @damienaccorsi
+        sur @tortilla "Wrapping Web APIs", inscr: bit.ly/1cXwG7O
+
+LinkedIN ( https://www.linkedin.com/grp/home?gid=4161296 ), e.g. 
+    Subject: Python Meetup a la Casemate 19h, jeudi 28 mai
+
+    Voila, presque tout est dans le sujet du message. 
+
+    Nous ferons meetup a Grenoble ce jeudi soir, et Damien Accorsi nous parlera de Tortilla 
+    https://pypi.python.org/pypi/tortilla 
+
+    Merci de vous inscire sur Meetup: 
+    http://bit.ly/1cXwG7O 
+
+    A bientot, 
+    Mike
+
+
 - Look at having an environment where others can contribute
 
 - Look at having Django based site?
