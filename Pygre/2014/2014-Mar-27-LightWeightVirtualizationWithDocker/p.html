@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Lightweight Virtualization with Docker</title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="file:///usr/local/lib/python2.7/dist-packages/landslide-1.1.1-py2.7.egg/landslide/themes/default/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="file:///usr/local/lib/python2.7/dist-packages/landslide-1.1.1-py2.7.egg/landslide/themes/default/css/screen.css">
+    
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="file:///usr/local/lib/python2.7/dist-packages/landslide-1.1.1-py2.7.egg/landslide/themes/default/js/slides.js"></script>
+    
+    
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Lightweight Virtualization with Docker</h1></header>
+            
+            
+            <section><ul>
+<li>Michael Bright, 27 Mars 2014.</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/4
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Lightweight Virtualization with Docker</h1></header>
+            
+            
+            <section><ul>
+<li>Overview: What's a container?</li>
+<li>OpenStack and Docker</li>
+<li>OpenStack versus Vagrant ??</li>
+</ul>
+<p><a href="http://docker.io">docker.io</a></p>
+<p>TOADD: <a href="https://mail.google.com/mail/u/0/?ui=2&amp;shva=1#inbox/144db663f35a11b0">19 Mar 2014 e-mail</a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/4
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>What's a container?</h2></header>
+            
+            
+            <section><ul>
+<li>LXC: Linux Containers</li>
+</ul>
+<h2>What's Docker?</h2>
+<ul>
+<li>A wrapper around LXC</li>
+</ul>
+<h2>What does Docker bring that Container's don't?</h2>
+<ul>
+<li>Image repository</li>
+<li>Union filesystem</li>
+</ul>
+<h2>What's bad?</h2>
+<ul>
+<li></li>
+<li>Union filesystem</li>
+</ul>
+<h1>Changes</h1>
+<ul>
+<li>Python -&gt; Go</li>
+<li>LXC -&gt; ...</li>
+<li>OpenStack Nova Driver (Havana) -&gt; OpenStack Heat (IceHouse)</li>
+</ul>
+<h1>What else?</h1>
+<ul>
+<li>Ports</li>
+<li>Ambassadors</li>
+</ul>
+<h1>What does it all mean? - what it gives us</h1>
+<ul>
+<li>Low memory</li>
+<li>Low disk footprint</li>
+<li>Fast spinup</li>
+<li>Hierarchical images via repo</li>
+</ul>
+<h1>Projects around Docker</h1>
+<p>Many !!!!
+- ....</p>
+<h1>Docker and OpenStack</h1>
+<h1>Demo</h1>
+<h1>Conclusions</h1>
+<h2>Subtitle2</h2>
+<p>-
+- Your first slide (title slide) should not have a heading, only <code>&lt;p&gt;</code>s
+- Your other slides should have a heading that renders to an h1 element
+- To highlight blocks of code, put !{{lang}} as the first indented line
+- See the included slides.md for an example</p>
+<h2>Rendering Instructions</h2>
+<ul>
+<li>Put your markdown content in a file called <code>slides.md</code></li>
+<li>Run <code>python render.py</code></li>
+<li>Enjoy your newly generated <code>presentation.html</code></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/4
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: Slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Slide #2</h1></header>
+            
+            
+            <section><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna tellus,
+fermentum nec venenatis nec, dapibus id metus. Phasellus nulla massa, consequat
+nec tempor et, elementum viverra est. Duis sed nisl in eros adipiscing tempor.</p>
+<h2>Section #1</h2>
+<p>Integer in dignissim ipsum. Integer pretium nulla at elit facilisis eu feugiat
+velit consectetur.</p>
+<h2>Section #2</h2>
+<p>Donec risus tortor, dictum sollicitudin ornare eu, egestas at purus. Cras
+consequat lacus vitae lectus faucibus et molestie nisl gravida. Donec tempor,
+tortor in varius vestibulum, mi odio laoreet magna, in hendrerit nibh neque eu
+eros.</p>
+<h1>Docker Versions</h1>
+<ul>
+<li>0.8</li>
+<li>0.9</li>
+<li>1.0</li>
+</ul>
+<h1>Running Docker</h1>
+<p>-&gt; Native on Ubuntu LTS and ...
+-&gt; Poss on Fedora
+-&gt; Soon in RHEL7
+-&gt; vagrant-docker
+-&gt; CoreOS
+-&gt; vagrant-dockstack (later!)
+-&gt; boot2docker(!) - via VirtualBox</p>
+<h1>Demo1 - Basic interaction</h1>
+<ul>
+<li>Start image</li>
+<li>Start image, touch file</li>
+<li>ReStart image, ls file -&gt; error</li>
+</ul>
+<p>Script to kill items</p>
+<h1>Demo2 - Daemon attach/detach</h1>
+<h1>Demo3 - Open ports</h1>
+<ul>
+<li>communicate between machines</li>
+<li>ambassadors</li>
+</ul>
+<h1>Demo4 - Example envts</h1>
+<ul>
+<li>twisted web server</li>
+<li>rails</li>
+<li>django</li>
+</ul>
+<p>ports via ssh</p>
+<h1>Links</h1>
+<p><a href="http://www.centurylinklabs.com/deploying-multi-server-docker-apps-with-ambassadors/">Deploying Multi-Server Docker Apps with Ambassadors</a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="Slides.md">Slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/4
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Lightweight Virtualization with Docker</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2">Lightweight Virtualization with Docker</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+        
+        <tr id="toc-row-3" class="sub">
+          <th><a href="#slide3">What's a container?</a></th>
+          <td><a href="#slide3">3</a></td>
+        </tr>
+        
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">Slide #2</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>
