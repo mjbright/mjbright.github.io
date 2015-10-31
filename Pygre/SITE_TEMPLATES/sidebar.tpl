@@ -9,8 +9,10 @@
               <li><a href="LearningPython.html">Apprentissage</a></li>
 
               <li class="nav-header">Meetups a venir</li>
-	      <!-- <li><a href="#upcoming">Xxx 2015</a></li> -->
               <li><a href="#Contributions">Contributions</a></li>
+              {% for event in future_events %}
+                 <li><a href="#{{ event.aname }}">{{ event.name }}</a></li>
+              {% endfor %}
 
               <li class="nav-header">Archives</li>
               {% for event in past_events %}

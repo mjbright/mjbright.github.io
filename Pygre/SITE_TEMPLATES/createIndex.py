@@ -42,6 +42,77 @@ from jinja2.environment import Environment
       }, 
 """
 
+future_events = [
+    { ## ---- Dec. 2015 ------------------------------------------------------------ ##
+      "aname": "2015-dec",
+      "name":  "10 Dec 2015",
+      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/223559600/",
+      "talks": [
+        {
+          "speaker":     "Matias Guijaro",
+          "title":       "Environnements Pythons Virtuels - Pyenv",
+          "slides_url":   "",
+          "slides_image": "",
+          "code":         "",
+        },
+        {
+          "speaker":     "Arthur Vuillard",
+          "title":       "Environnements Pythons Virtuels - PEW",
+          "slides_url":   "",
+          "slides_image": "",
+          "code":         "",
+        },
+       ],
+    },
+
+    { ## ---- Jan. 2016 ------------------------------------------------------------ ##
+      "aname": "2016-Jan",
+      "name":  "14 Jan 2016",
+      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226446981/",
+      "talks": [
+        {
+          "speaker":     "Un gentil volontaire",
+          "title":       "A definir",
+          "slides_url":   "",
+          "slides_image": "",
+          "code":         "",
+        },
+       ],
+    },
+
+    { ## ---- Feb. 2016 ------------------------------------------------------------ ##
+      "aname": "2016-Feb",
+      "name":  "18 Feb 2016",
+      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226447111/",
+      "talks": [
+        {
+          "speaker":     "Un gentil volontaire",
+          "title":       "A definir",
+          "slides_url":   "",
+          "slides_image": "",
+          "code":         "",
+        },
+       ],
+    },
+
+    { ## ---- Mar. 2016 ------------------------------------------------------------ ##
+      "aname": "2016-Mar",
+      "name":  "24 Mar 2016",
+      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226447125/",
+      "talks": [
+        {
+          "speaker":     "Un gentil volontaire",
+          "title":       "A definir",
+          "slides_url":   "",
+          "slides_image": "",
+          "code":         "",
+        },
+       ],
+    },
+
+]
+
+
 past_events = [
 
     { ## ---- Oct. 2015 ------------------------------------------------------------ ##
@@ -301,5 +372,5 @@ env.loader = FileSystemLoader('.')
 tmpl = env.get_template('index.tpl')
 
 f = open('op.html', 'w')
-f.write(tmpl.render( past_events = past_events ))
+f.write(tmpl.render( future_events = future_events, past_events = past_events ))
 
