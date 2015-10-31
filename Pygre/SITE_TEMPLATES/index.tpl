@@ -79,14 +79,15 @@
               Il y a des suggestions sur les sujets, ou comment trouver des sujets a presenter a cette page:
               <a href="Contributions.html">
               <br/>Suggestions sur les presentations</a></li>
-	    </div> <!--/row-->
 	    </div> <!--/span-->
+	    </div> <!--/row-->
 
     {% for event in future_events %}
             <font color=#0000bb> </font> <!-- HACK -->
             <a name="{{ event.aname }}" /> <br/> <div class="span4">
               <h2>{{ event.name }}</h2>
          <br/>Inscrivez-vous sur Meetup <a href="{{ event.meetup_url }}"> <font color=#00bbbb> ici </font> </a>
+	    </div> <!--/span-->
       {% endfor %}
 
           <hr/> <!-- ========================================================= -->
