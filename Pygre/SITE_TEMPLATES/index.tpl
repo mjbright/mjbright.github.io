@@ -89,6 +89,10 @@
               <h2>{{ event.name }}</h2>
          <br/>Inscrivez-vous sur Meetup <a href="{{ event.meetup_url }}"> <font color=#00bbbb> ici </font> </a>
 	    </div> <!--/span-->
+    {% for talk in event.talks %}
+        <b> {{ talk.speaker }}:<br/> "{{ talk.title }}" </b>
+    {% endfor %}
+
       {% endfor %}
 	    </div> <!--/row-->
 
@@ -101,7 +105,6 @@
               <h2>{{ event.name }}</h2>
          <br/>Lien sur l'Evenement Meetup <a href="{{ event.meetup_url }}"> <font color=#00bbbb> ici </font> </a>
         <br/>
-
 
     {% for talk in event.talks %}
         <b> {{ talk.speaker }}:<br/> "{{ talk.title }}" </b>
@@ -116,7 +119,7 @@
       {% endfor %}
         {{ event.extra }}
             </div><!--/span-->
-      {% endfor %}
+    {% endfor %}
     
 
     </div><!--/.fluid-container-->
