@@ -90,6 +90,7 @@
          <br/>Inscrivez-vous sur Meetup <a href="{{ event.meetup_url }}"> <font color=#00bbbb> ici </font> </a>
       {% for talk in event.talks %}
         <b> {{ talk.speaker }}:<br/> "{{ talk.title }}" </b>
+       <p>
       {% endfor %}
 
 	    </div> <!--/span-->
