@@ -88,7 +88,7 @@
             <a name="{{ event.aname }}" /> <br/> <div class="span4">
               <h2>{{ event.name }}</h2>
          <br/>Inscrivez-vous sur Meetup <a href="{{ event.meetup_url }}"> <font color=#00bbbb> ici </font> </a>
-         <br/>
+         <p/>
       {% for talk in event.talks %}
         <b> {{ talk.speaker }}:<br/> "{{ talk.title }}" </b>
        <p>
