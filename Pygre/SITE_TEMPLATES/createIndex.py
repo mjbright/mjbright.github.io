@@ -71,7 +71,7 @@ future_events = [
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226446981/",
       "talks": [
         {
-          "speaker":     "Un gentil volontaire",
+          "speaker":     "Speaker",
           "title":       "A definir",
           "slides_url":   "",
           "slides_image": "",
@@ -86,7 +86,7 @@ future_events = [
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226447111/",
       "talks": [
         {
-          "speaker":     "Un gentil volontaire",
+          "speaker":     "Speaker",
           "title":       "A definir",
           "slides_url":   "",
           "slides_image": "",
@@ -101,7 +101,7 @@ future_events = [
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226447125/",
       "talks": [
         {
-          "speaker":     "Un gentil volontaire",
+          "speaker":     "Speaker",
           "title":       "A definir",
           "slides_url":   "",
           "slides_image": "",
