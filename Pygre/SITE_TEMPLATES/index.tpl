@@ -111,7 +111,8 @@
     {% for talk in event.talks %}
         <b> {{ talk.speaker }}:<br/> "{{ talk.title }}" </b>
         {% if talk.code %} <br/> le code source du demo: <a href="{{ talk.code }}"> <font color=#00bbbb> ici </font> </a> {% endif %}
-        {% if talk.slides_url %} <br/> les slides: <a href="{{ talk.slides_url }}"> <font color=#00bbbb> ici </font> </a>
+        {% if talk.slides_url %} <br/> les slides:
+          <a href="{{ talk.slides_url }}"> <font color=#00bbbb> ici </font>
             <div class="slides"> <img src="{{ talk.slides_image }}" > </div>
           </a>
        </b>
