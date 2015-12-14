@@ -43,28 +43,6 @@ from jinja2.environment import Environment
 """
 
 future_events = [
-    { ## ---- Dec. 2015 ------------------------------------------------------------ ##
-      "aname": "2015-dec",
-      "name":  "10 Dec 2015",
-      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/223559600/",
-      "talks": [
-        {
-          "speaker":     "Matias Guijaro",
-          "title":       "Environnements Pythons Virtuels - Pyenv",
-          "slides_url":   "",
-          "slides_image": "",
-          "code":         "",
-        },
-        {
-          "speaker":     "Arthur Vuillard",
-          "title":       "Environnements Pythons Virtuels - PEW",
-          "slides_url":   "",
-          "slides_image": "",
-          "code":         "",
-        },
-       ],
-    },
-
     { ## ---- Jan. 2016 ------------------------------------------------------------ ##
       "aname": "2016-Jan",
       "name":  "14 Jan 2016",
@@ -114,6 +92,28 @@ future_events = [
 
 
 past_events = [
+
+    { ## ---- Dec. 2015 ------------------------------------------------------------ ##
+      "aname": "2015-dec",
+      "name":  "10 Dec 2015",
+      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/223559600/",
+      "talks": [
+        {
+          "speaker":     "Matias Guijaro",
+          "title":       "Environnements Pythons Virtuels - Pyenv",
+          "slides_url":   "http://slides.com/matiasg/pyenv#/",
+          "slides_image": "images/2015/2015-Dec-10_Matias_Pyenv.png",
+          "code":         "",
+        },
+        {
+          "speaker":     "Arthur Vuillard",
+          "title":       "Environnements Pythons Virtuels - PEW",
+          "slides_url":   "https://static.hashbang.fr/20151210_pew/#1",
+          "slides_image": "images/2015/2015-Dec-10_Arthur_PEW.png",
+          "code":         "",
+        },
+       ],
+    },
 
     { ## ---- Oct. 2015 ------------------------------------------------------------ ##
       "aname": "2015-oct",
