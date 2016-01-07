@@ -45,12 +45,12 @@ from jinja2.environment import Environment
 future_events = [
     { ## ---- Jan. 2016 ------------------------------------------------------------ ##
       "aname": "2016-Jan",
-      "name":  "14 Jan 2016",
+      "name":  "26 Jan 2016",
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226446981/",
       "talks": [
         {
-          "speaker":     "Speaker",
-          "title":       "A definir",
+          "speaker":     "Mike BRIGHT",
+          "title":       "Python et MongoDB",
           "slides_url":   "",
           "slides_image": "",
           "code":         "",
