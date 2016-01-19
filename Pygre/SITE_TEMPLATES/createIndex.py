@@ -45,7 +45,7 @@ from jinja2.environment import Environment
 future_events = [
     { ## ---- Jan. 2016 ------------------------------------------------------------ ##
       "aname": "2016-Jan",
-      "name":  "26 Jan 2016",
+      "name":  "27 Jan 2016",
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226446981/",
       "talks": [
         {
@@ -60,7 +60,7 @@ future_events = [
 
     { ## ---- Feb. 2016 ------------------------------------------------------------ ##
       "aname": "2016-Feb",
-      "name":  "18 Feb 2016",
+      "name":  "23 Feb 2016",
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226447111/",
       "talks": [
         {
@@ -75,7 +75,7 @@ future_events = [
 
     { ## ---- Mar. 2016 ------------------------------------------------------------ ##
       "aname": "2016-Mar",
-      "name":  "24 Mar 2016",
+      "name":  "29 Mar 2016",
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226447125/",
       "talks": [
         {
