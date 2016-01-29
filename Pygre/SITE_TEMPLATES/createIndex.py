@@ -4,9 +4,9 @@ from jinja2 import FileSystemLoader
 from jinja2.environment import Environment
 
 """
-    { ## ---- MONTH 2014 ------------------------------------------------------------ ##
-      "aname": "2014-mon",
-      "name":  "Mon 2014",
+    { ## ---- MONTH 201x ------------------------------------------------------------ ##
+      "aname": "201x-mon",
+      "name":  "Mon 201x",
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/XXXXXXXX",
       "talks": [
         {
@@ -19,9 +19,9 @@ from jinja2.environment import Environment
        ],
       }, 
 
-    { ## ---- MONTH 2014 ------------------------------------------------------------ ##
-      "aname": "2014-mon",
-      "name":  "Mon 2014",
+    { ## ---- MONTH 201x ------------------------------------------------------------ ##
+      "aname": "201x-mon",
+      "name":  "Mon 201x",
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/XXXXXXXX",
       "talks": [
         {
@@ -43,29 +43,14 @@ from jinja2.environment import Environment
 """
 
 future_events = [
-    { ## ---- Jan. 2016 ------------------------------------------------------------ ##
-      "aname": "2016-Jan",
-      "name":  "27 Jan 2016",
+    { ## ---- Feb. 2016 ------------------------------------------------------------ ##
+      "aname": "2016-Feb",
+      "name":  "23 Feb 2016",
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226446981/",
       "talks": [
         {
           "speaker":     "Mike BRIGHT",
           "title":       "Python et MongoDB",
-          "slides_url":   "",
-          "slides_image": "",
-          "code":         "",
-        },
-       ],
-    },
-
-    { ## ---- Feb. 2016 ------------------------------------------------------------ ##
-      "aname": "2016-Feb",
-      "name":  "23 Feb 2016",
-      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226447111/",
-      "talks": [
-        {
-          "speaker":     "Speaker",
-          "title":       "A definir",
           "slides_url":   "",
           "slides_image": "",
           "code":         "",
