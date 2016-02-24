@@ -76,7 +76,7 @@ future_events = [
 
     { ## ---- May. 2016 ------------------------------------------------------------ ##
       "aname": "2016-May",
-      "name":  "31 May 2016",
+      "name":  "24 May 2016",
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/229090547/",
       "talks": [
         {
