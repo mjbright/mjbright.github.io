@@ -42,22 +42,8 @@ from jinja2.environment import Environment
       }, 
 """
 
-future_events = [
-    { ## ---- Feb. 2016 ------------------------------------------------------------ ##
-      "aname": "2016-Feb",
-      "name":  "23 Feb 2016",
-      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226446981/",
-      "talks": [
-        {
-          "speaker":     "Mike BRIGHT",
-          "title":       "Python et MongoDB",
-          "slides_url":   "",
-          "slides_image": "",
-          "code":         "",
-        },
-       ],
-    },
 
+future_events = [
     { ## ---- Mar. 2016 ------------------------------------------------------------ ##
       "aname": "2016-Mar",
       "name":  "29 Mar 2016",
@@ -73,10 +59,70 @@ future_events = [
        ],
     },
 
+    { ## ---- Apr. 2016 ------------------------------------------------------------ ##
+      "aname": "2016-Apr",
+      "name":  "26 Apr 2016",
+      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/229090535/",
+      "talks": [
+        {
+          "speaker":     "Speaker",
+          "title":       "A definir",
+          "slides_url":   "",
+          "slides_image": "",
+          "code":         "",
+        },
+       ],
+    },
+
+    { ## ---- May. 2016 ------------------------------------------------------------ ##
+      "aname": "2016-May",
+      "name":  "31 May 2016",
+      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/229090547/",
+      "talks": [
+        {
+          "speaker":     "Speaker",
+          "title":       "A definir",
+          "slides_url":   "",
+          "slides_image": "",
+          "code":         "",
+        },
+       ],
+    },
+
+    { ## ---- Jun. 2016 ------------------------------------------------------------ ##
+      "aname": "2016-Jun",
+      "name":  "21 Jun 2016",
+      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/229090555/",
+      "talks": [
+        {
+          "speaker":     "Speaker",
+          "title":       "A definir",
+          "slides_url":   "",
+          "slides_image": "",
+          "code":         "",
+        },
+       ],
+    },
+
 ]
 
 
 past_events = [
+
+    { ## ---- Feb. 2016 ------------------------------------------------------------ ##
+      "aname": "2016-Feb",
+      "name":  "23 Feb 2016",
+      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226446981/",
+      "talks": [
+        {
+          "speaker":     "Mike BRIGHT",
+          "title":       "Python et MongoDB",
+          "slides_url":   "https://github.com/mjbright/jupyter_notebooks/blob/master/2016-Feb-23_Pyugre_UsingMongoDBAndPython/2016-Feb-23_Pyugre_PyMongo.pdf",
+          "slides_image": "images/2016-Feb-23_UsingMongoDBAndPython.png",
+          "code":         "https://github.com/mjbright/jupyter_notebooks/blob/master/2016-Feb-23_Pyugre_UsingMongoDBAndPython/2016-Feb-23_Pyugre_MongoDB_DEMO.ipynb",
+        },
+       ],
+    },
 
     { ## ---- Dec. 2015 ------------------------------------------------------------ ##
       "aname": "2015-dec",
