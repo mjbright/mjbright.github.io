@@ -50,8 +50,8 @@ future_events = [
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/226447125/",
       "talks": [
         {
-          "speaker":     "Speaker",
-          "title":       "A definir",
+          "speaker":     "Benoit Brayer",
+          "title":       "Elasticsearch pour Django",
           "slides_url":   "",
           "slides_image": "",
           "code":         "",
