@@ -43,7 +43,7 @@ from jinja2.environment import Environment
 """
 
 
-future_events = [
+'''
     { ## ---- Mar. 2016 ------------------------------------------------------------ ##
       "aname": "2016-Mar",
       "name":  "29 Mar 2016",
@@ -58,6 +58,9 @@ future_events = [
         },
        ],
     },
+'''
+
+future_events = [
 
     { ## ---- Apr. 2016 ------------------------------------------------------------ ##
       "aname": "2016-Apr",
@@ -80,8 +83,8 @@ future_events = [
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/229090547/",
       "talks": [
         {
-          "speaker":     "Speaker",
-          "title":       "A definir",
+          "speaker":     "Mike Bright",
+          "title":       "Atelier: Ipython in Depth",
           "slides_url":   "",
           "slides_image": "",
           "code":         "",
@@ -95,8 +98,8 @@ future_events = [
       "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/229090555/",
       "talks": [
         {
-          "speaker":     "Speaker",
-          "title":       "A definir",
+          "speaker":     "Mike Bright",
+          "title":       "Jupyter for everything else",
           "slides_url":   "",
           "slides_image": "",
           "code":         "",
