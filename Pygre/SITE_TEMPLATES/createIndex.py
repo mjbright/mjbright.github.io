@@ -62,21 +62,6 @@ from jinja2.environment import Environment
 
 future_events = [
 
-    { ## ---- Apr. 2016 ------------------------------------------------------------ ##
-      "aname": "2016-Apr",
-      "name":  "26 Apr 2016",
-      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/229090535/",
-      "talks": [
-        {
-          "speaker":     "Speaker",
-          "title":       "A definir",
-          "slides_url":   "",
-          "slides_image": "",
-          "code":         "",
-        },
-       ],
-    },
-
     { ## ---- May. 2016 ------------------------------------------------------------ ##
       "aname": "2016-May",
       "name":  "24 May 2016",
@@ -111,6 +96,28 @@ future_events = [
 
 
 past_events = [
+
+    { ## ---- Apr. 2016 ------------------------------------------------------------ ##
+      "aname": "2016-Apr",
+      "name":  "26 Apr 2016",
+      "meetup_url": "http://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/229090535/",
+      "talks": [
+        {
+          "speaker":     "Rene Ribaud",
+          "title":       "DocOpt",
+          "slides_url":   "",
+          "slides_image": "",
+          "code":         "",
+        },
+        {
+          "speaker":     "Mike Bright",
+          "title":       "What did you Expect?",
+          "slides_url":   "https://github.com/mjbright/What-did-you-Pexpect",
+          "slides_image": "",
+          "code":         "",
+        },
+       ],
+    },
 
     { ## ---- Feb. 2016 ------------------------------------------------------------ ##
       "aname": "2016-Feb",
