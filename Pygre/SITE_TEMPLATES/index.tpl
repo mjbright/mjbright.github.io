@@ -91,6 +91,9 @@
          <p/>
       {% for talk in event.talks %}
         <b> {{ talk.speaker }}:<br/> "{{ talk.title }}" </b>
+            {% if talk.slides_image %} <br/>
+                <div class="slides"> <img src="{{ talk.slides_image }}" > </div>
+            {% endif %}
        <p>
       {% endfor %}
 
@@ -116,6 +119,10 @@
             <div class="slides"> <img src="{{ talk.slides_image }}" > </div>
           </a>
        </b>
+        {% else %}
+            {% if talk.slides_image %} <br/>
+                <div class="slides"> <img src="{{ talk.slides_image }}" > </div>
+            {% endif %}
         {% endif %}
        <p>
         {{ talk.extra }}
