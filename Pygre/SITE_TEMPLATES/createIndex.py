@@ -391,7 +391,7 @@ past_events = [
         {
           "speaker": '<a href="http://www.linkedin.com/profile/view?id=5259119">  Mike Bright </a>',
           "title":   "Intro / Tendences Dev en 2014",
-          "slides_url":     "../reveal.js/PRESENTATIONS/2014-01-23_PyGre1/intro.html",
+          "slides_url":     "./reveal.js/PRESENTATIONS/2014-01-23_PyGre1/intro.html",
           "slides_image":   "2014/images/2014-Jan_Mike_Tendences.png",
         },
         {
