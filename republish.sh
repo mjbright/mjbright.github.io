@@ -13,6 +13,8 @@ press() {
 WWW_MJB=~/z/www/mjbright.github.io/
 cd $WWW_MJB/hugosite
 
+press "Edit publications content under hugosite/content/publication/"
+
 pwd
 press "Regenerating site using hugo"
 ~/z/bin/lin64/hugo_0.18_linux_amd64/hugo_0.18_linux_amd64
