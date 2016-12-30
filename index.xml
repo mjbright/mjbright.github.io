@@ -2,70 +2,70 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>https://example.com/index.xml</link>
+    <link>https://mjbright.github.io/index.xml</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Mike Bright</copyright>
-    <lastBuildDate>Mon, 06 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Docker Advanced</title>
-      <link>https://example.com/publication/FUTURE_2016-Feb_HPE_TSS_Cannes_DockerAdvanced/</link>
+      <link>https://mjbright.github.io/publication/FUTURE_2017-Feb_HPE_TSS_Cannes_DockerAdvanced/</link>
       <pubDate>Mon, 06 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/publication/FUTURE_2016-Feb_HPE_TSS_Cannes_DockerAdvanced/</guid>
+      <guid>https://mjbright.github.io/publication/FUTURE_2017-Feb_HPE_TSS_Cannes_DockerAdvanced/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Container Orchestration: Swarm, Mesos, Kubernetes - Lab</title>
-      <link>https://example.com/publication/2016-Oct_ContainerConEU_Berlin_ContainerOrchestrationLab/</link>
+      <link>https://mjbright.github.io/publication/2016-Oct_ContainerConEU_Berlin_ContainerOrchestrationLab/</link>
       <pubDate>Tue, 04 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/publication/2016-Oct_ContainerConEU_Berlin_ContainerOrchestrationLab/</guid>
+      <guid>https://mjbright.github.io/publication/2016-Oct_ContainerConEU_Berlin_ContainerOrchestrationLab/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Container Orchestration: Swarm, Mesos, Kubernetes - Which Conductor?</title>
-      <link>https://example.com/publication/2016-Oct_ContainerConEU_Berlin_ContainerOrchestration/</link>
+      <link>https://mjbright.github.io/publication/2016-Oct_ContainerConEU_Berlin_ContainerOrchestration/</link>
       <pubDate>Tue, 04 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/publication/2016-Oct_ContainerConEU_Berlin_ContainerOrchestration/</guid>
+      <guid>https://mjbright.github.io/publication/2016-Oct_ContainerConEU_Berlin_ContainerOrchestration/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Jupyter for Everything Else</title>
-      <link>https://example.com/publication/2016-Jul_EuroPython_Bilbao_JupyterForEverythingElse/</link>
+      <link>https://mjbright.github.io/publication/2016-Jul_EuroPython_Bilbao_JupyterForEverythingElse/</link>
       <pubDate>Fri, 22 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/publication/2016-Jul_EuroPython_Bilbao_JupyterForEverythingElse/</guid>
+      <guid>https://mjbright.github.io/publication/2016-Jul_EuroPython_Bilbao_JupyterForEverythingElse/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>IPython in Depth, 3-hr tutorial</title>
-      <link>https://example.com/publication/2016-Jul_EuroPython_Bilbao_IPythonInDepth/</link>
+      <link>https://mjbright.github.io/publication/2016-Jul_EuroPython_Bilbao_IPythonInDepth/</link>
       <pubDate>Mon, 18 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/publication/2016-Jul_EuroPython_Bilbao_IPythonInDepth/</guid>
+      <guid>https://mjbright.github.io/publication/2016-Jul_EuroPython_Bilbao_IPythonInDepth/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Deep Learning</title>
-      <link>https://example.com/project/deep-learning/</link>
+      <link>https://mjbright.github.io/project/deep-learning/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/project/deep-learning/</guid>
+      <guid>https://mjbright.github.io/project/deep-learning/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
@@ -80,19 +80,19 @@
     
     <item>
       <title>External Project</title>
-      <link>https://example.com/project/example-external-project/</link>
+      <link>https://mjbright.github.io/project/example-external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/project/example-external-project/</guid>
+      <guid>https://mjbright.github.io/project/example-external-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Getting started with the Academic theme for Hugo</title>
-      <link>https://example.com/post/getting-started/</link>
+      <link>https://mjbright.github.io/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 12:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/getting-started/</guid>
+      <guid>https://mjbright.github.io/post/getting-started/</guid>
       <description>
 
 &lt;p&gt;The Academic theme enables you to easily create a beautifully simple academic or personal website using the &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; static site generator.&lt;/p&gt;
@@ -175,11 +175,11 @@ cd my_website
 
 &lt;h3 id=&#34;add-your-content&#34;&gt;Add your content&lt;/h3&gt;
 
-&lt;p&gt;Refer to our guide on &lt;a href=&#34;https://example.com/post/managing-content/&#34;&gt;managing content&lt;/a&gt; to create your own homepage sections, publications, blog posts, and projects.&lt;/p&gt;
+&lt;p&gt;Refer to our guide on &lt;a href=&#34;https://mjbright.github.io/post/managing-content/&#34;&gt;managing content&lt;/a&gt; to create your own homepage sections, publications, blog posts, and projects.&lt;/p&gt;
 
 &lt;h3 id=&#34;remove-unused-widgets-and-pages&#34;&gt;Remove unused widgets and pages&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://example.com/post/managing-content/#removing-content&#34;&gt;How to remove unused widgets and content pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mjbright.github.io/post/managing-content/#removing-content&#34;&gt;How to remove unused widgets and content pages&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;customization-upgrading&#34;&gt;Customization &amp;amp; Upgrading&lt;/h3&gt;
 
@@ -267,11 +267,11 @@ $ git log --pretty=oneline --abbrev-commit --decorate HEAD..upstream/master
     
     <item>
       <title>Managing content</title>
-      <link>https://example.com/post/managing-content/</link>
+      <link>https://mjbright.github.io/post/managing-content/</link>
       <pubDate>Wed, 20 Apr 2016 11:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/managing-content/</guid>
-      <description>&lt;p&gt;This is a brief guide to managing content with the Academic theme. Content can include homepage sections, publications, projects, and news/blog articles. After you have read this guide about creating and managing content, you may also be interested to learn about &lt;a href=&#34;https://example.com/post/writing-markdown-latex/&#34;&gt;writing content with Markdown, LaTeX, and Shortcodes&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://mjbright.github.io/post/managing-content/</guid>
+      <description>&lt;p&gt;This is a brief guide to managing content with the Academic theme. Content can include homepage sections, publications, projects, and news/blog articles. After you have read this guide about creating and managing content, you may also be interested to learn about &lt;a href=&#34;https://mjbright.github.io/post/writing-markdown-latex/&#34;&gt;writing content with Markdown, LaTeX, and Shortcodes&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;To enable LaTeX math rendering for a page, you should include &lt;code&gt;math = true&lt;/code&gt; in the page&amp;rsquo;s &lt;code&gt;+++&lt;/code&gt; preamble, as demonstrated in the included example site. Otherwise, to enable math on the homepage or for all pages, you must globally set &lt;code&gt;math = true&lt;/code&gt; in &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
 
@@ -401,10 +401,10 @@ Further details on your publication can be written here using *Markdown* for for
     
     <item>
       <title>Writing content with Markdown, LaTeX, and Shortcodes</title>
-      <link>https://example.com/post/writing-markdown-latex/</link>
+      <link>https://mjbright.github.io/post/writing-markdown-latex/</link>
       <pubDate>Wed, 20 Apr 2016 10:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/writing-markdown-latex/</guid>
+      <guid>https://mjbright.github.io/post/writing-markdown-latex/</guid>
       <description>&lt;p&gt;Content can be written using &lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34;&gt;Markdown&lt;/a&gt;, &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34;&gt;LaTeX math&lt;/a&gt;, and &lt;a href=&#34;http://gohugo.io/extras/shortcodes/&#34;&gt;Hugo Shortcodes&lt;/a&gt;. Additionally, HTML may be used for advanced formatting. This article gives an overview of the most common formatting options.&lt;/p&gt;
 
 &lt;h2 id=&#34;sub-headings&#34;&gt;Sub-headings&lt;/h2&gt;
@@ -604,50 +604,50 @@ Here&#39;s some important information...
     
     <item>
       <title>Activities in the HPE EMEA OpenNFV Lab</title>
-      <link>https://example.com/publication/2016-Feb-HPE_TSS_Cannes_NFV/</link>
+      <link>https://mjbright.github.io/publication/2016-Feb-HPE_TSS_Cannes_NFV/</link>
       <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/publication/2016-Feb-HPE_TSS_Cannes_NFV/</guid>
+      <guid>https://mjbright.github.io/publication/2016-Feb-HPE_TSS_Cannes_NFV/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Docker Build Lab</title>
-      <link>https://example.com/publication/2016-Feb-HPE_TSS_Cannes_DockerBuildLab/</link>
+      <link>https://mjbright.github.io/publication/2016-Feb-HPE_TSS_Cannes_DockerBuildLab/</link>
       <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/publication/2016-Feb-HPE_TSS_Cannes_DockerBuildLab/</guid>
+      <guid>https://mjbright.github.io/publication/2016-Feb-HPE_TSS_Cannes_DockerBuildLab/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>IPython vers Jupyter</title>
-      <link>https://example.com/publication/2015-Oct_Pyconfr_Pau_IPythonVersJupyter/</link>
+      <link>https://mjbright.github.io/publication/2015-Oct_Pyconfr_Pau_IPythonVersJupyter/</link>
       <pubDate>Mon, 12 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/publication/2015-Oct_Pyconfr_Pau_IPythonVersJupyter/</guid>
+      <guid>https://mjbright.github.io/publication/2015-Oct_Pyconfr_Pau_IPythonVersJupyter/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>ETSI NFV Use Cases</title>
-      <link>https://example.com/publication/2015-Mar-HP_TES_Grenoble/</link>
+      <link>https://mjbright.github.io/publication/2015-Mar-HP_TES_Grenoble/</link>
       <pubDate>Sun, 22 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/publication/2015-Mar-HP_TES_Grenoble/</guid>
+      <guid>https://mjbright.github.io/publication/2015-Mar-HP_TES_Grenoble/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>HP EMEA NFV Use Cases</title>
-      <link>https://example.com/publication/2015-Feb-HP_ETSS_Cannes_NFV/</link>
+      <link>https://mjbright.github.io/publication/2015-Feb-HP_ETSS_Cannes_NFV/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/publication/2015-Feb-HP_ETSS_Cannes_NFV/</guid>
+      <guid>https://mjbright.github.io/publication/2015-Feb-HP_ETSS_Cannes_NFV/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
