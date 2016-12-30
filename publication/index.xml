@@ -7,8 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Mike Bright</copyright>
-    <lastBuildDate>Mon, 06 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Unikernels: The Next Big Little Thing?</title>
+      <link>https://mjbright.github.io/publication/FUTURE_2017-Feb_Snowcamp.io_Unikernels/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/FUTURE_2017-Feb_Snowcamp.io_Unikernels/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Docker Advanced</title>
@@ -16,6 +26,26 @@
       <pubDate>Mon, 06 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mjbright.github.io/publication/FUTURE_2017-Feb_HPE_TSS_Cannes_DockerAdvanced/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Container Orchestration Lab</title>
+      <link>https://mjbright.github.io/publication/FUTURE_2017-Jan_Devconf.cz_ContainerOrchestration/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/FUTURE_2017-Jan_Devconf.cz_ContainerOrchestration/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Unikernels: The Next Big Little Thing?</title>
+      <link>https://mjbright.github.io/publication/FUTURE_2017-Jan_Devconf.cz_Unikernels/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/FUTURE_2017-Jan_Devconf.cz_Unikernels/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>

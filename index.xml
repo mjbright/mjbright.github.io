@@ -11,11 +11,41 @@
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Unikernels: The Next Big Little Thing?</title>
+      <link>https://mjbright.github.io/publication/FUTURE_2017-Feb_Snowcamp.io_Unikernels/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/FUTURE_2017-Feb_Snowcamp.io_Unikernels/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Docker Advanced</title>
       <link>https://mjbright.github.io/publication/FUTURE_2017-Feb_HPE_TSS_Cannes_DockerAdvanced/</link>
       <pubDate>Mon, 06 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mjbright.github.io/publication/FUTURE_2017-Feb_HPE_TSS_Cannes_DockerAdvanced/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Container Orchestration Lab</title>
+      <link>https://mjbright.github.io/publication/FUTURE_2017-Jan_Devconf.cz_ContainerOrchestration/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/FUTURE_2017-Jan_Devconf.cz_ContainerOrchestration/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Unikernels: The Next Big Little Thing?</title>
+      <link>https://mjbright.github.io/publication/FUTURE_2017-Jan_Devconf.cz_Unikernels/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/FUTURE_2017-Jan_Devconf.cz_Unikernels/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
@@ -618,36 +648,6 @@ Here&#39;s some important information...
       <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://mjbright.github.io/publication/2016-Feb-HPE_TSS_Cannes_DockerBuildLab/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>IPython vers Jupyter</title>
-      <link>https://mjbright.github.io/publication/2015-Oct_Pyconfr_Pau_IPythonVersJupyter/</link>
-      <pubDate>Mon, 12 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://mjbright.github.io/publication/2015-Oct_Pyconfr_Pau_IPythonVersJupyter/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ETSI NFV Use Cases</title>
-      <link>https://mjbright.github.io/publication/2015-Mar-HP_TES_Grenoble/</link>
-      <pubDate>Sun, 22 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://mjbright.github.io/publication/2015-Mar-HP_TES_Grenoble/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>HP EMEA NFV Use Cases</title>
-      <link>https://mjbright.github.io/publication/2015-Feb-HP_ETSS_Cannes_NFV/</link>
-      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://mjbright.github.io/publication/2015-Feb-HP_ETSS_Cannes_NFV/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
