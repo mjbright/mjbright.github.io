@@ -10,8 +10,8 @@ press() {
     [ "$_DUMMY" = "Q" ] && exit 0
 }
 
-WWW_MJB=~/z/www/mjbright.github.io/
-cd $WWW_MJB/hugosite
+GIT_SRC=~/z/www/mjbright.github.io/
+cd $GIT_SRC/hugosite
 
 press "Edit publications content under hugosite/content/publication/"
 
@@ -19,11 +19,15 @@ pwd
 press "Regenerating site using hugo"
 ~/z/bin/lin64/hugo_0.18_linux_amd64/hugo_0.18_linux_amd64
 
-press "Copying generated site from [$PWD]/public to $WWW_MJB/"
-rsync -av public/ $WWW_MJB/ | grep -v /$
+press "Copying generated site from [$PWD]/public to $GIT_SRC/"
+rsync -av public/ $GIT_SRC/ | grep -v /$
 
-cd $WWW_MJB/
+cd $GIT_SRC/
+
+echo; echo "git status"
 git status
+
+press "About to perform 'git diff'"
 git diff
 
 press "GIT Add/Commit/Push changes"
