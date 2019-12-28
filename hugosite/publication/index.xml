@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on </title>
+    <link>https://mjbright.github.io/publication/index.xml</link>
+    <description>Recent content in Publications on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Mike Bright</copyright>
+    <lastBuildDate>Mon, 06 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Docker Advanced</title>
+      <link>https://mjbright.github.io/publication/FUTURE_2017-Feb_HPE_TSS_Cannes_DockerAdvanced/</link>
+      <pubDate>Mon, 06 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/FUTURE_2017-Feb_HPE_TSS_Cannes_DockerAdvanced/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Container Orchestration: Swarm, Mesos, Kubernetes - Lab</title>
+      <link>https://mjbright.github.io/publication/2016-Oct_ContainerConEU_Berlin_ContainerOrchestrationLab/</link>
+      <pubDate>Tue, 04 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/2016-Oct_ContainerConEU_Berlin_ContainerOrchestrationLab/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Container Orchestration: Swarm, Mesos, Kubernetes - Which Conductor?</title>
+      <link>https://mjbright.github.io/publication/2016-Oct_ContainerConEU_Berlin_ContainerOrchestration/</link>
+      <pubDate>Tue, 04 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/2016-Oct_ContainerConEU_Berlin_ContainerOrchestration/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Jupyter for Everything Else</title>
+      <link>https://mjbright.github.io/publication/2016-Jul_EuroPython_Bilbao_JupyterForEverythingElse/</link>
+      <pubDate>Fri, 22 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/2016-Jul_EuroPython_Bilbao_JupyterForEverythingElse/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>IPython in Depth, 3-hr tutorial</title>
+      <link>https://mjbright.github.io/publication/2016-Jul_EuroPython_Bilbao_IPythonInDepth/</link>
+      <pubDate>Mon, 18 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/2016-Jul_EuroPython_Bilbao_IPythonInDepth/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Activities in the HPE EMEA OpenNFV Lab</title>
+      <link>https://mjbright.github.io/publication/2016-Feb-HPE_TSS_Cannes_NFV/</link>
+      <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/2016-Feb-HPE_TSS_Cannes_NFV/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Docker Build Lab</title>
+      <link>https://mjbright.github.io/publication/2016-Feb-HPE_TSS_Cannes_DockerBuildLab/</link>
+      <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/2016-Feb-HPE_TSS_Cannes_DockerBuildLab/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>IPython vers Jupyter</title>
+      <link>https://mjbright.github.io/publication/2015-Oct_Pyconfr_Pau_IPythonVersJupyter/</link>
+      <pubDate>Mon, 12 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/2015-Oct_Pyconfr_Pau_IPythonVersJupyter/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ETSI NFV Use Cases</title>
+      <link>https://mjbright.github.io/publication/2015-Mar-HP_TES_Grenoble/</link>
+      <pubDate>Sun, 22 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/2015-Mar-HP_TES_Grenoble/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HP EMEA NFV Use Cases</title>
+      <link>https://mjbright.github.io/publication/2015-Feb-HP_ETSS_Cannes_NFV/</link>
+      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/2015-Feb-HP_ETSS_Cannes_NFV/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mjbright.github.io/publication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mjbright.github.io/publication/</guid>
+      <description>&lt;h1&gt;Past Conference Presentations&lt;/h1&gt;
+&lt;table border=2 bgcolor=&#34;#aaaaff&#34;&gt;&lt;tbody&gt;
+&lt;tr&gt; &lt;td&gt; &lt;!-- ========================================================================================== --&gt;
+        2016-Oct: LinuxCon/Container Con Europe, Berlin - Container Orchestration: Which Conductor?
+    &lt;/td&gt; &lt;td&gt;
+        &lt;a href=&#34;https://mjbright.github.io/LinuxConEU-ContainerOrchestration/ContainerConEU2016_Pres_remark.html#1&#34;&gt; slides &lt;/a&gt;
+    &lt;/td&gt; &lt;td&gt;
+        &lt;a href=&#34;https://github.com/mjbright/LinuxConEU-ContainerOrchestration/tree/gh-pages&#34;&gt; on github &lt;/a&gt;
+    &lt;/td&gt; &lt;td&gt;
+    &lt;/td&gt; &lt;td&gt;
+        &lt;a href=&#34;http://www.slideshare.net/MichaelBright3/container-con-europe-2016-container-orchestration-which-conductor&#34;&gt; on slideshare.net &lt;/a&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;!-- ========================================================================================== --&gt;
+    2016-Oct: LinuxCon/Container Con Europe, Berlin - Container Orchestration Lab 
+    &lt;/td&gt; &lt;td&gt;
+        &lt;a href=&#34;https://mjbright.github.io/LinuxConEU-ContainerOrchestration/ContainerConEU2016_Lab_remark.html#1&#34;&gt; slides &lt;/a&gt;
+    &lt;/td&gt; &lt;td&gt;
+        &lt;a href=&#34;https://github.com/mjbright/LinuxConEU-ContainerOrchestration/&#34;&gt; on github &lt;/a&gt;
+    &lt;/td&gt; &lt;td&gt;
+    &lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;!-- ========================================================================================== --&gt;
+    2016-Jul: Europython, Bilbao - Jupyter for Everything Else
+    &lt;/td&gt; &lt;td&gt;
+    &lt;a href=&#34;http://www.slideshare.net/MichaelBright3/presentation-jupyter-foreverythingelse-67691960&#34;&gt; slides &lt;/a&gt;
+    &lt;/td&gt; &lt;td&gt;
+    &lt;a href=&#34;https://github.com/mjbright/jupyter-for-everything-else&#34;&gt; on github &lt;/a&gt;
+    &lt;/td&gt; &lt;td&gt;
+    &lt;a href=&#34;https://www.youtube.com/watch?v=wG6u51uuXEA&#34;&gt; on YouTube &lt;/a&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;!-- ========================================================================================== --&gt;
+    2016-Jul: Europython, Bilbao - Ipython in Depth Tutorial
+&lt;/td&gt; &lt;td&gt;
+    &lt;a href=&#34;http://www.slideshare.net/MichaelBright3/euro-python2016-logistics&#34;&gt; slides &lt;/a&gt;
+&lt;/td&gt; &lt;td&gt;
+    &lt;a href=&#34;https://github.com/mjbright/ipython-in-depth&#34;&gt; on github &lt;/a&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;!-- ========================================================================================== --&gt;
+    2016-Feb: HPE TSS, Cannes - Docker Build Lab
+&lt;/td&gt; &lt;td&gt;
+    &lt;a href=&#34;https://github.com/mjbright/jupyter_notebooks/blob/master/2016-Feb_Docker_Build_Lab/2016-Feb_Docker_Build_Lab.pdf&#34;&gt; Lab Guide &lt;/a&gt;
+&lt;/td&gt; &lt;td&gt;
+    &lt;a href=&#34;https://github.com/mjbright/jupyter_notebooks/tree/master/2016-Feb_Docker_Build_Lab&#34;&gt; on github &lt;/a&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;!-- ========================================================================================== --&gt;
+    2016-Feb: HPE TSS, Cannes - NFV
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;!-- ========================================================================================== --&gt;
+    2015-Oct: Pyconfr, Pau - IPython vers Jupyter
+&lt;/td&gt; &lt;td&gt;
+    &lt;a href=&#34;http://www.slideshare.net/MichaelBright3/2015-oct17-pyconfrpauipythonversjupyter-67688884&#34;&gt; slides &lt;/a&gt;
+&lt;/td&gt; &lt;td&gt;
+    &lt;a href=&#34;https://github.com/mjbright/jupyter_notebooks/tree/master/2015-Oct-17_Pyconfr_Pau_IPython_vers_Jupyter&#34;&gt; on github &lt;/a&gt;
+&lt;/td&gt; &lt;td&gt;
+    &lt;a href=&#34;https://www.youtube.com/watch?v=0Uy5jS1wgzs&#34;&gt; on YouTube &lt;/a&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;!-- ========================================================================================== --&gt;
+    2015-Mar: HP TES, Grenoble - NFV
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; &lt;!-- ========================================================================================== --&gt;
+    2015-Feb: HP ETSS, Barcelona - NFV
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;td&gt;
+&lt;/td&gt; &lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;a href=&#34;Pygre/index.html&#34;&gt; &lt;h1&gt;Grenoble Python User Group Presentations&lt;/h1&gt; &lt;/a&gt;
+
+&lt;!-- **** TODO **** *****************************************************************
+
+- Add a little D3.js, a little BootStrap, a little style ;-)
+- Link to my github, twitter, linkedin, CV, conference presentations, interests, blog, ...
+- My languages ...
+
+***************************************************************** **** TODO **** --&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>

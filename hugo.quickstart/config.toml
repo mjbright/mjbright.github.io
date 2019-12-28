@@ -1,0 +1,5 @@
+#baseURL = "http://example.org/"
+baseURL = "http://www.mjbright.net/"
+languageCode = "en-us"
+title = "[Hugo Quickstart] My New Hugo Site"
+theme = "ananke"

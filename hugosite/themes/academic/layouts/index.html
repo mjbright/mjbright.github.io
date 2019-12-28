@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<!-- Flag for jQuery -->
+<span id="homepage" style="display: none"></span>
+
+<!-- Widgets -->
+{{ $pubs_selected_len := len (where (where .Data.Pages "Type" "conferences") ".Params.selected" true) }}
+{{ $pubs_selected_len := len (where (where .Data.Pages "Type" "publication") ".Params.selected" true) }}
+{{ range $index, $page := where .Data.Pages "Type" "home" }}
+  {{ $params := dict "root" $ "page" $page "pubs_selected_len" $pubs_selected_len }}
+  {{ $widget := printf "widgets/%s.html" ( or $page.Params.widget "custom" ) }}
+  {{ partial $widget $params }}
+{{ end }}
+
+<!-- Page Footer -->
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}
