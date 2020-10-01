@@ -92,7 +92,7 @@ CHECK_CONNECTIVITY() {
 }
 
 INSTALL_PACKAGES() {
-    local APT_INSTALL_PACKAGES=$1; shift
+    local APT_INSTALL_PACKAGES="$1"; shift
     ## Install packages:
     safe_apt_get update
     safe_apt_get upgrade -y
